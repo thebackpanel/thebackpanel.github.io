@@ -1,0 +1,21 @@
+{
+  "name": "BACKPANEL",
+  "short_name": "BACKPANEL",
+  "description": "Auto back-panel ads that make your startup show up on roads and LinkedIn. RTO-certified, all-inclusive, risk-free.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FF4D00",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
