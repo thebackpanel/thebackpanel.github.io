@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="BACKPANEL — auto back-panel ads that make your startup show up on roads and LinkedIn. RTO-certified, all-inclusive, risk-free." />
+<title>BACKPANEL — your brand, on the back of an auto</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="logo"><span class="dot" aria-hidden="true"></span>BACK<span>PANEL</span></div>
+  <input type="checkbox" id="navtoggle" class="navtoggle" aria-hidden="true" />
+  <label for="navtoggle" class="navbtn" aria-label="Toggle menu" role="button">&#9776;</label>
+  <nav aria-label="Primary">
+    <a href="#how">HOW</a>
+    <a href="#pitch">PITCH ON WHEELS</a>
+    <a href="#why">WHY IT WORKS</a>
+    <a href="#pricing">PRICING</a>
+    <a href="#creative">CREATIVE</a>
+    <a href="#trust">TRUST</a>
+    <a href="#contact" class="cta">GET WRAPPED</a>
+  </nav>
+</header>
+
+<main id="main">
+<section class="hero">
+  <h1>PUT YOUR BRAND WHERE A PHONE CAN'T SAVE THEM. <em>(at a red light, nobody scrolls.)</em></h1>
+  <p class="sub">We stick your logo on the back of an auto-rickshaw. The person behind it is trapped at a red light, staring right at you. Then we film the whole thing and hand you the clip, so you show up on LinkedIn too. RTO-certified. Bilingual. None of the illegal hood-sticker drama.</p>
+  <div class="hero-cta">
+    <a href="#contact" class="btn">START A CAMPAIGN</a>
+    <a href="#pitch" class="btn ghost">ENTER PITCH ON WHEELS</a>
+  </div>
+  <div class="ticker" aria-hidden="true"><span>THE ONLY RTO-CERTIFIED AUTO-AD NETWORK THAT MAKES STARTUPS ACTUALLY GO VIRAL · ALL-INCLUSIVE · GPS-PROOFED · NO GRAY ZONE *</span></div>
+</section>
+
+<section id="how" class="block">
+  <div class="wrap">
+    <h2>How it <span class="hl">works</span> <span class="fn">(no MBA required)</span></h2>
+    <div class="grid3">
+      <div class="card"><div class="num">01</div><h3>Pick your hood</h3><p>Tell us one neighbourhood. We wrap every auto we can get in there. The competitor three streets over will wonder what just happened.</p></div>
+      <div class="card"><div class="num">02</div><h3>We make it shareable</h3><p>Our guy films your founder pitch sitting in a parked rickshaw. Legal, chill, no moving-vehicle nonsense. You get a Reel and the actual panel. One price, two things to show people.</p></div>
+      <div class="card"><div class="num">03</div><h3>Proof you can post</h3><p>A dashboard with GPS-tagged photos and a clean little link (bp.in/yourbrand). Screenshot it. Post it. Watch other founders ask who you used.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pitch" class="block alt">
+  <div class="wrap">
+    <h2>Pitch on <span class="hl">wheels</span></h2>
+    <p class="lead">This is the part that actually spreads. Record a 30-second pitch. Best ones get 50 free back-panels and we push your story to our whole network. Founder ego plus a LinkedIn loop equals reach you'd otherwise pay some agency a silly retainer for.</p>
+    <ul class="facts">
+      <li>It's a contest, not a billboard. People share their own pitch, tag friends, vote. The auto is just the trophy.</li>
+      <li>Filmed legally. Parked rickshaws only. We checked the rules so you don't have to google "is this illegal" at 1am.</li>
+      <li>You keep the footage. Post it anywhere. We want you to. That's the whole idea.</li>
+    </ul>
+    <form id="pitchForm" class="pitch-form" onsubmit="return sendPitch(event)">
+      <input name="founder_name" placeholder="Your name" aria-label="Your name" required />
+      <input name="company" placeholder="Startup name" aria-label="Startup name" required />
+      <input name="pitch_url" placeholder="Link to your 30s pitch (YouTube / LinkedIn)" aria-label="Pitch video link" required />
+      <button type="submit">SUBMIT PITCH</button>
+      <div id="pitchMsg"></div>
+    </form>
+  </div>
+</section>
+
+<section id="why" class="block">
+  <div class="wrap">
+    <h2>Why it <span class="hl">works</span></h2>
+    <p class="lead">The vinyl is the trophy. The video is the reach. Here's the stuff a hoarding can't do:</p>
+    <ul class="facts">
+      <li>Your customer lives in one pin code. So should your ad. We don't blast the whole city and call it awareness. We blanket the block you actually sell to.</li>
+      <li>Compliant by design. Back-panel, RTO plus municipal sign-off, eco-vinyl. The hood-sticker crowd lives in a gray area we're not touching. Happy to let you out them.</li>
+      <li>Roughly ₹0.33 per thousand pairs of eyes (we modeled it, counting is hard). Your performance marketer just winced. With jealousy.</li>
+      <li>Paperwork's on us.* Permits, sign-off, bilingual copy, insurance. You stay creatively irresponsible, which is the fun part.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="pricing" class="block alt">
+  <div class="wrap">
+    <h2>Pricing <span class="hl">(flat monthly, zero surprise)</span></h2>
+    <p class="lead">Simple: one flat rate per auto, per month. Everything's in it — print, install, RTO sign-off, advertisement tax, GPS proof, eco-vinyl, your Pitch-on-Wheels video. Minimum 10 autos, 3-month run. No per-impression maths, no "didn't move" fine print. (Elsewhere you'll see cheaper one-time print rates. They don't include permission, tax, or the video. Ours does.)</p>
+    <div class="grid3">
+      <div class="card price"><h3>Starter</h3><div class="amt">₹15–20K</div><p>10 autos, your hood, a toe in the water. Plus one founder video.</p></div>
+      <div class="card price hot"><h3>Neighbourhood</h3><div class="amt">₹35–45K</div><p>25 autos, one hood, two creative variants. Comes with the Pitch-on-Wheels reel.</p></div>
+      <div class="card price"><h3>Saturation</h3><div class="amt">₹80K–1.2L</div><p>50-plus autos, you basically own the city. Includes a contest entry for 50 free panels.</p></div>
+    </div>
+    <div class="calc">
+      <label>Autos: <input id="autos" type="number" value="25" min="5" max="500" /></label>
+      <label>Days: <input id="days" type="number" value="30" min="7" max="180" /></label>
+      <button type="button" onclick="calc()">ESTIMATE REACH</button>
+      <div id="reachOut" class="reach"></div>
+    </div>
+    <div class="cta-row">
+      <a href="#contact" class="btn">GET WRAPPED</a>
+      <a href="#pitch" class="btn ghost">OR ENTER PITCH ON WHEELS</a>
+    </div>
+  </div>
+</section>
+
+<section id="creative" class="block">
+  <div class="wrap">
+    <h2>Six brutal <span class="hl">creative templates</span></h2>
+    <p class="lead">Every one is Reel-ready and road-legal. Pick a voice, we'll weaponise it.</p>
+    <div class="grid2">
+      <div class="card"><h3>Honest roast</h3><p>Brands that make fun of themselves stick. We'll find your flaw and make it the joke. Gently.<br><b lang="gu">GU: અમારો ઢોસો અમારી ઍડ કરતાં વધુ તીખો.</b></p></div>
+      <div class="card"><h3>Local slang bomb</h3><p>We write it in the local tongue so it sounds like a neighbour, not a logo. Corporations aren't neighbours.<br><b lang="gu">GU: અમદાવાદ, અમે તારું જોઈએ છીએ.</b></p></div>
+      <div class="card"><h3>Cause-confront</h3><p>Say the uncomfortable thing. Road safety, air, whatever you mean. Be the brand with a spine for once.<br><b lang="gu">GU: ગયા વર્ષે રસ્તાઓ પર ૧.૭૭ લાખ લોકો મર્યા.</b></p></div>
+      <div class="card"><h3>Anti-ad ad</h3><p>An ad that admits it's an ad. Weirdly works. Honesty is the last clickbait left.<br><b lang="gu">GU: અમે પણ ગરીબ છીએ. એટલે આ ₹200 પૅનલ.</b></p></div>
+      <div class="card"><h3>Rival poke</h3><p>We poke the whole category, never a named rival. Bold, and our lawyer's fine with it.<br><b lang="gu">GU: બીજી ફિનટેક સુંદર જૂઠ બોલે છે.</b></p></div>
+      <div class="card"><h3>Utility map</h3><p>Your panel becomes a map and a link. A sticker that gets clicks. We're as surprised as you are.<br><b lang="gu">GU: આ ઑટો તારું શહેર ગૂગલ કરતાં વધુ સારું જાણે છે.</b></p></div>
+    </div>
+    <p class="fn">*Local-language variants (Gujarati shown) available on request.</p>
+  </div>
+</section>
+
+<section id="trust" class="block alt">
+  <div class="wrap">
+    <h2>Trust &amp; <span class="hl">compliance</span></h2>
+    <div class="trust-grid">
+      <div class="trust"><b>100% RTO-certified.</b> Back-panel only. We don't do hood stickers, a municipal body flagged that gray zone back in 2022. Sleep easy.</div>
+      <div class="trust"><b>Permission on us*.</b> RTO plus municipal sign-off, per auto, per city. We stand in the line so you don't have to.</div>
+      <div class="trust"><b>Eco-vinyl.</b> Biodegradable, non-PVC. The planet notices. So do the inspectors, annoyingly.</div>
+      <div class="trust"><b>No LED. No moving QR.</b> Static vinyl and a link. Safe, legal, still trackable.</div>
+      <div class="trust"><b>Bilingual.</b> Local tongue and English. Written for humans, not algorithms.</div>
+      <div class="trust"><b>Insurance.</b> ₹5L to ₹1Cr third-party liability per campaign. Included. Optimism is not a strategy, sadly.</div>
+      <div class="trust"><b>Back-panel, done right.</b> Ad area stays inside the 75% rule, static only, no animation. We carry the NOC and pay the ad tax so operators don't eat the liability.</div>
+      <div class="trust"><b>Honest creative.</b> If we use AI in your artwork, we label it per ASCI's 2026 draft. No fake stats, no greenwashing.</div>
+    </div>
+    <p class="fn">*Currently operating across Gujarat.</p>
+  </div>
+</section>
+
+<section id="contact" class="block getwrapped">
+  <div class="wrap">
+    <h2>Get <span class="hl">wrapped</span></h2>
+    <p class="lead">Tell us your brand and your hood. We come back within a day with a plan, a price, and the first creative. Nothing moves on the road until you say go.</p>
+    <form id="leadForm" class="lead-form" onsubmit="return send(event)">
+      <input name="name" placeholder="Your name" aria-label="Your name" required />
+      <input name="company" placeholder="Startup name" aria-label="Startup name" required />
+      <input name="email" type="email" placeholder="Email" aria-label="Email" required />
+      <input name="hood" placeholder="Target hood / city" aria-label="Target hood or city" />
+      <textarea name="brief" placeholder="One-line brief, or just paste your pitch link" aria-label="Brief or pitch link"></textarea>
+      <button type="submit">GET WRAPPED</button>
+      <div id="formMsg"></div>
+    </form>
+    <p class="fn">Your details go straight to our team and into our tracking sheet. *Currently live across Gujarat.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  BACKPANEL · the ad that ends up on LinkedIn · RTO-certified · bilingual* &nbsp;|&nbsp; <a href="#contact" class="foolink">Get wrapped</a> &nbsp;|&nbsp; <span class="fn">*Currently live across Gujarat.</span>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

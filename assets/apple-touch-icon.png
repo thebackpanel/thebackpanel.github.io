@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
+  <rect width="180" height="180" rx="40" fill="#FF4D00"/>
+  <circle cx="66" cy="50" r="12" fill="#fff"/>
+  <circle cx="114" cy="50" r="12" fill="#fff"/>
+  <text x="90" y="115" text-anchor="middle" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="40" fill="#fff" letter-spacing="2">BACK</text>
+  <text x="90" y="158" text-anchor="middle" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="40" fill="#fff" letter-spacing="2">PANEL</text>
+</svg>
