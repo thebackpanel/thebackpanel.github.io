@@ -1,7 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-  <rect x="32" y="48" width="448" height="416" rx="56" fill="#FF4D00"/>
-  <circle cx="176" cy="128" r="28" fill="#fff"/>
-  <circle cx="336" cy="128" r="28" fill="#fff"/>
-  <text x="256" y="310" text-anchor="middle" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="110" fill="#fff" letter-spacing="8">BACK</text>
-  <text x="256" y="420" text-anchor="middle" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="110" fill="#fff" letter-spacing="8">PANEL</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <style>
+    .bg { fill: #FF4D00; }
+    .rivet { fill: #fff; }
+    .label { fill: #fff; font-family: Arial Black, Impact, sans-serif; font-weight: 900; letter-spacing: 4px; }
+  </style>
+  <rect class="bg" x="32" y="48" width="448" height="416" rx="56"/>
+  <circle class="rivet" cx="160" cy="120" r="24"/>
+  <circle class="rivet" cx="352" cy="120" r="24"/>
+  <text class="label" x="256" y="290" text-anchor="middle" font-size="100">BACK</text>
+  <text class="label" x="256" y="400" text-anchor="middle" font-size="100">PANEL</text>
 </svg>
