@@ -3,9 +3,6 @@
     .bg { fill: #FF4D00; }
     .dot { fill: #fff; }
     .text { fill: #fff; font-family: Arial Black, Impact, sans-serif; font-weight: 900; font-size: 11px; letter-spacing: 0.5px; }
-    @media (prefers-color-scheme: dark) {
-      .bg { fill: #FF4D00; }
-    }
   </style>
   <rect class="bg" x="1" y="1" width="30" height="30" rx="6" ry="6"/>
   <circle class="dot" cx="10" cy="8" r="2.5"/>

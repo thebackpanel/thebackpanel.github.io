@@ -1,12 +1,20 @@
-// BACKPANEL site interactions
+// BACKPANEL site interactions — psychology-driven
+
+// Nav scroll effect
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+}
 
 // Reach estimator: 8k-12k impressions/auto/day (transit OOH benchmark, modelled)
 function calc() {
   const autos = parseInt(document.getElementById('autos').value) || 0;
   const days = parseInt(document.getElementById('days').value) || 0;
-  const perDay = 10000; // conservative midpoint
+  const perDay = 10000;
   const total = autos * perDay * days;
-  const cpm = 0.33; // modeled floor; honest range ₹0.33–₹1.00
+  const cpm = 0.33;
   const cost = (total / 1000) * cpm;
   document.getElementById('reachOut').textContent =
     `≈ ${total.toLocaleString('en-IN')} impressions · est. media cost ₹${Math.round(cost).toLocaleString('en-IN')} (from ₹${cpm} CPM, modeled)`;
@@ -14,14 +22,13 @@ function calc() {
 
 // --- shared: push a row to the Google Form (best-effort, no-cors) ---
 const GF_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSfgtJ-DBn2ffEC1tH8hfSKvpRihmWqV5s_uPVz9Vjdi3vqGkA/formResponse";
-// entry IDs from the live form: Name / Email / Organization / pay-ack(Yes)
 const GF = { name: "entry.2092238618", email: "entry.1556369182", org: "entry.479301265", ack: "entry.2109138769" };
 async function pushGoogle(map) {
   const p = new URLSearchParams();
   if (map.name) p.set(GF.name, map.name);
   if (map.email) p.set(GF.email, map.email);
   if (map.org) p.set(GF.org, map.org);
-  p.set(GF.ack, "Yes"); // required acknowledgment — omitting it makes Google drop the row
+  p.set(GF.ack, "Yes");
   try {
     await fetch(GF_FORM, { method: "POST", mode: "no-cors",
       headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: p.toString() });
@@ -34,7 +41,7 @@ async function pushBackend(path, payload) {
   } catch (_) { return false; }
 }
 
-// Lead capture: backend + Google Form + localStorage + mailto fallback
+// Lead capture
 async function send(e) {
   e.preventDefault();
   const f = e.target;
@@ -53,12 +60,12 @@ async function send(e) {
     `Hood: ${data.hood}\nBrief: ${data.brief}`
   );
   window.location.href = `mailto:founders@backpanel.in?subject=${subject}&body=${body}`;
-  document.getElementById('formMsg').textContent = 'Brief sent — saved to our system + your form, and we\'ll email you back.';
+  document.getElementById('formMsg').textContent = 'Brief sent — we\'ll email you back within 24 hours.';
   f.reset();
   return false;
 }
 
-// Pitch-on-Wheels: backend + Google Form + mailto fallback
+// Pitch-on-Wheels
 async function sendPitch(e) {
   e.preventDefault();
   const f = e.target;
@@ -75,9 +82,15 @@ async function sendPitch(e) {
   const subject = encodeURIComponent('Pitch on Wheels: ' + payload.company);
   const body = encodeURIComponent(`Founder: ${payload.founder_name}\nCompany: ${payload.company}\nPitch: ${payload.pitch_url}`);
   window.location.href = `mailto:founders@backpanel.in?subject=${subject}&body=${body}`;
-  msg.textContent = 'Pitch sent — logged to our system + your form. If it wins, we wrap 50 autos.';
+  msg.textContent = 'Pitch submitted — if it wins, we wrap 50 autos.';
   f.reset();
   return false;
 }
+
+// Auto-dismiss social badge after 8s
+setTimeout(() => {
+  const badge = document.getElementById('socialBadge');
+  if (badge) badge.style.opacity = '0';
+}, 8000);
 
 document.addEventListener('DOMContentLoaded', calc);

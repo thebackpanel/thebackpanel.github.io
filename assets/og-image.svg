@@ -1,24 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
-  <rect width="1200" height="630" fill="#0A0A0A"/>
-  <!-- Subtle grid pattern -->
   <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <linearGradient id="g1" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="1" fill="#222"/>
     </pattern>
   </defs>
-  <rect width="1200" height="630" fill="url(#grid)"/>
-  <!-- Orange accent bar -->
-  <rect x="0" y="0" width="1200" height="8" fill="#FF4D00"/>
-  <rect x="0" y="622" width="1200" height="8" fill="#FF4D00"/>
-  <!-- Icon -->
-  <rect x="80" y="165" width="300" height="300" rx="48" fill="#FF4D00"/>
-  <circle cx="170" cy="230" r="22" fill="#fff"/>
-  <circle cx="290" cy="230" r="22" fill="#fff"/>
-  <text x="230" y="360" text-anchor="middle" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="72" fill="#fff" letter-spacing="4">BACK</text>
-  <text x="230" y="430" text-anchor="middle" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="72" fill="#fff" letter-spacing="4">PANEL</text>
-  <!-- Text -->
-  <text x="440" y="280" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="96" fill="#FFFFFF" letter-spacing="-3">BACKPANEL</text>
-  <text x="440" y="360" font-family="Arial,sans-serif" font-weight="600" font-size="36" fill="#FF4D00">AUTO RICKSHAW ADVERTISING</text>
-  <text x="440" y="420" font-family="Arial,sans-serif" font-weight="400" font-size="28" fill="#888">Your brand, on the back of an auto.</text>
-  <text x="440" y="470" font-family="Arial,sans-serif" font-weight="400" font-size="22" fill="#555">RTO-certified · Bilingual · GPS-proofed · Bengaluru</text>
+  <rect width="1200" height="630" fill="url(#g1)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect x="0" y="0" width="8" height="630" fill="#FF4D00"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#FF4D00"/>
+  <rect x="0" y="624" width="1200" height="6" fill="#FF4D00"/>
+  <rect x="80" y="140" width="320" height="350" rx="52" fill="#FF4D00"/>
+  <circle cx="180" cy="210" r="26" fill="#fff"/>
+  <circle cx="300" cy="210" r="26" fill="#fff"/>
+  <text x="240" y="340" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="80" fill="#fff" letter-spacing="5">BACK</text>
+  <text x="240" y="430" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="80" fill="#fff" letter-spacing="5">PANEL</text>
+  <text x="470" y="240" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="100" fill="#FFFFFF" letter-spacing="-3">BACKPANEL</text>
+  <text x="470" y="320" font-family="Arial, sans-serif" font-weight="700" font-size="38" fill="#FF4D00">BENGALURU'S AUTO AD NETWORK</text>
+  <text x="470" y="380" font-family="Arial, sans-serif" font-weight="400" font-size="28" fill="#999">Your brand, on the back of an auto.</text>
+  <text x="470" y="430" font-family="Arial, sans-serif" font-weight="400" font-size="22" fill="#666">RTO-certified · GPS-proofed · ₹0.33 CPM</text>
+  <text x="470" y="475" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#FF4D00">thebackpanel.github.io</text>
 </svg>
