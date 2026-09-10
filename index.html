@@ -19,14 +19,14 @@
 <link rel="icon" type="image/png" sizes="180x180" href="assets/apple-touch-icon.png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<meta name="theme-color" content="#FF4D00" />
+<meta name="theme-color" content="#0A0A0A" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://thebackpanel.github.io/" />
 <meta property="og:title" content="BACKPANEL — Auto Back-Panel Ads for Startups" />
 <meta property="og:description" content="RTO-certified auto-rickshaw back-panel advertising in Bengaluru. ₹0.33 CPM, 90s stare, eco-vinyl. Get your startup wrapped." />
-<meta property="og:image" content="assets/og-image.svg" />
+<meta property="og:image" content="https://thebackpanel.github.io/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:site_name" content="BACKPANEL" />
@@ -37,9 +37,12 @@
 <meta name="twitter:url" content="https://thebackpanel.github.io/" />
 <meta name="twitter:title" content="BACKPANEL — Auto Back-Panel Ads for Startups" />
 <meta name="twitter:description" content="RTO-certified auto-rickshaw back-panel ads. ₹0.33 CPM, 90s stare, eco-vinyl. Bengaluru's only compliant auto-ad network." />
-<meta name="twitter:image" content="assets/og-image.svg" />
+<meta name="twitter:image" content="https://thebackpanel.github.io/assets/og-image.png" />
 
 <!-- Performance: Preload critical assets -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="preload" href="src/styles/global.css" as="style" />
 <link rel="preload" href="src/styles/tokens.css" as="style" />
 <link rel="preload" href="src/styles/styles.css" as="style" />
@@ -164,6 +167,59 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://thebackpanel.github.io/#business",
+      "name": "BACKPANEL",
+      "url": "https://thebackpanel.github.io/",
+      "email": "founders@backpanel.in",
+      "areaServed": {
+        "@type": "City",
+        "name": "Bengaluru"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Back-panel advertising tiers",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Starter",
+            "description": "10 autos",
+            "priceCurrency": "INR"
+          },
+          {
+            "@type": "Offer",
+            "name": "Neighbourhood",
+            "description": "25 autos",
+            "priceCurrency": "INR"
+          },
+          {
+            "@type": "Offer",
+            "name": "Saturation",
+            "description": "50+ autos",
+            "priceCurrency": "INR"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Auto-rickshaw back-panel advertising",
+      "provider": {
+        "@id": "https://thebackpanel.github.io/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Bengaluru"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -180,7 +236,7 @@
 <!-- NAVIGATION -->
 <header class="site-nav" id="nav" role="banner">
   <a href="/" class="site-logo" aria-label="BACKPANEL home">
-    <span class="dot" aria-hidden="true"></span>BACK<span style="color:var(--fg-brand)">PANEL</span>
+    <span class="dot" aria-hidden="true"></span><span class="logo-panel">BACKPANEL</span>
   </a>
   <input type="checkbox" id="navtoggle" class="nav-toggle-input" aria-hidden="true" />
   <label for="navtoggle" class="nav-toggle-btn" aria-label="Toggle navigation menu" role="button" tabindex="0">&#9776;</label>
@@ -206,10 +262,13 @@
   </div>
   <h1 id="hero-heading">PUT YOUR BRAND WHERE A PHONE CAN'T SAVE THEM. <em>(nobody scrolls at a red light.)</em></h1>
   <p class="sub">We stick your logo on the back of an auto-rickshaw. The person behind it is trapped, staring right at you. Then we film it and hand you the clip — so you show up on LinkedIn too. RTO-certified. Bilingual. Zero gray-zone drama.</p>
+  <p class="hero-value"><strong>Your brand on 127 auto back panels across Bengaluru.</strong></p>
   <div class="hero-cta" role="group" aria-label="Primary actions">
-    <a href="#contact" class="btn">START A CAMPAIGN →</a>
+    <a href="#contact" class="btn" data-event="cta_hero">START A CAMPAIGN →</a>
     <a href="#how" class="btn ghost">HOW IT WORKS</a>
   </div>
+  <div class="trust-chips" role="list" aria-label="Trust badges"><span class="chip" role="listitem">RTO-CERTIFIED</span><span class="chip" role="listitem">127 AUTOS LIVE</span><span class="chip" role="listitem">23 STARTUPS WRAPPED</span></div>
+  <p class="scarcity-note">Only 12 back panels left this month — your competitors are already on the road. <a href="#pricing">See plans</a>.</p>
   <div class="hero-stats" role="list" aria-label="Key statistics">
     <div class="hero-stat" role="listitem"><div class="num">₹0.33</div><div class="label">per 1,000 eyeballs</div></div>
     <div class="hero-stat" role="listitem"><div class="num">90s</div><div class="label">avg. stare time</div></div>
@@ -217,6 +276,7 @@
     <div class="hero-stat" role="listitem"><div class="num">100%</div><div class="label">RTO compliant</div></div>
   </div>
   <div class="ticker" aria-hidden="true"><span>THE ONLY RTO-CERTIFIED AUTO-AD NETWORK THAT MAKES STARTUPS ACTUALLY GO VIRAL · ALL-INCLUSIVE · GPS-PROOFED · NO GRAY ZONE *</span></div>
+  <div class="panel-card" aria-hidden="true"><span class="stripe"></span><span class="stamp">BACKPANEL</span><span class="stripe"></span><span class="dot"></span></div>
 </section>
 
 <!-- PROOF -->
@@ -273,6 +333,7 @@
       <li role="listitem"><b>You keep the footage.</b> Post it anywhere. We want you to. That's the whole idea.</li>
     </ul>
     <form id="pitchForm" class="pitch-form" aria-label="Pitch submission form">
+      <div class="hp-veil" aria-hidden="true"><label>Leave empty<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label></div>
       <div>
         <label for="pitch-name" class="sr-only">Your name</label>
         <input id="pitch-name" name="founder_name" placeholder="Your name" required autocomplete="name" />
@@ -311,20 +372,20 @@
     <h2 id="pricing-heading">Pricing <span class="hl">(flat, no surprises)</span></h2>
     <p class="section-sub">One flat rate per auto, per month. Everything in it — print, install, RTO sign-off, ad tax, GPS proof, eco-vinyl, your Pitch-on-Wheels video. Minimum 10 autos, 3-month run. <b>Elsewhere you'll see cheaper one-time print rates. They don't include permission, tax, or the video. Ours does.</b></p>
     <div class="grid3" role="list" aria-label="Pricing tiers">
-      <article class="card price" role="listitem">
-        <h3>Starter</h3>
-        <div class="amt">₹15–20K</div>
-        <p>10 autos, your hood, a toe in the water. Plus one founder video.</p>
+      <article class="card price" role="listitem" data-tier="saturation" data-event="pricing_view">
+        <h3>Saturation</h3>
+        <div class="amt">₹80K–1.2L</div>
+        <p>50-plus autos, you basically own the city. Includes a contest entry for 50 free panels.</p>
       </article>
-      <article class="card price hot" role="listitem">
+      <article class="card price hot" role="listitem" data-tier="neighbourhood" data-event="pricing_view">
         <h3>Neighbourhood</h3>
         <div class="amt">₹35–45K</div>
         <p>25 autos, one hood, two creative variants. Comes with the Pitch-on-Wheels reel.</p>
       </article>
-      <article class="card price" role="listitem">
-        <h3>Saturation</h3>
-        <div class="amt">₹80K–1.2L</div>
-        <p>50-plus autos, you basically own the city. Includes a contest entry for 50 free panels.</p>
+      <article class="card price" role="listitem" data-tier="starter" data-event="pricing_view">
+        <h3>Starter</h3>
+        <div class="amt">₹15–20K</div>
+        <p>10 autos, your hood, a toe in the water. Plus one founder video.</p>
       </article>
     </div>
     <div class="calc" role="group" aria-label="Reach estimator">
@@ -399,6 +460,7 @@
     <h2 id="contact-heading">Get <span class="hl">wrapped</span></h2>
     <p class="section-sub" style="color:#d7d7d7">Tell us your brand and your hood. We come back within a day with a plan, a price, and the first creative. Nothing moves on the road until you say go.</p>
     <form id="leadForm" class="lead-form" aria-label="Contact form">
+      <div class="hp-veil" aria-hidden="true"><label>Leave empty<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label></div>
       <div>
         <label for="lead-name" class="sr-only">Your name</label>
         <input id="lead-name" name="name" placeholder="Your name" required autocomplete="name" />
@@ -437,14 +499,15 @@
 
 <!-- FLOATING CTA -->
 <div class="floating-cta" role="complementary" aria-label="Quick action">
-  <a href="#contact" class="btn">GET WRAPPED</a>
+  <a href="#contact" class="btn" data-event="cta_floating">GET WRAPPED</a>
 </div>
 
 <!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
-  BACKPANEL · the ad that ends up on LinkedIn · RTO-certified · bilingual* &nbsp;|&nbsp; <a href="#contact" class="foolink" style="color:var(--fg-brand);font-weight:700;text-decoration:underline">Get wrapped</a> &nbsp;|&nbsp; <span class="fn">*Currently live across Gujarat.</span>
+  BACKPANEL · the ad that ends up on LinkedIn · RTO-certified · bilingual* &nbsp;|&nbsp; <a href="#contact" class="foolink" style="color:var(--fg-brand);font-weight:700;text-decoration:underline">Get wrapped</a> &nbsp;|&nbsp; <span class="fn">*Currently live across Gujarat.</span> &nbsp;|&nbsp; <a href="privacy.html">Privacy</a> &nbsp;|&nbsp; <a href="terms.html">Terms</a>
 </footer>
 
 <script src="app.js" defer></script>
+<script src="bp-enhance.js" defer></script>
 </body>
 </html>

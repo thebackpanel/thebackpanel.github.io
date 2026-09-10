@@ -3,27 +3,29 @@
   "short_name": "BACKPANEL",
   "description": "Auto back-panel ads that make your startup show up on roads and LinkedIn. RTO-certified, all-inclusive, risk-free.",
   "start_url": "/",
+  "scope": "/",
+  "id": "/",
   "display": "standalone",
-  "background_color": "#fafafa",
-  "theme_color": "#FF4D00",
+  "background_color": "#F5F5F0",
+  "theme_color": "#0A0A0A",
   "icons": [
     {
-      "src": "assets/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/favicon-dark.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any",
-      "media": "(prefers-color-scheme: dark)"
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "assets/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
+      "src": "assets/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

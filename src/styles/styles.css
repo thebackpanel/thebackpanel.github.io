@@ -919,3 +919,235 @@ h2 .hl { color: var(--fg-brand); }
   .hero h1 { letter-spacing: -0.075em; }
   .site-logo { font-size: 1.25rem; }
 }
+
+/* ============================================================
+   BRAND LAYER v3 — auto-yellow/ink street identity
+   Append-only: visual overrides only. No layout/body-copy changes.
+   Contrast rule: yellow-on-ink (~14:1) only; NEVER yellow text on white.
+   Every rule is overflow-safe (max-width:100%).
+   ============================================================ */
+
+/* ── Display type ─────────────────────────────────────────── */
+h1, h2 {
+  font-family: var(--font-display);
+  max-width: 100%;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  max-width: 100%;
+}
+
+/* ── Hero dark treatment ──────────────────────────────────── */
+.hero {
+  background-color: var(--ink);
+  background-image: repeating-linear-gradient(105deg, var(--auto-yellow) 0 10px, transparent 10px 24px);
+  background-size: 100% 10px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  color: var(--paper);
+  max-width: 100%;
+}
+.hero h1,
+.hero h2 {
+  color: var(--paper);
+  max-width: 100%;
+}
+.hero .sub {
+  color: #d8d8d2;
+  max-width: 100%;
+}
+
+/* ── Panel-card motif (pure CSS, no images) ───────────────── */
+.panel-card {
+  transform: rotate(-2deg);
+  border-radius: 14px;
+  background: #000;
+  background-color: var(--ink);
+  border: 3px solid var(--auto-yellow);
+  box-shadow: var(--shadow-panel);
+  padding: var(--space-5);
+  color: var(--paper);
+  max-width: 100%;
+  overflow: hidden;
+}
+.panel-card .stripe {
+  background: var(--auto-yellow);
+  color: var(--ink);
+  max-width: 100%;
+}
+.panel-card .stripe:nth-child(even) {
+  background: #000;
+  background-color: var(--ink);
+  color: var(--auto-yellow);
+}
+.panel-card .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: var(--lime);
+  background-color: var(--lime);
+  display: inline-block;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+/* ── Logo panel ───────────────────────────────────────────── */
+.logo-panel {
+  display: inline-block;
+  background: var(--ink);
+  background-color: var(--ink);
+  color: var(--auto-yellow);
+  padding: 0.15em 0.4em;
+  border-radius: 8px;
+  transform: rotate(-2deg);
+  font-family: 'Archivo Black', var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  max-width: 100%;
+}
+
+/* ── Trust chips ──────────────────────────────────────────── */
+.trust-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  max-width: 100%;
+}
+.trust-chips .chip {
+  border: 1px solid var(--auto-yellow);
+  color: var(--paper);
+  border-radius: 9999px;
+  padding: 0.3em 0.8em;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.trust-chips .chip:first-child {
+  background: var(--auto-yellow);
+  background-color: var(--auto-yellow);
+  color: var(--ink);
+  border-color: var(--auto-yellow);
+}
+
+/* ── Scarcity note ────────────────────────────────────────── */
+.scarcity-note {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--paper);
+  border-left: 4px solid var(--lime);
+  padding-left: var(--space-3);
+  max-width: 100%;
+}
+
+/* ── Buttons: street restyle (yellow-on-ink only) ─────────── */
+.btn {
+  background: var(--ink);
+  background-color: var(--ink);
+  color: var(--auto-yellow);
+  border: 2px solid var(--ink);
+  max-width: 100%;
+}
+.btn:hover {
+  transform: translateY(-2px) rotate(-0.5deg);
+  box-shadow: var(--shadow-panel);
+  transition: transform 200ms var(--ease-snap), box-shadow 200ms var(--ease-snap);
+}
+.btn.ghost {
+  background: transparent;
+  background-color: transparent;
+  border: 2px solid currentColor;
+  box-shadow: none;
+}
+.hero .btn.ghost {
+  color: var(--paper);
+  border-color: var(--paper);
+  max-width: 100%;
+}
+
+/* ── Numbers ──────────────────────────────────────────────── */
+.proof-item .big,
+.hero-stat .num,
+.price .amt {
+  font-family: var(--font-num);
+  max-width: 100%;
+}
+
+/* ── Scroll reveal (slide from side) ──────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translate(48px, 0);
+  max-width: 100%;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 300ms var(--ease-snap), transform 300ms var(--ease-snap);
+  max-width: 100%;
+}
+
+/* ── Stencil stamp ────────────────────────────────────────── */
+@keyframes stamp-in {
+  from { transform: scale(1.6) rotate(-4deg); opacity: 0; }
+  to { transform: scale(1) rotate(-2deg); opacity: 1; }
+}
+.stamp {
+  animation: stamp-in 300ms var(--ease-snap) both;
+  max-width: 100%;
+}
+
+/* ── Honeypot veil (anti-spam) ────────────────────────────── */
+.hp-veil {
+  position: absolute !important;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ── Contrast hardening (WCAG 2.2 AA, light theme) ────────────
+   Legacy brand orange (#F97316) is 2.8:1 on white — large-text only.
+   Primary surfaces go ink (white text = 17:1); text accents deepen
+   to brand-700 (#C2410C ≈ 5.8:1 on white). Dark theme untouched. */
+:root[data-theme="light"] {
+  --interactive-primary: var(--ink);
+  --interactive-primary-hover: #1c1c1c;
+  --interactive-primary-active: #000000;
+  --fg-brand: #c2410c;
+  --shadow-brand: 0 4px 16px rgba(10, 10, 10, 0.35);
+}
+
+/* ── Hero value prop (1-second test line) ─────────────────── */
+.hero-value {
+  color: var(--auto-yellow);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  letter-spacing: var(--tracking-wide);
+  margin: var(--space-4) 0 0;
+  max-width: 100%;
+}
+.hero-value strong { font-weight: 400; }
+
+/* ── Reduced motion: full disable ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .ticker span,
+  .stamp {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

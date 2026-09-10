@@ -3,13 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
-<title>Other Modes of Ads — Cards, Neon, Reels & Full Marketing | BACKPANEL</title>
-<meta name="description" content="BACKPANEL does more than autos. Personalised NFC business cards, neon signs for stores, reel shoots, influencer collabs, LinkedIn content, WhatsApp kits and launch packs for startups." />
+<title>More Ways to Advertise — Cards, Neon, Reels | BACKPANEL</title>
+<meta name="description" content="BACKPANEL does more than autos: NFC business cards, neon signs, reel shoots, influencer collabs, LinkedIn content and launch packs for startups." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://thebackpanel.github.io/stack.html" />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<meta name="theme-color" content="#FF4D00" />
+<meta name="theme-color" content="#0A0A0A" />
+<meta property="og:image" content="https://thebackpanel.github.io/assets/og-image.png" />
+<meta name="twitter:image" content="https://thebackpanel.github.io/assets/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="src/styles/global.css" />
 <link rel="stylesheet" href="src/styles/tokens.css" />
 <link rel="stylesheet" href="src/styles/styles.css" />
@@ -281,6 +288,7 @@
         <label for="stack-brief" class="sr-only">What do you sell?</label>
         <textarea id="stack-brief" name="brief" placeholder="What do you sell, and where? (one line is enough)"></textarea>
       </div>
+      <div class="hp-veil" aria-hidden="true"><label>Leave empty<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label></div>
       <button type="submit">BUILD MY STACK →</button>
       <div id="stackMsg" role="status" aria-live="polite"></div>
     </form>
@@ -301,10 +309,11 @@
 </div>
 
 <footer class="site-footer" role="contentinfo">
-  BACKPANEL · cards, neon, reels &amp; everything after the ad · <a href="/" class="foolink" style="color:var(--fg-brand);font-weight:700;text-decoration:underline">Back to autos</a>
+  BACKPANEL · cards, neon, reels &amp; everything after the ad · <a href="/" class="foolink" style="color:var(--fg-brand);font-weight:700;text-decoration:underline">Back to autos</a> · <a href="privacy.html" style="color:var(--fg-brand);font-weight:700;text-decoration:underline">Privacy</a> · <a href="terms.html" style="color:var(--fg-brand);font-weight:700;text-decoration:underline">Terms</a>
 </footer>
 
 <script src="app.js" defer></script>
+<script src="bp-enhance.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   var f = document.getElementById("stackForm");

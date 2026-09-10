@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thebackpanel.github.io/sitemap.xml

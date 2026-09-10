@@ -1,0 +1,136 @@
+# GitHub Pages deploy (validate → deploy)
+#
+# FOR THE LIVE REPO (thebackpanel/thebackpanel.github.io), whose ROOT mirrors
+# this site/ directory (index.html, stack.html, assets/, ... at top level).
+# Do NOT copy this file into site/ subfolders — it lives at
+# .github/workflows/deploy.yml in the live repo.
+#
+# REQUIRED REPO SETTING: Settings → Pages → Source must be "GitHub Actions".
+# Otherwise the deploy-pages job has nowhere to publish to.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  SITE_URL: https://thebackpanel.github.io/
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate SEO / PWA invariants (fail loudly)
+        run: |
+          python3 - <<'EOF'
+          import json, re, sys
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import urlparse
+
+          errors = []
+          root = Path(".")
+
+          # NOTE (known gaps, fix in live repo until green):
+          #  - stack.html meta description is currently 183 chars (limit 100-170)
+          #  - 404.html currently has no canonical link
+          #  - no sitemap.xml ships with site/ yet (warned, not failed)
+
+          html_files = sorted(root.glob("*.html"))
+          assert html_files, "no *.html files found at repo root"
+
+          for f in html_files:
+              s = f.read_text(encoding="utf-8")
+
+              m = re.search(r"<title>(.*?)</title>", s, re.S | re.I)
+              title = re.sub(r"\s+", " ", m.group(1)).strip() if m else ""
+              if not (30 <= len(title) <= 70):
+                  errors.append(f"{f}: <title> length {len(title)} not in 30-70: {title!r}")
+
+              m = re.search(
+                  r'<meta\s+[^>]*name=["\']description["\'][^>]*content=["\'](.*?)["\']',
+                  s, re.S | re.I,
+              ) or re.search(
+                  r'<meta\s+[^>]*content=["\'](.*?)["\'][^>]*name=["\']description["\']',
+                  s, re.S | re.I,
+              )
+              desc = m.group(1).strip() if m else ""
+              if not (100 <= len(desc) <= 170):
+                  errors.append(f"{f}: meta description length {len(desc)} not in 100-170")
+
+              if not re.search(r'<link\s+[^>]*rel=["\']canonical["\']', s, re.I):
+                  errors.append(f"{f}: missing <link rel=\"canonical\">")
+
+          # Sitemap: every <loc> must resolve to a file in the repo.
+          sm = root / "sitemap.xml"
+          if not sm.exists():
+              print("::warning::sitemap.xml missing — add one listing all pages")
+          else:
+              locs = re.findall(r"<loc>(.*?)</loc>", sm.read_text(encoding="utf-8"), re.S)
+              assert locs, "sitemap.xml has no <loc> entries"
+              for loc in locs:
+                  loc = loc.strip()
+                  path = urlparse(loc).path.lstrip("/") or "index.html"
+                  if not (root / path).exists():
+                      errors.append(f"sitemap <loc> {loc} does not resolve to file {path}")
+
+          # Manifest icons must exist on disk.
+          man = root / "site.webmanifest"
+          if not man.exists():
+              errors.append("site.webmanifest missing")
+          else:
+              icons = json.loads(man.read_text(encoding="utf-8")).get("icons", [])
+              assert icons, "manifest has no icons"
+              for ic in icons:
+                  src = (ic.get("src") or "").lstrip("/")
+                  if not src or not (root / src).exists():
+                      errors.append(f"manifest icon missing on disk: {src!r}")
+
+          if errors:
+              print("VALIDATION FAILED:")
+              for e in errors:
+                  print(" -", e)
+              sys.exit(1)
+          print(f"OK: {len(html_files)} html pages, sitemap + manifest checks passed")
+          EOF
+
+      - name: Check for mixed content (http:// in html)
+        run: |
+          # Fail loudly if any insecure http:// URL remains in shipped HTML.
+          if grep -rn --include='*.html' 'http://' .; then
+            echo "::error::mixed content: 'http://' found in HTML (use https://)"
+            exit 1
+          fi
+          echo "OK: no http:// mixed content in HTML"
+
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
