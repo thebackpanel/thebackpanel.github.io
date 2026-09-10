@@ -23,9 +23,33 @@
 <!-- Fonts: self-hosted subset woff2, preloaded (no third-party chain) -->
 <link rel="preload" href="assets/fonts/archivo-black-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+<!-- Critical CSS: above-fold only (full styles deferred below) -->
+<style>
+@font-face{font-family:'Archivo Black';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/archivo-black-latin.woff2') format('woff2')}
+@font-face{font-family:'Archivo Fallback';src:local('Arial Black'),local('Arial-BoldMT');size-adjust:100%;ascent-override:87.8%;descent-override:21%;line-gap-override:0%}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('assets/fonts/inter-var-latin.woff2') format('woff2')}
+@font-face{font-family:'Inter Fallback';src:local('.SFNSText'),local('.SFNSDisplay'),local('Segoe UI'),local('Roboto'),local('Helvetica Neue'),local('Arial');size-adjust:105%;ascent-override:92%;descent-override:23%;line-gap-override:0%}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{background:#0A0A0A;color:#F5F5F0;font-family:'Inter','Inter Fallback',system-ui,'Segoe UI',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.skip-link{position:absolute;left:-999px;top:0;background:#0A0A0A;color:#FFD400;padding:.75rem 1rem;z-index:500;font-weight:700}
+.site-nav{display:flex;justify-content:space-between;align-items:center;padding:0 clamp(1rem,5vw,4rem);min-height:72px;background:rgba(255,255,255,.94);position:sticky;top:0;z-index:200}
+.site-logo{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;text-decoration:none;color:#0A0A0A;display:flex;align-items:center;gap:.6rem}
+.nav-links{display:flex;gap:.5rem 1rem;align-items:center;flex-wrap:wrap}
+.nav-links a{font-weight:700;font-size:.75rem;color:#0A0A0A;text-decoration:none}
+h1{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:clamp(2rem,1.5rem + 3vw,3.5rem);line-height:1;margin:0 0 1rem}
+main{padding:clamp(3rem,8vw,5rem) clamp(1rem,5vw,4rem);max-width:72ch;margin:0 auto}
+</style>
+
+<!-- Styles: deferred (non-blocking) with no-JS fallback -->
+<link rel="stylesheet" href="src/styles/global.css" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="src/styles/tokens.css" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="src/styles/styles.css" media="print" onload="this.media='all'" />
+<noscript>
 <link rel="stylesheet" href="src/styles/global.css" />
 <link rel="stylesheet" href="src/styles/tokens.css" />
 <link rel="stylesheet" href="src/styles/styles.css" />
+</noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

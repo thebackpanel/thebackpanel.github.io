@@ -1114,6 +1114,15 @@ h1, h2 {
    Legacy brand orange (#F97316) is 2.8:1 on white — large-text only.
    Primary surfaces go ink (white text = 17:1); text accents deepen
    to brand-700 (#C2410C ≈ 5.8:1 on white). Dark theme untouched. */
+/* Below-fold render skipping (Speed Index / TBT): offscreen
+   sections skip rendering until scrolled near. Browsers exclude
+   these from CLS; anchor jumps + IO reveals force render on
+   demand. Hero (.hero) is never skipped. */
+main .block,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto none;
+}
 :root[data-theme="light"] {
   --interactive-primary: var(--ink);
   --interactive-primary-hover: #1c1c1c;
