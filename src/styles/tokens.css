@@ -1,0 +1,249 @@
+/* ============================================================
+   DESIGN TOKENS — BACKPANEL v2
+   Fluid Scale | Dual Theme | Smooth Crossfade
+   ============================================================ */
+
+:root {
+  /* ── PRIMITIVES: Gray / Slate ────────────────────────────── */
+  --gray-50:  #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --gray-950: #020617;
+
+  /* ── PRIMITIVES: Brand ───────────────────────────────────── */
+  --brand-50:  #fff7ed;
+  --brand-100: #ffedd5;
+  --brand-200: #fed7aa;
+  --brand-300: #fdba74;
+  --brand-400: #fb923c;
+  --brand-500: #f97316;
+  --brand-600: #ea580c;
+  --brand-700: #c2410c;
+  --brand-800: #9a3412;
+  --brand-900: #7c2d12;
+
+  /* ── PRIMITIVES: Blue ────────────────────────────────────── */
+  --blue-50:  #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a5f;
+
+  /* ── PRIMITIVES: Green ───────────────────────────────────── */
+  --green-50:  #f0fdf4;
+  --green-100: #dcfce7;
+  --green-400: #4ade80;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+
+  /* ── PRIMITIVES: Red ─────────────────────────────────────── */
+  --red-50:  #fef2f2;
+  --red-100: #fee2e2;
+  --red-400: #f87171;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+
+  /* ── PRIMITIVES: Yellow ──────────────────────────────────── */
+  --yellow-50:  #fefce8;
+  --yellow-100: #fef9c3;
+  --yellow-400: #facc15;
+  --yellow-500: #eab308;
+  --yellow-600: #ca8a04;
+
+  /* ── SEMANTIC: Background ────────────────────────────────── */
+  --bg-primary:    var(--gray-50);
+  --bg-secondary:  #ffffff;
+  --bg-tertiary:   var(--gray-100);
+  --bg-inverse:    var(--gray-900);
+  --bg-brand:      var(--brand-500);
+  --bg-brand-subtle: rgba(255, 77, 0, 0.08);
+
+  /* ── SEMANTIC: Foreground / Text ──────────────────────────── */
+  --fg-primary:    var(--gray-900);
+  --fg-secondary:  var(--gray-600);
+  --fg-tertiary:   var(--gray-500);
+  --fg-inverse:    #ffffff;
+  --fg-brand:      var(--brand-500);
+  --fg-brand-hover: var(--brand-600);
+  --fg-link:       var(--blue-600);
+
+  /* ── SEMANTIC: Interactive ────────────────────────────────── */
+  --interactive-primary:       var(--brand-500);
+  --interactive-primary-hover: var(--brand-600);
+  --interactive-primary-active: var(--brand-700);
+  --interactive-secondary:       var(--gray-200);
+  --interactive-secondary-hover: var(--gray-300);
+
+  /* ── SEMANTIC: Borders ───────────────────────────────────── */
+  --border-default:   var(--gray-200);
+  --border-strong:    var(--gray-300);
+  --border-brand:     var(--brand-500);
+  --border-focus:     var(--blue-600);
+
+  /* ── SEMANTIC: Status ────────────────────────────────────── */
+  --status-success:     var(--green-600);
+  --status-success-bg:  var(--green-50);
+  --status-error:       var(--red-600);
+  --status-error-bg:    var(--red-50);
+  --status-warning:     var(--yellow-600);
+  --status-warning-bg:  var(--yellow-50);
+  --status-info:        var(--blue-600);
+  --status-info-bg:     var(--blue-50);
+
+  /* ── SEMANTIC: Shadows ───────────────────────────────────── */
+  --shadow-xs:   0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md:   0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg:   0 8px 16px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
+  --shadow-xl:   0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.06);
+  --shadow-brand: 0 4px 16px rgba(255, 77, 0, 0.3);
+
+  /* ── TYPOGRAPHY ──────────────────────────────────────────── */
+  --font-sans:   'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono:   'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* Modular scale: 1.333 (perfect fourth) — all clamped */
+  --text-xs:   clamp(0.6944rem, 0.65rem + 0.22vw, 0.8rem);
+  --text-sm:   clamp(0.8333rem, 0.78rem + 0.28vw, 1rem);
+  --text-base: clamp(1rem, 0.93rem + 0.35vw, 1.25rem);
+  --text-md:   clamp(1.125rem, 1.04rem + 0.42vw, 1.4063rem);
+  --text-lg:   clamp(1.2656rem, 1.16rem + 0.52vw, 1.5625rem);
+  --text-xl:   clamp(1.4238rem, 1.29rem + 0.66vw, 1.9531rem);
+  --text-2xl:  clamp(1.5938rem, 1.4rem + 0.95vw, 2.4413rem);
+  --text-3xl:  clamp(1.7929rem, 1.48rem + 1.52vw, 3.0518rem);
+  --text-4xl:  clamp(2.0171rem, 1.52rem + 2.42vw, 3.8147rem);
+  --text-5xl:  clamp(2.2691rem, 1.49rem + 3.8vw, 4.7684rem);
+  --text-hero: clamp(2.5527rem, 1.39rem + 5.72vw, 5.9605rem);
+
+  /* Line heights */
+  --leading-none:    1;
+  --leading-tight:   1.15;
+  --leading-snug:    1.3;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.75;
+
+  /* Font weights */
+  --weight-normal:   400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-extrabold: 800;
+  --weight-black:    900;
+
+  /* Letter spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight:   -0.025em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.025em;
+  --tracking-wider:   0.05em;
+  --tracking-widest:  0.1em;
+
+  /* ── SPACING (8px grid) ──────────────────────────────────── */
+  --space-0:    0;
+  --space-1:    0.25rem;
+  --space-2:    0.5rem;
+  --space-3:    0.75rem;
+  --space-4:    1rem;
+  --space-5:    1.25rem;
+  --space-6:    1.5rem;
+  --space-7:    1.75rem;
+  --space-8:    2rem;
+  --space-10:   2.5rem;
+  --space-12:   3rem;
+  --space-16:   4rem;
+  --space-20:   5rem;
+  --space-24:   6rem;
+  --space-32:   8rem;
+
+  /* ── BORDER RADIUS ───────────────────────────────────────── */
+  --radius-sm:   0.375rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
+  --radius-2xl:  1.5rem;
+  --radius-full: 9999px;
+
+  /* ── TRANSITIONS ─────────────────────────────────────────── */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in:      cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:     cubic-bezier(0, 0, 0.2, 1);
+  --ease-bounce:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:   100ms;
+  --duration-normal: 200ms;
+  --duration-slow:   300ms;
+  --duration-slower: 500ms;
+
+  /* ── Z-INDEX SCALE ───────────────────────────────────────── */
+  --z-base:     0;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+
+  /* ── LAYOUT ──────────────────────────────────────────────── */
+  --max-width:    1180px;
+  --nav-height:   72px;
+  --section-py:   clamp(3rem, 10vw, 7.5rem);
+  --section-px:   clamp(1rem, 5vw, 4rem);
+}
+
+/* ── DARK THEME ──────────────────────────────────────────── */
+[data-theme="dark"],
+.dark {
+  --bg-primary:     var(--gray-950);
+  --bg-secondary:   var(--gray-900);
+  --bg-tertiary:    var(--gray-800);
+  --bg-brand:       var(--brand-600);
+  --bg-brand-subtle: rgba(255, 77, 0, 0.12);
+  --fg-primary:     var(--gray-50);
+  --fg-secondary:   var(--gray-400);
+  --fg-tertiary:    var(--gray-500);
+  --fg-brand:       var(--brand-400);
+  --fg-brand-hover: var(--brand-300);
+  --border-default: var(--gray-800);
+  --border-strong:  var(--gray-700);
+  --shadow-xs:   0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md:   0 4px 6px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-lg:   0 8px 16px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-xl:   0 20px 40px rgba(0, 0, 0, 0.5), 0 8px 16px rgba(0, 0, 0, 0.3);
+  --shadow-brand: 0 4px 16px rgba(255, 77, 0, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-primary:     var(--gray-950);
+    --bg-secondary:   var(--gray-900);
+    --bg-tertiary:    var(--gray-800);
+    --bg-brand:       var(--brand-600);
+    --bg-brand-subtle: rgba(255, 77, 0, 0.12);
+    --fg-primary:     var(--gray-50);
+    --fg-secondary:   var(--gray-400);
+    --fg-tertiary:    var(--gray-500);
+    --fg-brand:       var(--brand-400);
+    --fg-brand-hover: var(--brand-300);
+    --border-default: var(--gray-800);
+    --border-strong:  var(--gray-700);
+    --shadow-xs:   0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md:   0 4px 6px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-lg:   0 8px 16px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2);
+    --shadow-xl:   0 20px 40px rgba(0, 0, 0, 0.5), 0 8px 16px rgba(0, 0, 0, 0.3);
+    --shadow-brand: 0 4px 16px rgba(255, 77, 0, 0.25);
+  }
+}

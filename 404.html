@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>404 — Page Not Found | BACKPANEL</title>
+<meta name="description" content="The page you're looking for doesn't exist. Head back to BACKPANEL to get your startup wrapped on auto-rickshaws." />
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="stylesheet" href="src/styles/tokens.css" />
+<link rel="stylesheet" href="src/styles/styles.css" />
+<style>
+.error-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(24px, 4vw, 40px);
+  background: var(--bg-primary);
+}
+.error-code {
+  font-size: clamp(4rem, 15vw, 12rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--fg-brand);
+  margin-bottom: var(--space-4);
+}
+.error-title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--fg-primary);
+  margin-bottom: var(--space-4);
+}
+.error-message {
+  font-size: var(--text-lg);
+  color: var(--fg-secondary);
+  max-width: 48ch;
+  margin-bottom: var(--space-8);
+  line-height: 1.6;
+}
+.error-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.error-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--bg-brand-subtle);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: var(--space-6);
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#error-main">Skip to main content</a>
+
+<main id="error-main" class="error-page" role="main" aria-labelledby="error-title">
+  <div class="error-icon" aria-hidden="true">🛺</div>
+  <div class="error-code" aria-hidden="true">404</div>
+  <h1 class="error-title" id="error-title">This page took a wrong turn.</h1>
+  <p class="error-message">Looks like this page got wrapped by an auto and is now somewhere on the streets of Bengaluru. Let's get you back on track.</p>
+  <div class="error-actions" role="group" aria-label="Navigation options">
+    <a href="/" class="btn">BACK TO HOME →</a>
+    <a href="#contact" class="btn ghost">GET WRAPPED</a>
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  BACKPANEL · the ad that ends up on LinkedIn · RTO-certified
+</footer>
+</body>
+</html>
