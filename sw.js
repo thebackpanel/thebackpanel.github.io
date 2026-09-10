@@ -1,9 +1,10 @@
 // BACKPANEL service worker: offline-first for app shell.
-const CACHE_V = 'bp-v1';
+const CACHE_V = 'bp-v2';
 const PRECACHE = [
   '/', '/index.html', '/stack.html', '/privacy.html', '/terms.html',
   '/site.webmanifest', '/src/styles/global.css', '/src/styles/tokens.css',
-  '/src/styles/styles.css', '/app.js', '/bp-enhance.js'
+  '/src/styles/styles.css', '/app.js', '/bp-enhance.js',
+  '/assets/fonts/archivo-black-latin.woff2', '/assets/fonts/inter-var-latin.woff2'
 ];
 
 // Install: cache each asset individually so one 404 won't fail install.

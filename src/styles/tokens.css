@@ -254,9 +254,9 @@
   --ink: #0A0A0A;
   --lime: #C6FF00;
   --paper: #F5F5F0;
-  --font-display: 'Archivo Black', 'Space Grotesk', system-ui, sans-serif;
-  --font-num: 'Bebas Neue', 'Archivo Black', sans-serif;
-  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-display: 'Archivo Black', 'Archivo Fallback', 'Arial Black', sans-serif;
+  --font-num: 'Archivo Black', 'Archivo Fallback', 'Arial Black', sans-serif;
+  --font-sans: 'Inter', 'Inter Fallback', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --ease-snap: cubic-bezier(0.2, 0.8, 0.2, 1);
   --shadow-panel: 6px 6px 0 rgba(10, 10, 10, .9);
 }
