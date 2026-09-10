@@ -31,11 +31,13 @@ interface PitchFormData {
   pitch_url: string;
 }
 
-/** Reach estimation result */
+/** Reach estimation result — CPM derived from our own rates, not assumed */
 interface ReachResult {
   totalImpressions: number;
   estimatedCost: number;
   cpm: number;
+  cpmLo: number;
+  cpmHi: number;
 }
 
 /** Error boundary state */

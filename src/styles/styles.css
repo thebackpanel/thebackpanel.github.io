@@ -1160,3 +1160,44 @@ main .block,
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Math block + trust-bar links (Fix 2: honesty repair) ─────── */
+.trust-bar a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--auto-yellow, #FFD400);
+}
+.calc.math {
+  text-align: left;
+  max-width: 100%;
+}
+.calc.math h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-4);
+  overflow-wrap: break-word;
+}
+.calc.math p {
+  margin-bottom: var(--space-4);
+  line-height: 1.7;
+  max-width: 72ch;
+}
+.calc.math ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-4);
+  display: grid;
+  gap: var(--space-2);
+}
+.calc.math li {
+  padding-left: 1.4em;
+  position: relative;
+  line-height: 1.7;
+}
+.calc.math li::before {
+  content: "=";
+  position: absolute;
+  left: 0;
+  font-weight: 800;
+}

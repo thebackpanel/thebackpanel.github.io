@@ -49,8 +49,10 @@ const GF_CONFIG: GoogleFormConfig = {
   },
 };
 
-const IMPRESSIONS_PER_AUTO_PER_DAY = 10_000;
-const CPM_MODELED = 0.33;
+const IMPRESSIONS_PER_AUTO_PER_DAY = 10_000; // benchmark midpoint (range 8,000–12,000)
+const IMPRESSIONS_LO_PER_DAY = 8_000;
+const IMPRESSIONS_HI_PER_DAY = 12_000;
+const COST_PER_AUTO_PER_MONTH = 1_600; // all-in reference rate (Neighbourhood ₹40K / 25 autos)
 
 // ── Navigation Scroll Effect ───────────────────────────────
 function initNavScroll(): void {
@@ -65,10 +67,18 @@ function initNavScroll(): void {
 }
 
 // ── Reach Estimator ────────────────────────────────────────
+// CPM is DERIVED here, not assumed:
+//   CPM = monthly cost ÷ (autos × benchmark impressions × days ÷ 1,000)
+// Same formula as the published math in #math. Check it.
 function calcReach(autos: number, days: number): ReachResult {
   const totalImpressions = autos * IMPRESSIONS_PER_AUTO_PER_DAY * days;
-  const estimatedCost = (totalImpressions / 1000) * CPM_MODELED;
-  return { totalImpressions, estimatedCost, cpm: CPM_MODELED };
+  const estimatedCost = autos * COST_PER_AUTO_PER_MONTH * (days / 30);
+  const perThousand = (impr: number): number =>
+    impr > 0 ? (estimatedCost / impr) * 1000 : 0;
+  const cpm = perThousand(totalImpressions);
+  const cpmLo = perThousand(autos * IMPRESSIONS_HI_PER_DAY * days);
+  const cpmHi = perThousand(autos * IMPRESSIONS_LO_PER_DAY * days);
+  return { totalImpressions, estimatedCost, cpm, cpmLo, cpmHi };
 }
 
 function calc(): void {
@@ -83,7 +93,7 @@ function calc(): void {
 
   const result = calcReach(autos, days);
 
-  reachOutEl.textContent = `\u2248 ${result.totalImpressions.toLocaleString("en-IN")} impressions \u00B7 est. media cost \u20B9${Math.round(result.estimatedCost).toLocaleString("en-IN")} (from \u20B9${result.cpm} CPM, modeled)`;
+  reachOutEl.textContent = `\u2248 ${result.totalImpressions.toLocaleString("en-IN")} impressions \u00B7 \u2248 \u20B9${Math.round(result.estimatedCost).toLocaleString("en-IN")} all-in (\u20B91,600/auto/month) \u2192 \u2248\u20B9${result.cpm.toFixed(2)} CPM (\u20B9${result.cpmLo.toFixed(2)}\u2013${result.cpmHi.toFixed(2)} across the 8\u201312K benchmark range)`;
 }
 
 // ── Google Form Push (best-effort) ─────────────────────────

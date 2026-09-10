@@ -50,7 +50,9 @@ var GF_CONFIG = {
     }
 };
 var IMPRESSIONS_PER_AUTO_PER_DAY = 10000;
-var CPM_MODELED = 0.33;
+var IMPRESSIONS_LO_PER_DAY = 8000;
+var IMPRESSIONS_HI_PER_DAY = 12000;
+var COST_PER_AUTO_PER_MONTH = 1600;
 // ── Navigation Scroll Effect ───────────────────────────────
 function initNavScroll() {
     var nav = document.getElementById("nav");
@@ -61,11 +63,15 @@ function initNavScroll() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
 }
-// ── Reach Estimator ────────────────────────────────────────
+// ── Reach Estimator (CPM DERIVED from our rates — see #math) ──
 function calcReach(autos, days) {
     var totalImpressions = autos * IMPRESSIONS_PER_AUTO_PER_DAY * days;
-    var estimatedCost = (totalImpressions / 1000) * CPM_MODELED;
-    return { totalImpressions: totalImpressions, estimatedCost: estimatedCost, cpm: CPM_MODELED };
+    var estimatedCost = autos * COST_PER_AUTO_PER_MONTH * (days / 30);
+    var perThousand = function (impr) { return impr > 0 ? (estimatedCost / impr) * 1000 : 0; };
+    var cpm = perThousand(totalImpressions);
+    var cpmLo = perThousand(autos * IMPRESSIONS_HI_PER_DAY * days);
+    var cpmHi = perThousand(autos * IMPRESSIONS_LO_PER_DAY * days);
+    return { totalImpressions: totalImpressions, estimatedCost: estimatedCost, cpm: cpm, cpmLo: cpmLo, cpmHi: cpmHi };
 }
 function calc() {
     var autosEl = document.getElementById("autos");
@@ -76,7 +82,7 @@ function calc() {
     var autos = parseInt(autosEl.value, 10) || 0;
     var days = parseInt(daysEl.value, 10) || 0;
     var result = calcReach(autos, days);
-    reachOutEl.textContent = "\u2248 " + result.totalImpressions.toLocaleString("en-IN") + " impressions \u00B7 est. media cost \u20B9" + Math.round(result.estimatedCost).toLocaleString("en-IN") + " (from \u20B9" + result.cpm + " CPM, modeled)";
+    reachOutEl.textContent = "\u2248 " + result.totalImpressions.toLocaleString("en-IN") + " impressions \u00B7 \u2248 \u20B9" + Math.round(result.estimatedCost).toLocaleString("en-IN") + " all-in (\u20B91,600/auto/month) \u2192 \u2248\u20B9" + result.cpm.toFixed(2) + " CPM (\u20B9" + result.cpmLo.toFixed(2) + "\u2013" + result.cpmHi.toFixed(2) + " across the 8\u201312K benchmark range)";
 }
 // ── Google Form Push (best-effort) ─────────────────────────
 function pushGoogle(map) {
