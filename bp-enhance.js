@@ -301,3 +301,94 @@
   });
   registerServiceWorker();
 })();
+
+/* ============================================================================
+ * CTA VARIANT TEST (Fix 9 — measurement only, no copy changes outside variant)
+ * ----------------------------------------------------------------------------
+ * How to run:
+ *   - Default (control): load page with no param -> `wrapped` variant, no text change.
+ *   - Challenger:        load page with `?cta=quote` -> hero + floating CTAs read
+ *                        "Get a Quote" (hero keeps its trailing "→" if present).
+ *   - Any other `cta` value falls back to `wrapped` (default, no text change).
+ * What fires (via window.bpTrack when present, else no-op):
+ *   - `cta_variant_view` { variant } — once per pageview, on load.
+ *   - `cta_click` { variant, event } — on click of a[data-event="cta_hero"] or
+ *     a[data-event="cta_floating"]; `event` echoes the element's data-event.
+ *     Existing delegated [data-event] handler is untouched (this uses a
+ *     separate capture listener, no preventDefault/stopPropagation).
+ * Where data lands:
+ *   - Umami custom event (umami.track) and Plausible custom event
+ *     (plausible(event, { props })) when those snippets are configured;
+ *     otherwise (or additionally) appended to window._bpq queue for inspection.
+ * Notes: query param only — no cookies, no storage. prefers-reduced-motion:
+ *   N/A (no motion in this section). Exposes window.__bpCtaVariant and
+ *   document.documentElement.dataset.ctaVariant for debugging/reuse.
+ * ========================================================================== */
+(function () {
+  'use strict';
+
+  function safeTrack(event, data) {
+    try {
+      if (typeof window.bpTrack === 'function') window.bpTrack(event, data);
+    } catch (e) { /* never break the page */ }
+  }
+
+  function getVariant() {
+    try {
+      var v = new URLSearchParams(location.search).get('cta');
+      if (v === 'quote') return 'quote';
+    } catch (e) { /* ignore; fall through to default */ }
+    return 'wrapped';
+  }
+
+  var variant = getVariant();
+
+  try {
+    window.__bpCtaVariant = variant;
+  } catch (e) { /* ignore */ }
+  try {
+    document.documentElement.dataset.ctaVariant = variant;
+  } catch (e) { /* ignore */ }
+
+  function applyQuoteCopy() {
+    try {
+      var hero = document.querySelector('a[data-event="cta_hero"]');
+      if (hero) {
+        var orig = hero.textContent || '';
+        var hasArrow = orig.indexOf('\u2192') !== -1;
+        hero.textContent = hasArrow ? 'Get a Quote \u2192' : 'Get a Quote';
+      }
+      var floating = document.querySelector('a[data-event="cta_floating"]');
+      if (floating) floating.textContent = 'Get a Quote';
+    } catch (e) { /* never break rendering */ }
+  }
+
+  function boot() {
+    if (variant === 'quote') applyQuoteCopy();
+    safeTrack('cta_variant_view', { variant: variant });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+
+  // Separate capture listener: augments clicks with { variant }, leaves the
+  // existing bubble-phase [data-event] handler in bp-enhance.js untouched.
+  document.addEventListener(
+    'click',
+    function (e) {
+      var el =
+        e.target && e.target.closest
+          ? e.target.closest('a[data-event="cta_hero"],a[data-event="cta_floating"]')
+          : null;
+      if (!el) return;
+      safeTrack('cta_click', {
+        variant: variant,
+        event: el.getAttribute('data-event'),
+      });
+    },
+    true
+  );
+})();

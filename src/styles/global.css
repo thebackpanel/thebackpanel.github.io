@@ -215,3 +215,47 @@ h4 { font-size: clamp(1.1rem, 0.5vw + 0.5rem, 1.5rem); }
   overflow-wrap: break-word;
   word-break: break-word;
 }
+
+/* ── 15. SELF-HOSTED FONTS ───────────────────────────────────
+   Two families, subset latin woff2, same-origin (no Google chain).
+   Metric-matched fallbacks (measured with fonttools):
+   - Archivo Black (upm 1000, asc 878/desc 210, meanAdv .687em)
+     vs Arial Black (meanAdv .6873em) → size-adjust 100%,
+     ascent-override 87.8%, descent-override 21%.
+   - Inter variable wght 400-900, instanced (upm 2048, meanAdv .6064em)
+     vs system stack (~.579em) → size-adjust 105%,
+     ascent-override 92%, descent-override 23%.
+   (Same faces are inlined in each page's critical CSS; this copy
+   covers any context without the inline block.) */
+@font-face {
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../assets/fonts/archivo-black-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Archivo Fallback';
+  src: local('Arial Black'), local('Arial-BoldMT');
+  size-adjust: 100%;
+  ascent-override: 87.8%;
+  descent-override: 21%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('../../assets/fonts/inter-var-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('.SFNSText'), local('.SFNSDisplay'), local('Segoe UI'), local('Roboto'), local('Helvetica Neue'), local('Arial');
+  size-adjust: 105%;
+  ascent-override: 92%;
+  descent-override: 23%;
+  line-gap-override: 0%;
+}

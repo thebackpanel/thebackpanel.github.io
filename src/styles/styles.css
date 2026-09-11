@@ -1201,3 +1201,73 @@ main .block,
   left: 0;
   font-weight: 800;
 }
+
+/* FAQ accordion + included table (Fix 3) ─────────────────── */
+.faq-list {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 100%;
+}
+.faq-list details {
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  max-width: 100%;
+}
+.faq-list summary {
+  cursor: pointer;
+  font-weight: var(--weight-bold);
+  padding: var(--space-4) var(--space-5);
+  list-style: none;
+  display: flex;
+  gap: var(--space-3);
+  align-items: baseline;
+  overflow-wrap: break-word;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::before {
+  content: "+";
+  color: var(--fg-brand);
+  font-weight: var(--weight-black);
+  flex-shrink: 0;
+}
+.faq-list details[open] summary::before { content: "–"; }
+.faq-list details p {
+  padding: 0 var(--space-5) var(--space-5);
+  color: var(--fg-secondary);
+  line-height: 1.7;
+  max-width: 72ch;
+}
+.calc.included {
+  text-align: left;
+  max-width: 100%;
+  margin-top: var(--space-6);
+}
+.calc.included h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+  overflow-wrap: break-word;
+}
+.calc.included table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+.calc.included caption {
+  text-align: left;
+  font-weight: var(--weight-bold);
+  padding-bottom: var(--space-3);
+}
+.calc.included th,
+.calc.included td {
+  border: 1px solid var(--border-default);
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  overflow-wrap: break-word;
+}
+.calc.included thead th {
+  background: var(--ink, #0A0A0A);
+  color: var(--auto-yellow, #FFD400);
+}
