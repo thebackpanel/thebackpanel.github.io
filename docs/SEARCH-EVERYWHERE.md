@@ -12,7 +12,7 @@ Google ranks pages. AI engines (ChatGPT, Perplexity, AI Overviews) retrieve and 
 
 1. **Technical SEO.** Sub-second pages, Core Web Vitals green, sitemap, schema (LocalBusiness, Service, Offer, FAQ). If crawlers can't read it, nothing else matters.
 2. **AEO (Answer Engine Optimization).** Every page answers one question directly, then elaborates. FAQ schema included. Built to be quoted by AI Overviews.
-3. **GEO (Generative Engine Optimization).** AI engines retrieve citable chunks via RAG. We write stat-led, self-contained sentences ("BACKPANEL runs 127 RTO-certified auto back-panels across Bengaluru at ~₹0.33 CPM") and repeat the entity the same way every time.
+3. **GEO (Generative Engine Optimization).** AI engines retrieve citable chunks via RAG. We write stat-led, self-contained sentences ("BACKPANEL runs 127 RTO-certified auto back-panels across Bengaluru at a derived ≈₹5–8 CPM — math published on the page") and repeat the entity the same way every time.
 4. **Local SEO + entity building.** Google Business Profile, consistent name-address-phone everywhere, area pages (Koramangala, Indiranagar, HSR), review velocity. Own "near me" searches.
 5. **E-E-A-T.** Experience, Expertise, Authoritativeness, Trust — demonstrated, not claimed. GPS-tagged proof photos, RTO paperwork, named founders, dated updates. Things AI can verify and competitors can't fake.
 
