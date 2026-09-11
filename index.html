@@ -261,21 +261,48 @@ body{background:#0A0A0A;color:#F5F5F0;font-family:'Inter','Inter Fallback',syste
         "itemListElement": [
           {
             "@type": "Offer",
-            "name": "Starter",
-            "description": "10 autos",
-            "priceCurrency": "INR"
+            "name": "Saturation",
+            "description": "50-plus autos, you basically own the city. Includes a contest entry for 50 free panels.",
+            "priceCurrency": "INR",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "80000",
+              "maxPrice": "120000"
+            },
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@id": "https://thebackpanel.github.io/#business"
+            }
           },
           {
             "@type": "Offer",
             "name": "Neighbourhood",
-            "description": "25 autos",
-            "priceCurrency": "INR"
+            "description": "25 autos, one hood, two creative variants. Most popular tier. Comes with the Pitch-on-Wheels reel.",
+            "priceCurrency": "INR",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "35000",
+              "maxPrice": "45000"
+            },
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@id": "https://thebackpanel.github.io/#business"
+            }
           },
           {
             "@type": "Offer",
-            "name": "Saturation",
-            "description": "50+ autos",
-            "priceCurrency": "INR"
+            "name": "Starter",
+            "description": "10 autos, your hood, a toe in the water. Plus one founder video.",
+            "priceCurrency": "INR",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "15000",
+              "maxPrice": "20000"
+            },
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@id": "https://thebackpanel.github.io/#business"
+            }
           }
         ]
       }
