@@ -1,5 +1,5 @@
 /* ============================================================================
- * bp-enhance.js — BACKPANEL progressive enhancement layer
+ * bp-enhance.js: BACKPANEL progressive enhancement layer
  * ----------------------------------------------------------------------------
  * Vanilla JS, zero dependencies. Loaded with `defer` (runs after HTML parse,
  * before DOMContentLoaded), so the site renders and works with zero JS by
@@ -303,7 +303,7 @@
 })();
 
 /* ============================================================================
- * CTA VARIANT TEST (Fix 9 — measurement only, no copy changes outside variant)
+ * CTA VARIANT TEST (Fix 9: measurement only, no copy changes outside variant)
  * ----------------------------------------------------------------------------
  * How to run:
  *   - Default (control): load page with no param -> `wrapped` variant, no text change.
@@ -311,8 +311,8 @@
  *                        "Get a Quote" (hero keeps its trailing "→" if present).
  *   - Any other `cta` value falls back to `wrapped` (default, no text change).
  * What fires (via window.bpTrack when present, else no-op):
- *   - `cta_variant_view` { variant } — once per pageview, on load.
- *   - `cta_click` { variant, event } — on click of a[data-event="cta_hero"] or
+ *   - `cta_variant_view` { variant }: once per pageview, on load.
+ *   - `cta_click` { variant, event }: on click of a[data-event="cta_hero"] or
  *     a[data-event="cta_floating"]; `event` echoes the element's data-event.
  *     Existing delegated [data-event] handler is untouched (this uses a
  *     separate capture listener, no preventDefault/stopPropagation).
@@ -320,7 +320,7 @@
  *   - Umami custom event (umami.track) and Plausible custom event
  *     (plausible(event, { props })) when those snippets are configured;
  *     otherwise (or additionally) appended to window._bpq queue for inspection.
- * Notes: query param only — no cookies, no storage. prefers-reduced-motion:
+ * Notes: query param only, no cookies, no storage. prefers-reduced-motion:
  *   N/A (no motion in this section). Exposes window.__bpCtaVariant and
  *   document.documentElement.dataset.ctaVariant for debugging/reuse.
  * ========================================================================== */

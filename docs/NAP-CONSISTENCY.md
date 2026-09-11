@@ -1,4 +1,4 @@
-# NAP Consistency Checklist — BACKPANEL
+# NAP Consistency Checklist: BACKPANEL
 
 Canonical NAP string (use byte-identical everywhere):
 

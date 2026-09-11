@@ -141,7 +141,7 @@ export const faqSchema: FAQPageSchema = {
       name: "Is auto-rickshaw advertising legal?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes — when done right. BACKPANEL operates exclusively on back-panels with full RTO and municipal sign-off, per auto, per city. We use eco-vinyl, stay inside the 75% ad area rule, carry the NOC, and pay the ad tax. No hood stickers or gray-zone tactics.",
+        text: "Yes, when done right. BACKPANEL operates exclusively on back-panels with full RTO and municipal sign-off, per auto, per city. We use eco-vinyl, stay inside the 75% ad area rule, carry the NOC, and pay the ad tax. No hood stickers or gray-zone tactics.",
       },
     },
     {
