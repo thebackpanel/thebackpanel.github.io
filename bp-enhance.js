@@ -392,3 +392,32 @@
     true
   );
 })();
+
+// ── RED-LIGHT COUNTDOWN (Fix 7) ─────────────────────────────
+// 90 → 0 loop, starts when visible, static "90" under
+// prefers-reduced-motion or without JS. Pure enhancement:
+// the dwell/readable labels are in HTML either way.
+(function () {
+  'use strict';
+  var el = document.getElementById('rlNum');
+  if (!el) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var t = 90;
+  var timer = null;
+  function tick() {
+    t = t <= 0 ? 90 : t - 1;
+    el.textContent = String(t);
+  }
+  function start() {
+    if (timer) return;
+    timer = window.setInterval(tick, 1000);
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) start();
+    });
+    io.observe(el);
+  } else {
+    start();
+  }
+})();
