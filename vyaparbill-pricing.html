@@ -17,7 +17,7 @@
 <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
 <style>
 /* Quiet Luxury 2026 — VyparBill Pricing */
-:root{--bg:#FAFAF9;--ink:#0A0A0A;--muted:#6B7280;--line:#E7E5E4;--accent:#FF6B00;--accent-ink:#FFFFFF;--radius:16px;--radius-lg:20px;--space-1:8px;--space-2:16px;--space-3:24px;--space-4:32px;--space-6:48px;--space-8:64px;--space-12:96px}
+:root{--bg:#FAFAF9;--ink:#0A0A0A;--muted:#44403C;--muted2:#57534E;--line:#E7E5E4;--accent:#FF6B00;--accent-ink:#FFFFFF;--radius:16px;--radius-lg:20px;--space-1:8px;--space-2:16px;--space-3:24px;--space-4:32px;--space-6:48px;--space-8:64px;--space-12:96px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
@@ -36,11 +36,11 @@ a{color:inherit;text-decoration:none}
 .logo{font-weight:700;letter-spacing:-.02em;font-size:18px;display:flex;align-items:center;gap:10px}
 .logo-mark{width:28px;height:28px;background:var(--ink);color:var(--bg);display:grid;place-items:center;border-radius:8px;font-size:13px;font-weight:700}
 .nav-links{display:flex;gap:20px;align-items:center;font-size:13px;font-weight:600}
-.nav-links a{opacity:.7;transition:opacity 150ms}
-.nav-links a:hover{opacity:1}
+.nav-links a{color:var(--muted2);transition:color 150ms}
+.nav-links a:hover{color:var(--ink)}
 .nav-cta{background:var(--accent);color:var(--accent-ink);padding:10px 18px;border-radius:999px;font-weight:700;opacity:1 !important}
 /* TrustStrip */
-.trust-strip{border-bottom:1px solid var(--line);padding:10px 0;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+.trust-strip{border-bottom:1px solid var(--line);padding:10px 0;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:#FFFFFF;display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
 /* Hero */
 .hero{padding:var(--space-8) 0 var(--space-6)}
 .hero-grid{display:grid;gap:var(--space-4);text-align:center;max-width:720px;margin:0 auto}
@@ -65,10 +65,10 @@ a{color:inherit;text-decoration:none}
 .price-card{border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;background:#fff;display:flex;flex-direction:column;gap:16px;transition:border-color 150ms, transform 150ms}
 .price-card:hover{transform:translateY(-2px)}
 .price-card.popular{border-color:var(--ink);position:relative;padding-top:36px}
-.badge-popular{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.badge-popular{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 14px;border-radius:999px;white-space:nowrap}
 .price{font-size:30px;font-weight:700;letter-spacing:-.02em}
 .price small{font-size:13px;color:var(--muted);font-weight:500}
-.save{font-size:12px;font-weight:700;color:var(--accent);background:rgba(255,107,0,.08);padding:6px 10px;border-radius:999px;display:inline-block}
+.save{font-size:12px;font-weight:700;color:var(--ink);background:var(--accent);padding:6px 10px;border-radius:999px;display:inline-block}
 .feature-list{list-style:none;display:grid;gap:10px;margin:8px 0}
 .feature-list li{font-size:13px;display:flex;gap:10px;align-items:flex-start;color:var(--ink)}
 .feature-list li::before{content:"✓";font-size:12px;font-weight:700;color:var(--accent);margin-top:1px}
@@ -99,8 +99,8 @@ details p{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.6}
 /* Final CTA */
 .final-cta{padding:var(--space-8) 0;text-align:center;background:var(--ink);color:var(--bg)}
 .final-cta .t-h2{color:var(--bg)}
-.final-cta .t-body{color:#A1A1AA}
-.scarcity{border:1px solid #27272A;padding:8px 14px;border-radius:999px;display:inline-flex;gap:8px;font-size:12px;font-weight:600;margin-bottom:16px;background:#18181B;color:#E7E5E4}
+.final-cta .t-body{color:#E7E5E4}
+.scarcity{border:1px solid #44403C;padding:8px 14px;border-radius:999px;display:inline-flex;gap:8px;font-size:12px;font-weight:700;margin-bottom:16px;background:#1C1917;color:#FAFAF9}
 /* Sticky Mobile */
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:30;background:rgba(250,250,249,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 16px;display:flex;gap:12px}
 .sticky-cta .btn-primary{flex:1}
@@ -212,14 +212,14 @@ body{padding-bottom:72px}
       </div>
       <div class="math-vs">VS</div>
       <div class="math-card" style="background:var(--ink);color:var(--bg);border-color:var(--ink)">
-        <div class="t-small" style="color:#A1A1AA;letter-spacing:.06em;text-transform:uppercase;font-weight:700">VyaparBill se</div>
-        <div class="math-number" style="color:var(--bg);margin:8px 0">₹1,499 <span class="t-small" style="color:#A1A1AA">/mahina · sal bhar ₹17,988</span></div>
-        <ul class="t-small" style="display:grid;gap:6px;list-style:none;color:#E7E5E4">
+        <div class="t-small" style="color:#E7E5E4;letter-spacing:.06em;text-transform:uppercase;font-weight:700">VyaparBill se</div>
+        <div class="math-number" style="color:var(--bg);margin:8px 0">₹1,499 <span class="t-small" style="color:#E7E5E4">/mahina · sal bhar ₹17,988</span></div>
+        <ul class="t-small" style="display:grid;gap:6px;list-style:none;color:#FAFAF9">
           <li>• 2 minute me bill + UPI QR + WhatsApp</li>
           <li>• White-label shopname.vyaparbill.in + hosting</li>
           <li>• GST pakka, GSTR-1 ek click, Hindi/Gujarati PDF</li>
         </ul>
-        <p class="t-small" style="margin-top:12px;color:#A1A1AA">60 bill/mahina pe ≈ <b style="color:var(--bg)">₹25 / bill</b> — vasuli apne aap.</p>
+        <p class="t-small" style="margin-top:12px;color:#E7E5E4">60 bill/mahina pe ≈ <b style="color:var(--bg)">₹25 / bill</b> — vasuli apne aap.</p>
       </div>
     </div>
     <p class="t-small" style="text-align:center;margin-top:16px">Hisab: yojana ÷ mahine ke bill. Koi per-user, per-bill jhol nahi.</p>
@@ -347,7 +347,7 @@ body{padding-bottom:72px}
       <a href="https://wa.me/919999999999?text=VyaparBill%20demo%20chahiye" class="btn-primary">Claim Seat — ₹999 se shuru</a>
       <a href="#pricing" class="btn-secondary" style="color:var(--bg)">Yojana dekho</a>
     </div>
-    <p class="t-small" style="color:#A1A1AA;margin-top:12px">30 din refund · White-label + hosting included · Unlimited bills</p>
+    <p class="t-small" style="color:#E7E5E4;margin-top:12px">30 din refund · White-label + hosting included · Unlimited bills</p>
   </div>
 </section>
 </main>
