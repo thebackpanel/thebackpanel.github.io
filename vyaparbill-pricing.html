@@ -1,102 +1,129 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>VyaparBill — GST Bill Jo Khud Vasuli Kare</title>
 <meta name="description" content="VyaparBill — GST bill jo khud vasuli kare. UPI QR + WhatsApp pe 2 min bhejo, customer pay kare. Trial ₹999, sal ₹1,499/mo (₹17,988), mahina ₹1,999. Bas 10 dukane." />
-<meta name="keywords" content="VyaparBill GST billing, UPI QR bill, WhatsApp bill, GSTR-1, bill vasuli, dukan billing software" />
+<meta name="keywords" content="VyaparBill GST billing, UPI QR bill, WhatsApp bill, GSTR-1, bill vasuli, dukan billing" />
 <link rel="canonical" href="https://thebackpanel.github.io/vyaparbill-pricing.html" />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="manifest" href="site.webmanifest" />
-<meta name="theme-color" content="#FF6B00" />
+<meta name="theme-color" content="#FAFAF9" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="VyaparBill — Bill Bhejo, Paisa Apne Aap Aayega" />
 <meta property="og:description" content="2 minute mein GST bill banao, UPI QR lagao, WhatsApp pe bhejo. Customer ek tap pe pay kare, aapko turant pata chale. Trial ₹999 se shuru." />
 <meta property="og:image" content="assets/og-image.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<link rel="preload" href="assets/fonts/archivo-black-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="src/styles/tokens.css" as="style" />
-<link rel="preload" href="src/styles/global.css" as="style" />
-<link rel="preload" href="src/styles/styles.css" as="style" />
 <style>
- @font-face{font-family:'Archivo Black';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/archivo-black-latin.woff2') format('woff2')}
- @font-face{font-family:'Archivo Fallback';src:local('Arial Black'),local('Arial-BoldMT');size-adjust:100%;ascent-override:87.8%;descent-override:21%;line-gap-override:0%}
- @font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url('assets/fonts/inter-var-latin.woff2') format('woff2')}
- @font-face{font-family:'Inter Fallback';src:local('.SFNSText'),local('.SFNSDisplay'),local('Segoe UI'),local('Roboto'),local('Helvetica Neue'),local('Arial');size-adjust:105%;ascent-override:92%;descent-override:23%;line-gap-override:0%}
- *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
- html{overflow-x:hidden;scroll-behavior:smooth}
- body{background:#FFFBF5;color:#0A0A0A;font-family:'Inter','Inter Fallback',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
- .trust-bar{background:#0B3D91;color:#fff;padding:.6rem 1rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;display:flex;justify-content:center;gap:1rem 2rem;flex-wrap:wrap}
- .trust-bar .dot{width:6px;height:6px;background:#FF6B00;border-radius:9999px;display:inline-block;margin-right:.4rem}
- .trust-bar a{color:#FFD60A;text-decoration:underline;text-underline-offset:3px}
- .site-nav{display:flex;justify-content:space-between;align-items:center;padding:0 clamp(1rem,5vw,4rem);min-height:72px;background:rgba(255,255,255,.94);position:sticky;top:0;z-index:200;border-bottom:1px solid #e5e7eb}
- .site-logo{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-weight:400;text-decoration:none;color:#0A0A0A;display:flex;align-items:center;gap:.6rem}
- .logo-panel{background:#FF6B00;color:#fff;padding:.15em .5em;border-radius:.35em;transform:rotate(-1.5deg);display:inline-block}
- .logo-sub{font-size:.75rem;font-weight:800;color:#0B3D91;letter-spacing:.05em}
- .nav-links{display:flex;gap:.5rem 1rem;align-items:center;flex-wrap:wrap}
- .nav-links a{font-weight:800;font-size:.75rem;color:#0A0A0A;text-decoration:none;letter-spacing:.03em}
- .nav-links a.cta{background:#FF6B00;color:#fff;padding:.6rem 1rem;border-radius:.6rem}
- .hero{background:#0B3D91;color:#fff;padding:clamp(2.5rem,6vw,4rem) clamp(1rem,5vw,4rem);text-align:center}
- .hero h1{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:clamp(2.4rem,6vw,4.5rem);line-height:.95;letter-spacing:-.02em;margin-bottom:1rem}
- .hero h1 em{color:#FFD60A;font-style:normal}
- .hero .sub{color:#dbeafe;max-width:62ch;margin:0 auto 1.25rem;font-size:clamp(1rem, .9rem + .4vw,1.2rem);line-height:1.6}
- .hero-value{color:#FFD60A;font-weight:900;margin-bottom:1.25rem}
- .btn{display:inline-flex;align-items:center;justify-content:center;background:#FF6B00;color:#fff;border:2px solid #FF6B00;padding:1rem 2rem;font-weight:900;font-size:1rem;border-radius:.75rem;text-decoration:none;min-height:52px}
- .btn.ghost{background:transparent;color:#fff;border-color:#fff}
- .block{padding:clamp(2.5rem,8vw,5rem) clamp(1rem,5vw,4rem);border-bottom:1px solid #e5e7eb;background:#FFFBF5}
- .block.alt{background:#fff}
- .wrap{max-width:1180px;margin:0 auto}
- h2{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.02em;margin-bottom:.6rem}
- h2 .hl{color:#FF6B00}
- .section-sub{color:#475569;max-width:68ch;margin-bottom:2rem;line-height:1.6}
- .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
- .card{border:1px solid #e5e7eb;border-radius:16px;padding:24px;background:#fff;transition:all .2s}
- .card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
- .card h3{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:1.1rem;margin:0 0 .3rem}
- .card .amt{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:clamp(1.6rem,3vw,2rem);color:#FF6B00;margin:.5rem 0}
- .card .amt small{font-family:'Inter',sans-serif;font-size:.82rem;color:#64748b;font-weight:700}
- .card p{color:#475569;font-size:.95rem;line-height:1.55}
- .card.hot{border:2px solid #FF6B00;box-shadow:0 4px 24px rgba(255,107,0,.15);position:relative}
- .card.hot::before{content:"SABSE ZYADA PASAND — SIRF 10 DUKANE";position:absolute;top:-12px;left:20px;background:#FF6B00;color:#fff;font-size:10px;font-weight:900;padding:4px 12px;border-radius:9999px;letter-spacing:.08em}
- .calc{margin-top:32px;border:1px solid #e5e7eb;border-radius:16px;padding:20px;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;background:#fff}
- .calc label{display:flex;flex-direction:column;gap:6px;font-weight:800;font-size:.8rem;color:#475569;flex:1 1 140px}
- .calc input,.calc select{width:100%;padding:12px;font:inherit;border:2px solid #e5e7eb;border-radius:10px;min-height:44px}
- .calc input:focus,.calc select:focus{border-color:#FF6B00;outline:none}
- .calc button{flex:1 1 160px;background:#0B3D91;color:#fff;border:none;padding:14px 24px;font-weight:900;cursor:pointer;border-radius:10px;min-height:44px}
- .calc button:hover{background:#0A0A0A}
- .reach{width:100%;color:#0B3D91;font-weight:900;font-size:.95rem;margin-top:4px;overflow-wrap:break-word}
- .math{background:#FFFBF5;border:1px dashed #FF6B00}
- .math h3,.included h3{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:1.15rem;margin-bottom:.6rem}
- .math p{color:#334155;margin:.5rem 0;line-height:1.6}
- .math ul{margin-left:1.2rem;color:#334155;line-height:1.6}
- .included table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.92rem}
- .included th,.included td{border:1px solid #e5e7eb;padding:10px 12px;text-align:left}
- .included th{background:#0B3D91;color:#fff;font-size:.78rem;letter-spacing:.05em}
- .included td:nth-child(2){background:#f0fdf4;font-weight:800;color:#15803d}
- .included td:nth-child(3){color:#64748b}
- caption{caption-side:top;text-align:left;font-weight:800;color:#0B3D91;padding:.4rem 0}
- .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
- .fn{font-size:.78rem;color:#64748b;margin-top:10px;line-height:1.5}
- .floating-cta{display:none;position:fixed;bottom:0;left:0;right:0;padding:12px 16px;background:rgba(255,255,255,.96);border-top:1px solid #e5e7eb;z-index:90}
- @media(max-width:760px){.floating-cta{display:block}}
+/* Quiet Luxury 2026 — VyparBill Pricing */
+:root{--bg:#FAFAF9;--ink:#0A0A0A;--muted:#6B7280;--line:#E7E5E4;--accent:#FF6B00;--accent-ink:#FFFFFF;--radius:16px;--radius-lg:20px;--space-1:8px;--space-2:16px;--space-3:24px;--space-4:32px;--space-6:48px;--space-8:64px;--space-12:96px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+@media(min-width:768px){.wrap{padding:0 24px}}
+/* Type: 4 sizes only */
+.t-display{font-size:clamp(36px,6vw,54px);line-height:.95;letter-spacing:-.03em;font-weight:700}
+.t-h2{font-size:clamp(26px,4vw,36px);line-height:1.05;letter-spacing:-.02em;font-weight:700}
+.t-h3{font-size:18px;line-height:1.3;font-weight:700;letter-spacing:-.01em}
+.t-body{font-size:16px;line-height:1.65;color:var(--muted)}
+.t-small{font-size:13px;line-height:1.5;letter-spacing:.02em;color:var(--muted)}
+/* Nav */
+.site-nav{position:sticky;top:0;z-index:20;background:rgba(250,250,249,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.site-nav .inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.logo{font-weight:700;letter-spacing:-.02em;font-size:18px;display:flex;align-items:center;gap:10px}
+.logo-mark{width:28px;height:28px;background:var(--ink);color:var(--bg);display:grid;place-items:center;border-radius:8px;font-size:13px;font-weight:700}
+.nav-links{display:flex;gap:20px;align-items:center;font-size:13px;font-weight:600}
+.nav-links a{opacity:.7;transition:opacity 150ms}
+.nav-links a:hover{opacity:1}
+.nav-cta{background:var(--accent);color:var(--accent-ink);padding:10px 18px;border-radius:999px;font-weight:700;opacity:1 !important}
+/* TrustStrip */
+.trust-strip{border-bottom:1px solid var(--line);padding:10px 0;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+/* Hero */
+.hero{padding:var(--space-8) 0 var(--space-6)}
+.hero-grid{display:grid;gap:var(--space-4);text-align:center;max-width:720px;margin:0 auto}
+.hero h1 span{font-weight:300;color:var(--muted)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);padding:16px 28px;border-radius:999px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;justify-content:center;min-height:52px;transition:transform 150ms, opacity 150ms}
+.btn-primary:hover{transform:translateY(-1px);opacity:.92}
+.btn-secondary{font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.trust-under-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.trust-pill{border:1px solid var(--line);background:#fff;padding:8px 14px;border-radius:999px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px}
+.trust-pill i{width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block}
+/* Value Math */
+.value-math{padding:var(--space-6) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.math-grid{display:grid;gap:var(--space-4);grid-template-columns:1fr}
+@media(min-width:900px){.math-grid{grid-template-columns:1.1fr .9fr;align-items:center}}
+.math-card{border:1px solid var(--line);border-radius:var(--radius);padding:var(--space-3);background:var(--bg)}
+.math-number{font-size:32px;font-weight:700;letter-spacing:-.02em}
+.math-vs{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--muted);padding:8px}
+/* Pricing */
+.pricing{padding:var(--space-8) 0}
+.pricing-grid{display:grid;gap:var(--space-3);grid-template-columns:1fr}
+@media(min-width:900px){.pricing-grid{grid-template-columns:repeat(3,1fr)}}
+.price-card{border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;background:#fff;display:flex;flex-direction:column;gap:16px;transition:border-color 150ms, transform 150ms}
+.price-card:hover{transform:translateY(-2px)}
+.price-card.popular{border-color:var(--ink);position:relative;padding-top:36px}
+.badge-popular{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.price{font-size:30px;font-weight:700;letter-spacing:-.02em}
+.price small{font-size:13px;color:var(--muted);font-weight:500}
+.save{font-size:12px;font-weight:700;color:var(--accent);background:rgba(255,107,0,.08);padding:6px 10px;border-radius:999px;display:inline-block}
+.feature-list{list-style:none;display:grid;gap:10px;margin:8px 0}
+.feature-list li{font-size:13px;display:flex;gap:10px;align-items:flex-start;color:var(--ink)}
+.feature-list li::before{content:"✓";font-size:12px;font-weight:700;color:var(--accent);margin-top:1px}
+.risk{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+/* Comparison */
+.comparison{padding:var(--space-6) 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg)}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--bg);font-weight:700}
+td:nth-child(2){background:#fff;font-weight:600}
+td:last-child{color:var(--muted)}
+.caption{font-size:12px;color:var(--muted);margin-top:8px}
+/* How */
+.how{padding:var(--space-8) 0}
+.steps{display:grid;gap:var(--space-3);grid-template-columns:1fr}
+@media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:#fff}
+.step-num{font-size:11px;letter-spacing:.1em;font-weight:700;color:var(--accent);margin-bottom:8px}
+/* FAQ */
+.faq{padding:var(--space-6) 0;background:#fff;border-top:1px solid var(--line)}
+details{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--bg);margin-bottom:12px}
+summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-weight:400;font-size:18px;color:var(--muted);transition:transform 150ms}
+details[open] summary::after{content:"—"}
+details p{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.6}
+/* Final CTA */
+.final-cta{padding:var(--space-8) 0;text-align:center;background:var(--ink);color:var(--bg)}
+.final-cta .t-h2{color:var(--bg)}
+.final-cta .t-body{color:#A1A1AA}
+.scarcity{border:1px solid #27272A;padding:8px 14px;border-radius:999px;display:inline-flex;gap:8px;font-size:12px;font-weight:600;margin-bottom:16px;background:#18181B;color:#E7E5E4}
+/* Sticky Mobile */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:30;background:rgba(250,250,249,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 16px;display:flex;gap:12px}
+.sticky-cta .btn-primary{flex:1}
+.sticky-cta .btn-wa{padding:14px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+@media(min-width:800px){.sticky-cta{display:none}}
+body{padding-bottom:72px}
+@media(min-width:800px){body{padding-bottom:0}}
+/* motion */
+.reveal{opacity:0;transform:translateY(6px);animation:fade 600ms forwards}
+@keyframes fade{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
 </style>
 <link rel="stylesheet" href="src/styles/tokens.css" media="print" onload="this.media='all'" />
 <link rel="stylesheet" href="src/styles/global.css" media="print" onload="this.media='all'" />
 <link rel="stylesheet" href="src/styles/styles.css" media="print" onload="this.media='all'" />
-<noscript>
-<link rel="stylesheet" href="src/styles/tokens.css" />
-<link rel="stylesheet" href="src/styles/global.css" />
-<link rel="stylesheet" href="src/styles/styles.css" />
-</noscript>
+<noscript><link rel="stylesheet" href="src/styles/tokens.css" /><link rel="stylesheet" href="src/styles/global.css" /><link rel="stylesheet" href="src/styles/styles.css" /></noscript>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Product",
   "name":"VyaparBill",
   "brand":{"@type":"Brand","name":"VyaparBill"},
-  "description":"GST bill, UPI QR + WhatsApp se 2 minute me bhejo. Customer ek tap pe pay kare, hisaab auto update. Bas 10 dukano ke liye.",
+  "description":"GST bill, UPI QR + WhatsApp se 2 minute me bhejo. Customer ek tap pe pay kare, hisaab auto update.",
   "url":"https://vyaparbill.in",
   "image":"https://thebackpanel.github.io/assets/og-image.png",
   "offers":{
@@ -108,9 +135,9 @@
     "availability":"https://schema.org/LimitedAvailability",
     "seller":{"@type":"Organization","name":"VyaparBill"},
     "offers":[
-      {"@type":"Offer","name":"Pehla Mahina","price":"999","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://vyaparbill.in#yojana"},
-      {"@type":"Offer","name":"Sal Bhar","price":"1499","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://vyaparbill.in#yojana"},
-      {"@type":"Offer","name":"Har Mahina","price":"1999","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://vyaparbill.in#yojana"}
+      {"@type":"Offer","name":"Pehla Mahina","price":"999","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://vyaparbill.in#pricing"},
+      {"@type":"Offer","name":"Sal Bhar","price":"1499","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://vyaparbill.in#pricing"},
+      {"@type":"Offer","name":"Har Mahina","price":"1999","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://vyaparbill.in#pricing"}
     ]
   },
   "areaServed":{"@type":"Country","name":"India"}
@@ -121,163 +148,230 @@
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"VyaparBill kya karta hai mere liye?","acceptedAnswer":{"@type":"Answer","text":"Aap 2 minute me GST bill banao, UPI QR lagao, WhatsApp pe bhejo. Customer ek tap pe pay kare, aapko turant 'Paid' dikhe. CA ke liye GSTR-1 ek click pe. Roz ka jhanjhat khatam."}},
-    {"@type":"Question","name":"Kitna kharcha aayega? GST alag hai kya?","acceptedAnswer":{"@type":"Answer","text":"Pehla mahina ₹999, fir sal bhar ka ₹1,499 har mahina (₹17,988 ek saath, 2 mahine free) ya har mahine ₹1,999. GST 18% alag dikha dete hain taki hisaab saaf rahe. Koi chhupa charge nahi."}},
-    {"@type":"Question","name":"Kya mera purana hisaab chalega? Tally ka kya?","acceptedAnswer":{"@type":"Answer","text":"Bilkul. Tally jaisa hai waisa chalne do — hisaab ke liye best hai. VyaparBill sirf bhejne aur vasuli ke liye hai. GSTR-1 CSV ek click pe niklega, CA seedha Tally me daal dega."}},
-    {"@type":"Question","name":"Paisa aaya kaise pata chalega?","acceptedAnswer":{"@type":"Answer","text":"Customer UPI ya link se pay karte hi bill apne aap 'Paid' ho jata hai. Aapko WhatsApp pe turant khabar mil jati hai. Baar baar screenshot check karne ki zarurat nahi."}},
-    {"@type":"Question","name":"Har bill ka kharcha kitna padta hai?","acceptedAnswer":{"@type":"Answer","text":"Kharcha = yojana ÷ mahine ke bill. Jaise 60 bill pe: Pehla mahina ₹16.65/bill, Sal wala ₹24.98, Har mahina ₹33.32. Jitne zyada bill, utna sasta. Ek hi hisaab, ghumao nahi."}}
+    {"@type":"Question","name":"Kya Tally band karna padega?","acceptedAnswer":{"@type":"Answer","text":"Bilkul nahi. Tally hisaab ke liye best hai, waise hi chalne do. VyaparBill sirf bill bhejne aur vasuli ke liye hai. GSTR-1 ek click pe niklega, CA seedha Tally me daal dega."}},
+    {"@type":"Question","name":"Mera data safe hai kya?","acceptedAnswer":{"@type":"Answer","text":"Haan. Hosting included, daily backup, aapka data aapka hi. Shopname.vyaparbill.in aapka alag hissa. Kabhi bhi export kar sakte ho."}},
+    {"@type":"Question","name":"WhatsApp template ka kya scene hai?","acceptedAnswer":{"@type":"Answer","text":"Gupshup/WATI ke approved Hindi/English template pehle se bane hain — bill bhejo, payment yaad dilao, paid ka thanks. Spam nahi, ek tap pe bhejo."}},
+    {"@type":"Question","name":"GST audit me chalega?","acceptedAnswer":{"@type":"Answer","text":"Haan. GSTIN, HSN/SAC har line pe, CGST/SGST vs IGST apne aap, round-off, shabdon me total, Hindi/Gujarati/English PDF, GSTR-1 CSV + e-invoice JSON — CA khush."}},
+    {"@type":"Question","name":"Cancel karna ho to?","acceptedAnswer":{"@type":"Answer","text":"Pehle 30 din me pasand na aaye to pura refund. Uske baad kabhi bhi cancel, koi sawal nahi. Sal wale ka bacha hua hisaab wapas."}}
   ]
 }
 </script>
 </head>
 <body>
-<a class="skip-link" href="#main-content" style="position:absolute;left:-999px;top:0;background:#0B3D91;color:#FFD60A;padding:.75rem 1rem;z-index:500;font-weight:700">Seedha main hisse pe jao</a>
-<div class="trust-bar" role="banner" aria-label="Trust bar">
-  <span><span class="dot" aria-hidden="true"></span>GST PAKKA</span>
-  <span><span class="dot" aria-hidden="true"></span>UPI QR + TURANT VASULI</span>
-  <span><span class="dot" aria-hidden="true"></span>WHATSAPP PE BHEJO</span>
-  <span><span class="dot" aria-hidden="true"></span>HINDI / GUJARATI BILL</span>
-  <span><span class="dot" aria-hidden="true"></span><a href="#hisaab">HISAAB DEKHO →</a></span>
-  <span><span class="dot" aria-hidden="true"></span>SIRF 10 DUKANE</span>
-</div>
-<header class="site-nav" id="nav" role="banner">
-  <a href="/" class="site-logo" aria-label="VyaparBill ghar"><span class="logo-panel">VyaparBill</span> <span class="logo-sub">Dukan ka apna hisaab</span></a>
-  <nav class="nav-links" aria-label="Primary navigation">
-    <a href="#yojana">YOJANA</a>
-    <a href="#hisaab">HISAAB</a>
-    <a href="#tulna">TULNA</a>
-    <a href="/" aria-label="BACKPANEL ghar">BACKPANEL</a>
-    <a href="#sampark" class="cta">SHURU KARO — ₹999</a>
-  </nav>
+<!-- Astro: SiteNav.astro -->
+<header class="site-nav">
+  <div class="wrap inner">
+    <a href="/" class="logo" aria-label="VyaparBill"><span class="logo-mark">V</span> VyaparBill <span style="font-weight:400;color:var(--muted);font-size:13px">Dukan ka hisaab</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#value-math">Hisaab</a>
+      <a href="#pricing">Yojana</a>
+      <a href="#comparison">Tulna</a>
+      <a href="#final-cta" class="nav-cta">Seat Rokko</a>
+    </nav>
+  </div>
 </header>
-<main id="main-content">
-<section class="hero" aria-labelledby="hero-heading">
-  <h1 id="hero-heading">GST BILL <em>JO KHUD VASULI KARE</em></h1>
-  <p class="sub">Bhaiya, sach bolo — bill banaya, PDF banaya, WhatsApp pe bheja, fir UPI ka screenshot dhoonda? Roz ka yahi chakkar hai na? VyaparBill yahi chakkar khatam karta hai: <b style="color:#fff">2 minute me bill banao, UPI QR + link lagao, WhatsApp pe ek tap pe bhejo — customer pay kare, hisaab apne aap Paid.</b></p>
-  <p class="hero-value">10 saal se bharosemand hisaab ka naya roop — chhoti dukan, CA aur agency ke liye banaya hai.</p>
-  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-    <a href="#yojana" class="btn">APNI YOJANA DEKHO →</a>
-    <a href="#tulna" class="btn ghost">PEHLE TULNA KARO</a>
+
+<!-- Astro: TrustStrip.astro -->
+<div class="trust-strip wrap">10 saal ka bharosa · Sirf 10 dukane · CG Road · Shapar · Sitabuldi ke dukanon ke liye</div>
+
+<main>
+<!-- Astro: Hero.astro | Visual: large bold, generous whitespace, accent only on CTA -->
+<section id="hero" class="hero wrap reveal">
+  <div class="hero-grid">
+    <h1 class="t-display">Bill bhejo,<br>paisa khud aayega.</h1>
+    <p class="t-body" style="max-width:560px;margin:0 auto">Excel → PDF → personal WhatsApp → UPI screenshot ka chakkar khatam. VyparBill se 2 minute me GST bill banao, UPI QR + Payment Link lagao, WhatsApp pe bhejo — customer ek tap pe pay kare.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px">
+      <a href="#pricing" class="btn-primary">Claim Seat — ₹999 se shuru</a>
+      <a href="#value-math" class="btn-secondary">Hisaab dekho</a>
+    </div>
+    <div class="trust-under-cta">
+      <span class="trust-pill"><i></i> Sirf 10 seats — fir waitlist 2027</span>
+      <span class="trust-pill"><i></i> Hosting + white-label + unlimited bills</span>
+      <span class="trust-pill">30 din me pasand na aaye → pura refund</span>
+    </div>
+    <p class="t-small">Ahmedabad · Rajkot · Indore · Nagpur — 2-3 logon ki team ke liye</p>
   </div>
 </section>
-<section id="yojana" class="block alt" aria-labelledby="yojana-heading">
+
+<!-- Astro: ValueMath.astro | thebackpanel transparent math style -->
+<section id="value-math" class="value-math">
   <div class="wrap">
-    <h2 id="yojana-heading">Kitna <span class="hl">lagega</span>? <span style="font-size:.5em;color:#64748b;font-weight:700">(ek hi daam, koi chhupa kharcha nahi)</span></h2>
-    <p class="section-sub">Har mahine ek hi daam — GST bill, HSN, UPI QR, WhatsApp, OTP se login, Hindi/Gujarati bill, GSTR-1, sab kuch andar. <b>₹399 wala sasta dikhta hai? Neeche dekho kya chhod deta hai. Hum 18% GST khul ke dikhate hain.</b></p>
-    <div class="grid3" role="list" aria-label="Yojana">
-      <article class="card price" role="listitem" data-tier="pehla">
-        <h3>Pehla Mahina</h3>
-        <div class="amt">₹999 <small>/ pehla mahina</small></div>
-        <p>Bindaas shuru karo. Jitne chaho utne GST bill + HSN + UPI QR + link + WhatsApp 500 message + OTP se login. Apna purana bill leke aao — 2 minute me naya banake dikhate hain.</p>
-        <p class="fn">Uske baad Sal ya Har Mahina chun lo. Zabardasti kuch nahi.</p>
-      </article>
-      <article class="card price hot" role="listitem" data-tier="sal">
-        <h3>Sal Bhar <span style="display:inline-flex;align-items:center;gap:.3rem;background:#FFD60A;color:#0B3D91;border:1px solid #FF6B00;border-radius:9999px;padding:.2rem .6rem;font-size:.68rem;font-weight:900;vertical-align:middle">2 MAHINE FREE</span></h3>
-        <div class="amt">₹1,499<small>/mahina</small></div>
-        <p style="font-weight:800;color:#0B3D91">₹17,988 ek saath — sabse samajhdaar wala. — bas 10 dukano ke liye</p>
-        <p>Wahi sab + WhatsApp pe pehle madad + 20 purane bill free banake denge + bina net ke bhi bill + apni dukan ka link <code>tenant07.vyaparbill.in</code>.</p>
-        <p class="fn">10 dukane bharti hi band. Samjho apni jagah pakki.</p>
-      </article>
-      <article class="card price" role="listitem" data-tier="mahina">
-        <h3>Har Mahina</h3>
-        <div class="amt">₹1,999<small>/mahina</small></div>
-        <p>Wahi sab, par jab chaho tab. Seasonal dhandhe ke liye perfect. Kabhi bhi Sal wale pe jao — 2 mahine free milenge.</p>
-        <p class="fn">Barcode printer + scan chahiye? Bas +₹500/mahina aur.</p>
-      </article>
+    <h2 class="t-h2" style="text-align:center;max-width:640px;margin:0 auto 8px">Excel aur WhatsApp ka asli kharcha</h2>
+    <p class="t-body" style="text-align:center;max-width:600px;margin:0 auto 24px">Sasta dikhta hai, par time aur vasuli ka paisa kon ginega? Ek hisaab khula.</p>
+    <div class="math-grid">
+      <div class="math-card">
+        <div class="t-small" style="font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)">Aaj ka tareeka</div>
+        <div class="math-number" style="margin:8px 0">₹18,500 <span class="t-small">/sal ka chhupa kharcha</span></div>
+        <ul class="t-small" style="display:grid;gap:6px;list-style:none">
+          <li>• 4 ghante/mahina Excel + PDF + forward = ₹8,000</li>
+          <li>• 12 din late vasuli × ₹400 roz ka byaj = ₹4,800</li>
+          <li>• CA ko Excel saaf karwai + GSTR-1 jod = ₹3,700</li>
+          <li>• Ek bill ka UPI miss = ₹2,000</li>
+        </ul>
+        <p class="t-small" style="margin-top:12px;color:var(--muted)">400 bill/sal pe ≈ <b style="color:var(--ink)">₹46 / bill</b> — bina chain ke.</p>
+      </div>
+      <div class="math-vs">VS</div>
+      <div class="math-card" style="background:var(--ink);color:var(--bg);border-color:var(--ink)">
+        <div class="t-small" style="color:#A1A1AA;letter-spacing:.06em;text-transform:uppercase;font-weight:700">VyaparBill se</div>
+        <div class="math-number" style="color:var(--bg);margin:8px 0">₹1,499 <span class="t-small" style="color:#A1A1AA">/mahina · sal bhar ₹17,988</span></div>
+        <ul class="t-small" style="display:grid;gap:6px;list-style:none;color:#E7E5E4">
+          <li>• 2 minute me bill + UPI QR + WhatsApp</li>
+          <li>• White-label shopname.vyaparbill.in + hosting</li>
+          <li>• GST pakka, GSTR-1 ek click, Hindi/Gujarati PDF</li>
+        </ul>
+        <p class="t-small" style="margin-top:12px;color:#A1A1AA">60 bill/mahina pe ≈ <b style="color:var(--bg)">₹25 / bill</b> — vasuli apne aap.</p>
+      </div>
     </div>
-    <div class="calc" role="group" aria-label="Har bill kitne ka pada">
-      <label for="bills">Mahine ke bill: <input id="bills" type="number" value="60" min="5" max="1000" inputmode="numeric" /></label>
-      <label for="plan">Apni yojana:
-        <select id="plan">
-          <option value="999">Pehla Mahina ₹999</option>
-          <option value="1499" selected>Sal Bhar ₹1,499</option>
-          <option value="1999">Har Mahina ₹1,999</option>
-        </select>
-      </label>
-      <button type="button" onclick="calcBill()">HAR BILL KA KHARCHA DEKHO</button>
-      <div id="billOut" class="reach" role="status" aria-live="polite"></div>
-    </div>
-    <div class="calc math" id="hisaab" role="note" aria-label="Hisaab kaise banta hai">
-      <h3>₹1,499 ka hisaab khula — paisa kahan bachta hai</h3>
-      <p>Dusre log 18% GST akhri me jodte hain, aapko mehenga lagta hai. Hum pehle hi bata dete hain. Asal kharcha: Silver jaisa <b>₹3,999/sal → ₹4,719</b> (₹399/mahina → ₹471), Gold ₹5,999 → ₹7,079, Diamond ₹8,999 → ₹10,619 (+ alag se desktop, e-invoicing, jaldi wali madad). Humko yeh chhupa kharcha pasand nahi, isliye sab khula.</p>
-      <p><b>Har bill ka kharcha = yojana ÷ mahine ke bill.</b> Bill me HSN + tax ka hissa + UPI QR + link + WhatsApp sab gin ke.</p>
-      <ul>
-        <li><b>Pehla Mahina ₹999:</b> 30 bill → <b>₹33.30/bill</b> · 60 bill → <b>₹16.65/bill</b> · 100 bill → <b>₹9.99/bill</b></li>
-        <li><b>Sal Bhar ₹1,499:</b> 30 → <b>₹49.97</b> · 60 → <b>₹24.98</b> · 100 → <b>₹14.99</b> (Sal ka GST jod ke: ₹1,499×1.18=₹1,769/mahina → ₹21,226/sal)</li>
-        <li><b>Har Mahina ₹1,999:</b> 30 → <b>₹66.63</b> · 60 → <b>₹33.32</b> · 100 → <b>₹19.99</b> (GST jod ke: ₹2,359/mahina)</li>
+    <p class="t-small" style="text-align:center;margin-top:16px">Hisab: yojana ÷ mahine ke bill. Koi per-user, per-bill jhol nahi.</p>
+  </div>
+</section>
+
+<!-- Astro: Pricing.astro -->
+<section id="pricing" class="pricing wrap reveal">
+  <div style="text-align:center;max-width:640px;margin:0 auto var(--space-4)">
+    <h2 class="t-h2">Apni yojana chuno</h2>
+    <p class="t-body">Ek hi daam, unlimited bills, hosting included. 10 seats ke baad — Cohort Full. Agla number 2027.</p>
+  </div>
+  <div class="pricing-grid">
+    <article class="price-card">
+      <h3 class="t-h3">Azmao</h3>
+      <p class="t-small">Pehle dekho, fir bharosa karo. Ek mahine me sab samajh aayega.</p>
+      <div class="price">₹999 <small>/ pehla mahina</small></div>
+      <ul class="feature-list">
+        <li>Unlimited GST bills + HSN/SAC</li>
+        <li>UPI QR + Razorpay Payment Link</li>
+        <li>WhatsApp + OTP login + PWA</li>
+        <li>shopname.vyaparbill.in + Hindi/Gujarati PDF</li>
       </ul>
-      <p>Poore sal ka dekho: <b>Sal wala ₹21,226 GST ke saath vs Silver ₹4,719 + Diamond ₹10,619 ka asli sach:</b> Sasta dikhta hai, par desktop (₹4,719 alag), barcode, e-invoicing (Gold se upar), staff (Gold se upar), jaldi wali madad (Diamond) jodo to mehenga. VyaparBill me sab andar — neeche line by line dekho.</p>
-      <p><b>Ek hi formula:</b> har bill ka kharcha <b>yojana ÷ bill — bas ek hisaab</b>. Koi chhupa per-user charge nahi. Ek hisaab, teenon yojana pe same. Agar hisaab ghumaye to samjho jhol hai. Hamara seedha hai.</p>
-      <p class="fn">Paisa paise me gin ke rakhte hain, kabhi dashamlav me gadbad nahi — UPI pe "149.00" exact.</p>
-    </div>
-    <div class="calc included" id="tulna" role="note" aria-label="Kya milta hai">
-      <h3>Jo dusre chhod dete hain, hum saath dete hain</h3>
-      <p>Sasta wala bill sirf PDF deta hai. Vasuli ka jhanjhat aapka. VyaparBill har yojana me yeh sab saath deta hai:</p>
+      <a href="#final-cta" class="btn-primary" style="background:var(--ink)">Pehla bill banao</a>
+      <p class="risk">Ek bill bhi bhejo — pasand na aaye to 30 din refund.</p>
+    </article>
+    <article class="price-card popular">
+      <span class="badge-popular">Most Popular · 2 Mahine Free</span>
+      <h3 class="t-h3">Badhao — Sal Bhar</h3>
+      <p class="t-small">Badhte dukan ke liye. Sabse samajhdaar faisla.</p>
+      <div class="price">₹1,499 <small>/mahina · ₹17,988/sal</small></div>
+      <span class="save">₹6,000 bachao (₹23,988 → ₹17,988)</span>
+      <ul class="feature-list">
+        <li><b>Unlimited</b> bills, white-label, hosting included</li>
+        <li>UPI QR + Payment Link har bill pe</li>
+        <li>WhatsApp approved Hindi templates (Gupshup/WATI)</li>
+        <li>GSTIN/HSN, CGST/SGST vs IGST auto, GSTR-1 CSV + e-invoice JSON</li>
+        <li>Fast2SMS OTP + bade button wala PWA</li>
+        <li>shopname.vyaparbill.in — aapki pehchan</li>
+      </ul>
+      <a href="#final-cta" class="btn-primary">Sal bhar ki seat rokko</a>
+      <p class="risk">Agar pehle 30 din me kaam na lage → pura paisa wapas. Koi sawal nahi.</p>
+    </article>
+    <article class="price-card">
+      <h3 class="t-h3">Azadi</h3>
+      <p class="t-small">Season chal raha hai? Jab chaho tab.</p>
+      <div class="price">₹1,999 <small>/mahina</small></div>
+      <ul class="feature-list">
+        <li>Wahi sab, mahine pe</li>
+        <li>Kabhi bhi Sal Bhar pe jao — bacha hua adjust</li>
+        <li>Unlimited + hosting + white-label</li>
+      </ul>
+      <a href="#final-cta" class="btn-primary" style="background:var(--ink)">Har mahina shuru karo</a>
+      <p class="risk">Mahine pe, bina bandhan.</p>
+    </article>
+  </div>
+  <div class="calc" style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;align-items:end;border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff">
+    <label style="flex:1 1 140px;display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700;color:var(--muted)">Mahine ke bill<input id="bills" type="number" value="60" min="5" max="1000" style="padding:12px;border:1px solid var(--line);border-radius:10px;font:inherit;min-height:44px" /></label>
+    <label style="flex:1 1 140px;display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700;color:var(--muted)">Yojana<select id="plan" style="padding:12px;border:1px solid var(--line);border-radius:10px;min-height:44px;font:inherit"><option value="999">Azmao ₹999</option><option value="1499" selected>Sal Bhar ₹1,499</option><option value="1999">Har Mahina ₹1,999</option></select></label>
+    <button type="button" onclick="calcBill()" style="flex:1 1 160px;background:var(--ink);color:#fff;border:none;padding:14px 20px;border-radius:999px;font-weight:700;min-height:44px;cursor:pointer">Har bill ka kharcha</button>
+    <div id="billOut" style="width:100%;font-weight:700;font-size:13px;color:var(--ink)"></div>
+  </div>
+</section>
+
+<!-- Astro: Comparison.astro -->
+<section id="comparison" class="comparison">
+  <div class="wrap">
+    <h2 class="t-h2" style="text-align:center">VyaparBill vs aaj ka tareeka</h2>
+    <p class="t-body" style="text-align:center;max-width:600px;margin:8px auto 24px">Excel + personal WhatsApp + Tally Lite sasta lagta hai, par vasuli aur CA ka time kon dekhega?</p>
+    <div class="table-wrap">
       <table>
-        <caption>Aapko kya milta hai vs aam tareeka / purana hisaab</caption>
-        <thead><tr><th scope="col">Kaam</th><th scope="col">VyaparBill (har yojana)</th><th scope="col">Aam sasta wala ₹399*</th></tr></thead>
+        <thead><tr><th>Kaam</th><th>VyaparBill</th><th>Excel + WhatsApp + Tally Lite</th></tr></thead>
         <tbody>
-          <tr><td>GST bill + HSN/SAC 6-digit (8000 code, sarkari niyam pakka)</td><td>Milta hai</td><td>Nahi milta</td></tr>
-          <tr><td>CGST+SGST vs IGST apne aap (aapke rajya se hisaab)</td><td>Milta hai</td><td>Nahi milta</td></tr>
-          <tr><td>Gol karke round-off + shabdon me rashi (₹)</td><td>Milta hai</td><td>Nahi milta</td></tr>
-          <tr><td>GSTR-1 ek click pe (B2B / B2CS / HSN jod)</td><td>Milta hai</td><td>Nahi milta</td></tr>
-          <tr><td>UPI QR (Bharat) + turant pay ka link</td><td>Milta hai</td><td>Nahi milta</td></tr>
-          <tr><td>Pay hote hi apne aap Paid — pakka saboot, double entry nahi</td><td>Milta hai</td><td>Nahi milta</td></tr>
-          <tr><td>WhatsApp pe bill bhejo (500 message)</td><td>Milta hai</td><td>Nahi milta</td></tr>
-          <tr><td>OTP se login + bina net ke bill ≥44px bada button</td><td>Milta hai</td><td>Nahi milta</td></tr>
-          <tr><td>Hindi/Gujarati me saaf PDF (akshar phate nahi)</td><td>Milta hai</td><td>Nahi milta</td></tr>
-          <tr><td>Customer ka apna link /pay/INVxxx</td><td>Milta hai</td><td>Nahi milta</td></tr>
-          <tr><td>Chhota printer jodna</td><td>+₹500 alag</td><td>Nahi milta</td></tr>
-          <tr><td>18% GST khul ke batana</td><td>Milta hai — upar dekho</td><td>Nahi batate (+₹720/sal)</td></tr>
+          <tr><td>GSTIN, HSN/SAC har line, CGST/SGST vs IGST auto</td><td>✓ Apne aap, pakka</td><td>Haath se, galti pakki</td></tr>
+          <tr><td>UPI QR + Razorpay Payment Link har bill pe</td><td>✓ Har bill pe, QR print me bhi</td><td>QR banana, link banana — alag kaam</td></tr>
+          <tr><td>WhatsApp pe bhejo (approved Hindi template)</td><td>✓ Ek tap pe, Gupshup/WATI</td><td>Personal number se forward, hisaab gayab</td></tr>
+          <tr><td>Pay hote hi Paid + WhatsApp update</td><td>✓ Auto, double entry nahi</td><td>Screenshot dhoondo, manual Paid</td></tr>
+          <tr><td>Hindi/Gujarati/English PDF, shabdon me total</td><td>✓ Noto fonts, saaf</td><td>English hi, akshar phate</td></tr>
+          <tr><td>GSTR-1 CSV + e-invoice JSON</td><td>✓ Ek click pe</td><td>CA raat bhar Excel jode</td></tr>
+          <tr><td>OTP login + PWA bade button</td><td>✓ ₹8k wale phone pe bhi</td><td>Laptop kholo, password yaad karo</td></tr>
+          <tr><td>White-label shopname.vyaparbill.in + hosting</td><td>✓ Included</td><td>Domain + hosting alag kharcha</td></tr>
+          <tr><td>Kharcha</td><td><b>₹1,499/mahina sal bhar</b> sab included</td><td>₹399 dikhawa + time + vasuli loss</td></tr>
         </tbody>
       </table>
-      <p class="fn">*Silver jaisa ₹3,999/sal + 18% GST = ₹4,719. Gold ₹5,999→₹7,079, Diamond ₹8,999→₹10,619. Desktop ke liye Silver to chahiye hi, e-invoicing/bank Gold se, jaldi wali madad Diamond pe. VyaparBill me sab ₹999 se andar.</p>
     </div>
-    <div class="cta-row" role="group" aria-label="Call to action">
-      <a href="#sampark" class="btn">PEHLA MAHINA ₹999 PE SHURU KARO</a>
-      <a href="#sampark" class="btn ghost" style="background:#0B3D91;border-color:#0B3D91">2 MINUTE KA DEMO BUK KARO</a>
-    </div>
-    <p class="fn">Sirf 10 dukane — iske baad intezaar suchi. <b>MAX_TENANTS=10</b> — jagah bharte hi <b>/waitlist</b>. 2027 tak renewal pakka, har mahine pehle Somwar shaam 4 baje WhatsApp pe sabki madad.</p>
+    <p class="caption">10 seats ke baad Cohort Full — Join Waitlist 2027. Paise ka hisaab paise me, koi jhol nahi.</p>
   </div>
 </section>
-<section id="sampark" class="block" style="background:#0B3D91;color:#fff">
-  <div class="wrap" style="max-width:780px;margin:0 auto;text-align:center">
-    <h2 style="color:#fff">Ab <span style="color:#FFD60A">dukan</span> taiyaar — 2 minute me</h2>
-    <p style="color:#dbeafe;max-width:60ch;margin:0 auto 20px">Apna purana bill bhejo — hum GST + UPI QR laga ke WhatsApp pe bhej ke dikhate hain. Customer pay kare, hisaab turant Paid. Staff OTP se login karega.</p>
-    <form id="leadForm" style="display:grid;grid-template-columns:1fr 1fr;gap:16px" aria-label="Lead form">
-      <input placeholder="Aapka naam" required autocomplete="name" style="padding:14px;border-radius:10px;border:2px solid #1e40af;background:#0f172a;color:#fff;min-height:44px" />
-      <input placeholder="Dukan ka naam" required autocomplete="organization" style="padding:14px;border-radius:10px;border:2px solid #1e40af;background:#0f172a;color:#fff;min-height:44px" />
-      <input placeholder="WhatsApp number" required autocomplete="tel" style="padding:14px;border-radius:10px;border:2px solid #1e40af;background:#0f172a;color:#fff;min-height:44px" />
-      <input placeholder="Sheher — Rajkot / Indore / Ahmedabad" style="padding:14px;border-radius:10px;border:2px solid #1e40af;background:#0f172a;color:#fff;min-height:44px" />
-      <textarea placeholder="Purane bill ka photo ya GSTIN + ek HSN likh do" style="grid-column:1/3;padding:14px;border-radius:10px;border:2px solid #1e40af;background:#0f172a;color:#fff;min-height:90px"></textarea>
-      <button type="submit" style="grid-column:1/3;background:#FF6B00;color:#fff;border:none;padding:16px;border-radius:10px;font-weight:900;min-height:52px;cursor:pointer">MUJHE 2 MINUTE KA NAMUNA BHEJO →</button>
-      <div id="formMsg" role="status" aria-live="polite" style="grid-column:1/3;color:#FFD60A;font-weight:700"></div>
-    </form>
-    <p class="fn" style="color:#93c5fd">Seedha WhatsApp + turant shuru ka link. *Sirf 10 dukane — pehle se taiyaar: hardware (Rajkot) + CA (Ahmedabad) + designer (Indore).</p>
+
+<!-- Astro: HowItWorks.astro -->
+<section id="how" class="how wrap">
+  <h2 class="t-h2" style="text-align:center">Kaise chalega — 3 kadam</h2>
+  <div class="steps" style="margin-top:24px">
+    <div class="step"><div class="step-num">01 — BANAO</div><h3 class="t-h3">2 minute me bill banao</h3><p class="t-body">GSTIN daalo, HSN chuno, CGST/SGST ya IGST apne aap, QR + link lag gaya. Hindi/Gujarati PDF taiyaar.</p></div>
+    <div class="step"><div class="step-num">02 — BHEJO</div><h3 class="t-h3">WhatsApp pe ek tap</h3><p class="t-body">Approved Hindi template se seedha customer ko. Fast2SMS OTP se staff bhi bhej de, phone chahe sasta wala ho.</p></div>
+    <div class="step"><div class="step-num">03 — PAO</div><h3 class="t-h3">Paisa aaya, hisaab Paid</h3><p class="t-body">Customer UPI se pay karte hi bill Paid, aapko update. GSTR-1 ek click, CA khush, aap free.</p></div>
+  </div>
+</section>
+
+<!-- Astro: FAQ.astro | placed directly under pricing per spec -->
+<section id="faq" class="faq">
+  <div class="wrap" style="max-width:760px">
+    <h2 class="t-h2" style="text-align:center">Aksar poochhe jaane wale sawal</h2>
+    <div style="margin-top:24px">
+      <details><summary>Kya Tally band karna padega?</summary><p>Nahi. Tally hisaab ke liye waise hi chalao. VyaparBill sirf bhejne aur vasuli ke liye hai — GSTR-1 CSV ek click pe nikal ke Tally me daal do.</p></details>
+      <details><summary>Mera data safe hai kya? Hosting kaun dega?</summary><p>Hosting included hai, shopname.vyaparbill.in aapka alag hissa, roz backup. Data aapka hai, jab chaho export kar lo.</p></details>
+      <details><summary>WhatsApp template ka kya scene hai?</summary><p>Gupshup/WATI ke approved Hindi/English template pehle se bane — bill bhejo, yaad dilao, paid ka thanks. Ek tap pe bhejo, spam nahi.</p></details>
+      <details><summary>GST audit me chalega?</summary><p>Bilkul. GSTIN, HSN/SAC har line, CGST/SGST vs IGST auto, round-off, shabdon me total, Hindi/Gujarati/English PDF, GSTR-1 CSV + e-invoice JSON — sab pakka.</p></details>
+      <details><summary>Cancel ya refund ka kya?</summary><p>Pehle 30 din me pasand na aaye to pura refund, koi sawal nahi. Uske baad kabhi bhi cancel.</p></details>
+      <details><summary>Sirf 10 customer kyu?</summary><p>Closed cohort hai — 10 dukano ko hi dil se service de paayenge. 10 ke baad Cohort Full — Join Waitlist 2027. Jaldi wale ko seat milti hai.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- Astro: FinalCTA.astro -->
+<section id="final-cta" class="final-cta">
+  <div class="wrap" style="max-width:640px">
+    <div class="scarcity">● Sirf 10 seats — 4 bhari, 6 bachi</div>
+    <h2 class="t-h2">Ab hisaab ka tension khatam karo</h2>
+    <p class="t-body" style="margin:12px auto 20px">CG Road, Shapar, Sitabuldi — jahan aapka customer hai, wahan aapka paisa time pe aayega. 2 minute ka demo lo, apna purana bill bhejo.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="https://wa.me/919999999999?text=VyaparBill%20demo%20chahiye" class="btn-primary">Claim Seat — ₹999 se shuru</a>
+      <a href="#pricing" class="btn-secondary" style="color:var(--bg)">Yojana dekho</a>
+    </div>
+    <p class="t-small" style="color:#A1A1AA;margin-top:12px">30 din refund · White-label + hosting included · Unlimited bills</p>
   </div>
 </section>
 </main>
-<footer class="site-footer" role="contentinfo" style="padding:24px;text-align:center;color:#64748b;font-size:.82rem;border-top:1px solid #e5e7eb">
-  VyaparBill · Bharat ki dukano ke liye · <a href="/" style="color:#0B3D91;font-weight:700;text-decoration:underline">BACKPANEL</a> · vyaparbill.in · Sirf 10 dukane · jagah bharte hi intezaar suchi
+
+<footer style="padding:24px 0;border-top:1px solid var(--line);text-align:center" class="t-small">
+  VyaparBill · Bharat ki dukano ke liye · <a href="/" style="font-weight:600;text-decoration:underline">BACKPANEL</a> · vyaparbill.in · Sirf 10 seats
 </footer>
-<div class="floating-cta" role="complementary" aria-label="Quick action"><a href="#yojana" class="btn" style="width:100%;text-align:center">₹999 PE SHURU KARO →</a></div>
+
+<!-- Sticky Mobile CTA spec: Claim Seat + WhatsApp, thumb-friendly 52px, safe-area -->
+<div class="sticky-cta" role="complementary" aria-label="Quick action">
+  <a href="#final-cta" class="btn-primary" style="padding:14px">Claim Seat</a>
+  <a href="https://wa.me/919999999999?text=Hi%20VyaparBill" class="btn-wa" aria-label="WhatsApp">WhatsApp</a>
+</div>
+
 <script>
 function calcBill(){
-  const bills = parseInt(document.getElementById('bills').value,10)||0;
-  const plan = parseInt(document.getElementById('plan').value,10)||1499;
-  const out = document.getElementById('billOut');
-  if(!bills || !plan){ out.textContent=''; return; }
-  const perBill = plan / bills;
-  const perBillGST = perBill * 1.18;
-  const yearlyTCO = Math.round(plan*1.18*12).toLocaleString('en-IN');
-  const inclMo = Math.round(plan*1.18).toLocaleString('en-IN');
-  const yearly = plan===999 ? ' (pehla mahina hi)' : plan===1499 ? ' · GST jod ke sal ka: ₹'+yearlyTCO+'/sal' : ' · GST jod ke: ₹'+inclMo+'/mahina';
-  out.textContent = '≈ ₹'+perBill.toFixed(2)+'/bill (₹'+perBillGST.toFixed(2)+' GST ke saath) · '+bills+' bill → ₹'+plan.toLocaleString('en-IN')+' pakka'+yearly;
+  const bills=parseInt(document.getElementById('bills').value,10)||0;
+  const plan=parseInt(document.getElementById('plan').value,10)||1499;
+  const out=document.getElementById('billOut');
+  if(!bills||!plan){out.textContent='';return}
+  const per=plan/bills, perGST=per*1.18;
+  const save=plan===1499? ' · Sal bhar ₹6,000 bachao' : '';
+  out.textContent='≈ ₹'+per.toFixed(2)+'/bill (₹'+perGST.toFixed(2)+' GST ke saath) · '+bills+' bill → ₹'+plan.toLocaleString('en-IN')+' pakka'+save;
 }
 calcBill();
-document.getElementById('bills').addEventListener('input',calcBill);
-document.getElementById('plan').addEventListener('change',calcBill);
+document.getElementById('bills')?.addEventListener('input',calcBill);
+document.getElementById('plan')?.addEventListener('change',calcBill);
 </script>
-<script src="app.js" defer></script>
 </body>
 </html>
