@@ -17,22 +17,29 @@
 <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
 <style>
 /* Quiet Luxury 2026 — VyparBill Pricing */
-:root{--bg:#FAFAF9;--ink:#0A0A0A;--muted:#44403C;--muted2:#57534E;--line:#E7E5E4;--accent:#FF6B00;--accent-ink:#FFFFFF;--radius:16px;--radius-lg:20px;--space-1:8px;--space-2:16px;--space-3:24px;--space-4:32px;--space-6:48px;--space-8:64px;--space-12:96px}
+:root{--bg:#FAFAF9;--ink:#1C1917;--muted:#44403C;--muted2:#57534E;--line:#E7E5E4;--accent:#FF6B00;--accent-ink:#1C1917;--radius:16px;--radius-lg:20px;--space-1:8px;--space-2:16px;--space-3:24px;--space-4:32px;--space-6:48px;--space-8:64px;--space-12:96px}
+*{font-variant-ligatures:common-ligatures}
+html{font-size:16px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,'Noto Sans Devanagari','Noto Sans Gujarati',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3{line-height:1.15;overflow-wrap:break-word}
+p,li,td{overflow-wrap:break-word}
+button,a,input,select{font-family:inherit;min-height:44px;line-height:1.4}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 @media(min-width:768px){.wrap{padding:0 24px}}
-/* Type: 4 sizes only */
+/* Type: 4 sizes only — 13 / 16 / 18 / 36-54 */
 .t-display{font-size:clamp(36px,6vw,54px);line-height:.95;letter-spacing:-.03em;font-weight:700}
 .t-h2{font-size:clamp(26px,4vw,36px);line-height:1.05;letter-spacing:-.02em;font-weight:700}
-.t-h3{font-size:18px;line-height:1.3;font-weight:700;letter-spacing:-.01em}
+.t-h3{font-size:18px;line-height:1.4;font-weight:700;letter-spacing:-.01em}
 .t-body{font-size:16px;line-height:1.65;color:var(--muted)}
-.t-small{font-size:13px;line-height:1.5;letter-spacing:.02em;color:var(--muted)}
+.t-small{font-size:13px;line-height:1.6;letter-spacing:.02em;color:var(--muted)}
+/* Hindi/Gujarati baseline fix: higher line-height for Devanagari */
+:lang(hi),:lang(gu){line-height:1.6}
 /* Nav */
 .site-nav{position:sticky;top:0;z-index:20;background:rgba(250,250,249,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.site-nav .inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.site-nav .inner{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px}
 .logo{font-weight:700;letter-spacing:-.02em;font-size:18px;display:flex;align-items:center;gap:10px}
 .logo-mark{width:28px;height:28px;background:var(--ink);color:var(--bg);display:grid;place-items:center;border-radius:8px;font-size:13px;font-weight:700}
 .nav-links{display:flex;gap:20px;align-items:center;font-size:13px;font-weight:600}
@@ -66,8 +73,8 @@ a{color:inherit;text-decoration:none}
 .price-card:hover{transform:translateY(-2px)}
 .price-card.popular{border-color:var(--ink);position:relative;padding-top:36px}
 .badge-popular{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 14px;border-radius:999px;white-space:nowrap}
-.price{font-size:30px;font-weight:700;letter-spacing:-.02em}
-.price small{font-size:13px;color:var(--muted);font-weight:500}
+.price{font-size:30px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.price small{font-size:13px;color:var(--muted);font-weight:500;line-height:1.4}
 .save{font-size:12px;font-weight:700;color:var(--ink);background:var(--accent);padding:6px 10px;border-radius:999px;display:inline-block}
 .feature-list{list-style:none;display:grid;gap:10px;margin:8px 0}
 .feature-list li{font-size:13px;display:flex;gap:10px;align-items:flex-start;color:var(--ink)}
@@ -75,8 +82,11 @@ a{color:inherit;text-decoration:none}
 .risk{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
 /* Comparison */
 .comparison{padding:var(--space-6) 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg)}
-table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+.table-wrap{overflow:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg)}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px;table-layout:fixed}
+th:first-child,td:first-child{width:40%}
+th:nth-child(2),td:nth-child(2){width:30%}
+th:last-child,td:last-child{width:30%}
 th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
 th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--bg);font-weight:700}
 td:nth-child(2){background:#fff;font-weight:600}
