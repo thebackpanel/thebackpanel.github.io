@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+<title>VyaparBill — Pricing | GST BILL JO KHUD VASULI KARE</title>
+<meta name="description" content="VyaparBill pricing — GST-compliant billing with HSN/CGST/SGST/IGST, UPI QR + Razorpay, WhatsApp delivery, OTP login, Hindi/Gujarati PDF. Trial ₹999, Yearly ₹1,499/mo (₹17,988 billed), Monthly ₹1,999. 10 shops only. Flat, no surprises, 18% GST shown." />
+<meta name="keywords" content="VyaparBill pricing, GST billing software, UPI QR invoice, Razorpay billing, WhatsApp invoice, GSTR-1, SolidInvoice India, Vyapar vs Tally" />
+<link rel="canonical" href="https://thebackpanel.github.io/vyaparbill-pricing.html" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="manifest" href="site.webmanifest" />
+<meta name="theme-color" content="#FF6B00" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="VyaparBill — Flat Pricing. No Tally Surprise." />
+<meta property="og:description" content="Trial ₹999 → Yearly ₹1,499/mo (₹17,988) → Monthly ₹1,999. GST+HSN+UPI QR+Razorpay+WhatsApp all-in. 10 shops cohort. See the math we wish Vyapar showed." />
+<meta property="og:image" content="assets/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preload" href="assets/fonts/archivo-black-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="src/styles/tokens.css" as="style" />
+<link rel="preload" href="src/styles/global.css" as="style" />
+<link rel="preload" href="src/styles/styles.css" as="style" />
+<style>
+ @font-face{font-family:'Archivo Black';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/archivo-black-latin.woff2') format('woff2')}
+ @font-face{font-family:'Archivo Fallback';src:local('Arial Black'),local('Arial-BoldMT');size-adjust:100%;ascent-override:87.8%;descent-override:21%;line-gap-override:0%}
+ @font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url('assets/fonts/inter-var-latin.woff2') format('woff2')}
+ @font-face{font-family:'Inter Fallback';src:local('.SFNSText'),local('.SFNSDisplay'),local('Segoe UI'),local('Roboto'),local('Helvetica Neue'),local('Arial');size-adjust:105%;ascent-override:92%;descent-override:23%;line-gap-override:0%}
+ *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+ html{overflow-x:hidden;scroll-behavior:smooth}
+ body{background:#FFFBF5;color:#0A0A0A;font-family:'Inter','Inter Fallback',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+ .trust-bar{background:#0B3D91;color:#fff;padding:.6rem 1rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;display:flex;justify-content:center;gap:1rem 2rem;flex-wrap:wrap}
+ .trust-bar .dot{width:6px;height:6px;background:#FF6B00;border-radius:9999px;display:inline-block;margin-right:.4rem}
+ .trust-bar a{color:#FFD60A;text-decoration:underline;text-underline-offset:3px}
+ .site-nav{display:flex;justify-content:space-between;align-items:center;padding:0 clamp(1rem,5vw,4rem);min-height:72px;background:rgba(255,255,255,.94);position:sticky;top:0;z-index:200;border-bottom:1px solid #e5e7eb}
+ .site-logo{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-weight:400;text-decoration:none;color:#0A0A0A;display:flex;align-items:center;gap:.6rem}
+ .logo-panel{background:#FF6B00;color:#fff;padding:.15em .5em;border-radius:.35em;transform:rotate(-1.5deg);display:inline-block}
+ .logo-sub{font-size:.75rem;font-weight:800;color:#0B3D91;letter-spacing:.05em}
+ .nav-links{display:flex;gap:.5rem 1rem;align-items:center;flex-wrap:wrap}
+ .nav-links a{font-weight:800;font-size:.75rem;color:#0A0A0A;text-decoration:none;letter-spacing:.03em}
+ .nav-links a.cta{background:#FF6B00;color:#fff;padding:.6rem 1rem;border-radius:.6rem}
+ .hero{background:#0B3D91;color:#fff;padding:clamp(2.5rem,6vw,4rem) clamp(1rem,5vw,4rem);text-align:center}
+ .hero h1{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:clamp(2.4rem,6vw,4.5rem);line-height:.95;letter-spacing:-.02em;margin-bottom:1rem}
+ .hero h1 em{color:#FFD60A;font-style:normal}
+ .hero .sub{color:#dbeafe;max-width:62ch;margin:0 auto 1.25rem;font-size:clamp(1rem, .9rem + .4vw,1.2rem);line-height:1.6}
+ .hero-value{color:#FFD60A;font-weight:900;margin-bottom:1.25rem}
+ .btn{display:inline-flex;align-items:center;justify-content:center;background:#FF6B00;color:#fff;border:2px solid #FF6B00;padding:1rem 2rem;font-weight:900;font-size:1rem;border-radius:.75rem;text-decoration:none;min-height:52px}
+ .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+ .block{padding:clamp(2.5rem,8vw,5rem) clamp(1rem,5vw,4rem);border-bottom:1px solid #e5e7eb;background:#FFFBF5}
+ .block.alt{background:#fff}
+ .wrap{max-width:1180px;margin:0 auto}
+ h2{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.02em;margin-bottom:.6rem}
+ h2 .hl{color:#FF6B00}
+ .section-sub{color:#475569;max-width:68ch;margin-bottom:2rem;line-height:1.6}
+ .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+ .card{border:1px solid #e5e7eb;border-radius:16px;padding:24px;background:#fff;transition:all .2s}
+ .card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+ .card h3{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:1.1rem;margin:0 0 .3rem}
+ .card .amt{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:clamp(1.6rem,3vw,2rem);color:#FF6B00;margin:.5rem 0}
+ .card .amt small{font-family:'Inter',sans-serif;font-size:.82rem;color:#64748b;font-weight:700}
+ .card p{color:#475569;font-size:.95rem;line-height:1.55}
+ .card.hot{border:2px solid #FF6B00;box-shadow:0 4px 24px rgba(255,107,0,.15);position:relative}
+ .card.hot::before{content:"MOST POPULAR — 10 SHOPS ONLY";position:absolute;top:-12px;left:20px;background:#FF6B00;color:#fff;font-size:10px;font-weight:900;padding:4px 12px;border-radius:9999px;letter-spacing:.08em}
+ .calc{margin-top:32px;border:1px solid #e5e7eb;border-radius:16px;padding:20px;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;background:#fff}
+ .calc label{display:flex;flex-direction:column;gap:6px;font-weight:800;font-size:.8rem;color:#475569;flex:1 1 140px}
+ .calc input,.calc select{width:100%;padding:12px;font:inherit;border:2px solid #e5e7eb;border-radius:10px;min-height:44px}
+ .calc input:focus,.calc select:focus{border-color:#FF6B00;outline:none}
+ .calc button{flex:1 1 160px;background:#0B3D91;color:#fff;border:none;padding:14px 24px;font-weight:900;cursor:pointer;border-radius:10px;min-height:44px}
+ .calc button:hover{background:#0A0A0A}
+ .reach{width:100%;color:#0B3D91;font-weight:900;font-size:.95rem;margin-top:4px;overflow-wrap:break-word}
+ .math{background:#FFFBF5;border:1px dashed #FF6B00}
+ .math h3,.included h3{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:1.15rem;margin-bottom:.6rem}
+ .math p{color:#334155;margin:.5rem 0;line-height:1.6}
+ .math ul{margin-left:1.2rem;color:#334155;line-height:1.6}
+ .included table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.92rem}
+ .included th,.included td{border:1px solid #e5e7eb;padding:10px 12px;text-align:left}
+ .included th{background:#0B3D91;color:#fff;font-size:.78rem;letter-spacing:.05em}
+ .included td:nth-child(2){background:#f0fdf4;font-weight:800;color:#15803d}
+ .included td:nth-child(3){color:#64748b}
+ caption{caption-side:top;text-align:left;font-weight:800;color:#0B3D91;padding:.4rem 0}
+ .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+ .fn{font-size:.78rem;color:#64748b;margin-top:10px;line-height:1.5}
+ .floating-cta{display:none;position:fixed;bottom:0;left:0;right:0;padding:12px 16px;background:rgba(255,255,255,.96);border-top:1px solid #e5e7eb;z-index:90}
+ @media(max-width:760px){.floating-cta{display:block}}
+</style>
+<link rel="stylesheet" href="src/styles/tokens.css" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="src/styles/global.css" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="src/styles/styles.css" media="print" onload="this.media='all'" />
+<noscript>
+<link rel="stylesheet" href="src/styles/tokens.css" />
+<link rel="stylesheet" href="src/styles/global.css" />
+<link rel="stylesheet" href="src/styles/styles.css" />
+</noscript>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"VyaparBill",
+  "brand":{"@type":"Brand","name":"VyaparBill"},
+  "description":"GST + UPI QR + WhatsApp billing for Indian SMEs. SolidInvoice 3.1.x skin — HSN/CGST/SGST/IGST, Razorpay/UPI, Gupshup/WATI, Fast2SMS OTP, Hindi/Gujarati PWA. 10 shops only.",
+  "url":"https://thebackpanel.github.io/vyaparbill-pricing.html",
+  "image":"https://thebackpanel.github.io/assets/og-image.png",
+  "offers":{
+    "@type":"AggregateOffer",
+    "priceCurrency":"INR",
+    "lowPrice":"999",
+    "highPrice":"1999",
+    "offerCount":"3",
+    "availability":"https://schema.org/LimitedAvailability",
+    "seller":{"@type":"Organization","name":"VyaparBill"},
+    "offers":[
+      {"@type":"Offer","name":"Trial","price":"999","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://thebackpanel.github.io/vyaparbill-pricing.html#pricing"},
+      {"@type":"Offer","name":"Yearly","price":"1499","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://thebackpanel.github.io/vyaparbill-pricing.html#pricing"},
+      {"@type":"Offer","name":"Monthly","price":"1999","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://thebackpanel.github.io/vyaparbill-pricing.html#pricing"}
+    ]
+  },
+  "areaServed":{"@type":"Country","name":"India"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What does VyaparBill cost?","acceptedAnswer":{"@type":"Answer","text":"Trial ₹999 first month, then Yearly ₹1,499/mo (₹17,988 billed yearly, save 2 months) or Monthly ₹1,999. All include unlimited GST bills, HSN/SAC, CGST/SGST/IGST auto, UPI QR + Razorpay Link, WhatsApp 500 msgs, OTP login, Hindi/Gujarati PDF (NotoSans), GSTR-1 CSV, PWA. 10 shops cohort only — then /waitlist."}},
+    {"@type":"Question","name":"Is 18% GST extra?","acceptedAnswer":{"@type":"Answer","text":"We show 18% GST in the math so you can compare honestly. Vyapar Silver ₹3,999/yr + 18% GST = ₹4,719; Gold ₹5,999 → ₹7,079; Diamond ₹8,999 → ₹10,619. VyaparBill TCO: Yearly ₹1,499×1.18=₹1,769/mo → ₹21,226/yr billed. No hidden per-user/hosting."}},
+    {"@type":"Question","name":"Does it replace Tally?","acceptedAnswer":{"@type":"Answer","text":"No. Tally stays for accounting. VyaparBill is bhejne+vasuli side-car: GST invoice with UPI QR, WhatsApp send (Gupshup/WATI template), Razorpay webhook raw body verification + x-razorpay-event-id idempotency → auto Paid, GSTR-1 CSV for CA to import into Tally."}},
+    {"@type":"Question","name":"What about Razorpay webhooks?","acceptedAnswer":{"@type":"Answer","text":"POST /webhooks/razorpay verifies X-Razorpay-Signature on raw body (no JSON parse before verify). On SignatureVerificationError → 400 + log, no state change. Handles payment.authorized/captured + payment_link.paid out-of-order safe; idempotency via x-razorpay-event-id stored, dupes skipped. On paid: invoice draft→pending→paid via existing workflow."}},
+    {"@type":"Question","name":"How is pricing per bill calculated?","acceptedAnswer":{"@type":"Answer","text":"Cost per bill = plan ÷ bills per month. Example 60 bills: Trial ₹999 → ₹16.65/bill (₹19.65 incl GST), Yearly ₹1,499 → ₹24.98 (₹29.48 incl GST), Monthly ₹1,999 → ₹33.32 (₹39.32 incl GST). Collapses to one formula like BACKPANEL CPM=per-auto÷300. Money stored as integer paise via moneyphp/money, never floats — Razorpay paise INT + UPI string 149.00."}}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content" style="position:absolute;left:-999px;top:0;background:#0B3D91;color:#FFD60A;padding:.75rem 1rem;z-index:500;font-weight:700">Skip to main content</a>
+<div class="trust-bar" role="banner" aria-label="Trust bar">
+  <span><span class="dot" aria-hidden="true"></span>GST-COMPLIANT</span>
+  <span><span class="dot" aria-hidden="true"></span>UPI QR + RAZORPAY</span>
+  <span><span class="dot" aria-hidden="true"></span>WHATSAPP (Gupshup/WATI)</span>
+  <span><span class="dot" aria-hidden="true"></span>HINDI / GUJARATI PDF</span>
+  <span><span class="dot" aria-hidden="true"></span><a href="#math">SEE MATH →</a></span>
+  <span><span class="dot" aria-hidden="true"></span>10 SHOPS ONLY</span>
+</div>
+<header class="site-nav" id="nav" role="banner">
+  <a href="/" class="site-logo" aria-label="VyaparBill home"><span class="logo-panel">VyaparBill</span> <span class="logo-sub">by SolidInvoice (MIT)</span></a>
+  <nav class="nav-links" aria-label="Primary navigation">
+    <a href="#pricing">PRICING</a>
+    <a href="#math">MATH</a>
+    <a href="#compare">COMPARE</a>
+    <a href="/" aria-label="BACKPANEL home">BACKPANEL</a>
+    <a href="#contact" class="cta">START TRIAL — ₹999</a>
+  </nav>
+</header>
+<main id="main-content">
+<section class="hero" aria-labelledby="hero-heading">
+  <h1 id="hero-heading">GST BILL <em>JO KHUD VASULI KARE</em></h1>
+  <p class="sub">Excel → PDF → WhatsApp forward → manual UPI check → CA ko GSTR-1 sheet. Bas yahi loop hai na? VyaparBill usi loop ko khatam karta hai: <b style="color:#fff">HSN + CGST/SGST/IGST auto + UPI QR + Razorpay Link invoice pe + WhatsApp pe ek tap + Paid hote hi auto-update.</b></p>
+  <p class="hero-value">SolidInvoice (MIT, 10 years, 950⭐) ka Indian Skin — 2–3 person dukan, CA, agency ke liye.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="#pricing" class="btn">SEE PLANS →</a>
+    <a href="#compare" class="btn ghost">VYAPAR vs VYAPARBILL</a>
+  </div>
+</section>
+<section id="pricing" class="block alt" aria-labelledby="pricing-heading">
+  <div class="wrap">
+    <h2 id="pricing-heading">What does it <span class="hl">cost</span>? <span style="font-size:.5em;color:#64748b;font-weight:700">(flat, no surprises)</span></h2>
+    <p class="section-sub">One flat monthly per dukan. GST billing, HSN, Razorpay/UPI QR, WhatsApp, OTP login, Hindi/Gujarati PDF, GSTR-1 CSV, PWA — all in. <b>Seen Vyapar ₹399? Table shows what it skips. 18% GST shown.</b></p>
+    <div class="grid3" role="list" aria-label="Pricing tiers">
+      <article class="card price" role="listitem" data-tier="trial">
+        <h3>Trial</h3>
+        <div class="amt">₹999 <small>/ first month</small></div>
+        <p>Unlimited GST bills + HSN/SAC + UPI QR + Razorpay Link + WhatsApp 500 msgs + OTP login. Apna last wala invoice leke aao — 2 minute demo.</p>
+        <p class="fn">Then choose Yearly or Monthly. No auto-renew trap.</p>
+      </article>
+      <article class="card price hot" role="listitem" data-tier="yearly">
+        <h3>Yearly <span style="display:inline-flex;align-items:center;gap:.3rem;background:#FFD60A;color:#0B3D91;border:1px solid #FF6B00;border-radius:9999px;padding:.2rem .6rem;font-size:.68rem;font-weight:900;vertical-align:middle">SAVE 2 MONTHS</span></h3>
+        <div class="amt">₹1,499<small>/mo</small></div>
+        <p style="font-weight:800;color:#0B3D91">₹17,988 billed yearly. Preferred. — cap 10</p>
+        <p>Same as Trial + priority WA support + free 20 old bills migration + offline PWA + tenant subdomain <code>tenant07.vyaparbill.in</code>.</p>
+        <p class="fn">Razorpay plan cap auto-closes at 10. 10 shops only.</p>
+      </article>
+      <article class="card price" role="listitem" data-tier="monthly">
+        <h3>Monthly</h3>
+        <div class="amt">₹1,999<small>/mo</small></div>
+        <p>Same features, no commitment. For seasonal shops. Switch to Yearly anytime — 2 months free.</p>
+        <p class="fn">Add-on: Barcode printer + scan + low-stock → +₹500/mo (optional).</p>
+      </article>
+    </div>
+    <div class="calc" role="group" aria-label="Cost-per-bill estimator">
+      <label for="bills">Bills / month: <input id="bills" type="number" value="60" min="5" max="1000" inputmode="numeric" /></label>
+      <label for="plan">Plan:
+        <select id="plan">
+          <option value="999">Trial ₹999</option>
+          <option value="1499" selected>Yearly ₹1,499</option>
+          <option value="1999">Monthly ₹1,999</option>
+        </select>
+      </label>
+      <button type="button" onclick="calcBill()">ESTIMATE COST / BILL</button>
+      <div id="billOut" class="reach" role="status" aria-live="polite"></div>
+    </div>
+    <div class="calc math" id="math" role="note" aria-label="How pricing is derived">
+      <h3>Where ₹1,499 comes from</h3>
+      <p>Vyapar hides 18% GST till checkout. Real TCO: Silver <b>₹3,999/yr → ₹4,719</b> (₹399/mo → ₹471), Gold ₹5,999 → ₹7,079, Diamond ₹8,999 → ₹10,619 (+ desktop, + e-invoicing, + priority). We hated that surprise, so we publish TCO. Check it:</p>
+      <p><b>Cost per bill = plan ÷ bills per month.</b> Bills include HSN + tax split + UPI QR + Razorpay Link + WhatsApp send — not just PDF.</p>
+      <ul>
+        <li><b>Trial ₹999:</b> 30 bills → <b>₹33.30/bill</b> · 60 bills → <b>₹16.65/bill</b> · 100 bills → <b>₹9.99/bill</b></li>
+        <li><b>Yearly ₹1,499:</b> 30 → <b>₹49.97</b> · 60 → <b>₹24.98</b> · 100 → <b>₹14.99</b> (Yearly TCO incl. GST: ₹1,499×1.18=₹1,769/mo → ₹21,226/yr)</li>
+        <li><b>Monthly ₹1,999:</b> 30 → <b>₹66.63</b> · 60 → <b>₹33.32</b> · 100 → <b>₹19.99</b> (incl. GST: ₹2,359/mo)</li>
+      </ul>
+      <p>Across 1-year TCO: <b>Yearly ₹21,226 inc GST vs Vyapar Silver ₹4,719 + Diamond ₹10,619 reality:</b> Vyapar looks cheap until you add Desktop (₹4,719 extra), barcode, e-invoicing (Gold+), staff (Gold+), priority support (Diamond). VyaparBill is all-in. Compare line by line below.</p>
+      <p><b>Why one formula:</b> cost/bill collapses to <b>plan ÷ bills — one formula</b>. No hidden per-user/hosting. One calculation, not three. If tiers don't reduce to one formula, the math is decoration. Ours does. Like BACKPANEL CPM = per-auto ÷ 300 at benchmark.</p>
+      <p class="fn">Money stored as integer paise (moneyphp/money), never floats — Razorpay paise INT + UPI string "149.00" — per FINAL_CODER_PROMPT.md. fn moneyphp/money paise INT.</p>
+    </div>
+    <div class="calc included" id="compare" role="note" aria-label="What every tier includes">
+      <h3>The quote comparison we wish everyone did</h3>
+      <p>Vyapar/Tally quotes look cheaper because they skip collection + export. Every VyaparBill tier includes:</p>
+      <table>
+        <caption>What VyaparBill covers vs typical Vyapar (Silver) / Tally + manual</caption>
+        <thead><tr><th scope="col">Line item</th><th scope="col">VyaparBill (all tiers)</th><th scope="col">Typical Vyapar Silver ₹399*</th></tr></thead>
+        <tbody>
+          <tr><td>HSN/SAC 6-digit column (CBIC, &gt;₹5cr mandatory, 8000 codes)</td><td>Included</td><td>Excluded</td></tr>
+          <tr><td>CGST+SGST vs IGST auto (sellerState == buyerState ? split : IGST)</td><td>Included</td><td>Excluded</td></tr>
+          <tr><td>Round-off to nearest ₹ + amount in words (₹ Indian system)</td><td>Included</td><td>Excluded</td></tr>
+          <tr><td>GSTR-1 CSV (B2B / B2CS / HSN summary) 1-click</td><td>Included</td><td>Excluded</td></tr>
+          <tr><td>UPI QR (Bharat upi://pay?pa &amp; Razorpay Payment Link)</td><td>Included</td><td>Excluded</td></tr>
+          <tr><td>Webhook auto Paid — raw body X-Razorpay-Signature 400 + x-razorpay-event-id idempotency</td><td>Included</td><td>Excluded</td></tr>
+          <tr><td>WhatsApp template send (Gupshup $0.001 + Meta ₹0.115 utility/₹0.86 marketing / WATI $59)</td><td>Included (500 msgs)</td><td>Excluded</td></tr>
+          <tr><td>OTP login (Fast2SMS Smart OTP 0.18) + PWA offline ≥44px tap</td><td>Included</td><td>Excluded</td></tr>
+          <tr><td>Hindi/Gujarati PDF (NotoSans + NotoSansDevanagari + NotoSansGujarati, no tofu)</td><td>Included</td><td>Excluded</td></tr>
+          <tr><td>Client portal /pay/INVxxx (Razorpay Checkout + UPI QR)</td><td>Included</td><td>Excluded</td></tr>
+          <tr><td>Thermal printer pairing (barcode add-on)</td><td>+₹500 add-on</td><td>Excluded</td></tr>
+          <tr><td>18% GST transparency (Vyapar hides till checkout)</td><td>Included — shown above</td><td>Excluded (+₹720/yr)</td></tr>
+        </tbody>
+      </table>
+      <p class="fn">*Vyapar Silver ₹3,999/yr + 18% GST = ₹4,719. Gold ₹5,999→₹7,079, Diamond ₹8,999→₹10,619. Desktop needs Silver minimum; e-invoicing/bank link need Gold; priority only Diamond. VyaparBill all-in from ₹999. All money via moneyphp/money paise INT.</p>
+    </div>
+    <div class="cta-row" role="group" aria-label="Call to action">
+      <a href="#contact" class="btn">START TRIAL — ₹999</a>
+      <a href="#contact" class="btn ghost" style="background:#0B3D91;border-color:#0B3D91">BOOK 2-MIN DEMO (YOUR OLD BILL)</a>
+    </div>
+    <p class="fn">Closed cohort — 10 shops only. <b>MAX_TENANTS=10</b> app guard + Supabase RLS <code>count(*)&lt;10</code> + Razorpay plan cap 10 → after 10, <b>/waitlist</b> (Tally-Form). Renewals till 2027, monthly office hour 1st Monday 4pm WA broadcast.</p>
+  </div>
+</section>
+<section id="contact" class="block" style="background:#0B3D91;color:#fff">
+  <div class="wrap" style="max-width:780px;margin:0 auto;text-align:center">
+    <h2 style="color:#fff">Get <span style="color:#FFD60A">wrapped</span> — dukan ready in 2 mins</h2>
+    <p style="color:#dbeafe;max-width:60ch;margin:0 auto 20px">Apna last Excel bhej do — hum GST + UPI QR laga ke WhatsApp pe bhejte hain. Paid hote hi auto-update. OTP se staff login.</p>
+    <form id="leadForm" style="display:grid;grid-template-columns:1fr 1fr;gap:16px" aria-label="Lead form">
+      <input placeholder="Your name" required autocomplete="name" style="padding:14px;border-radius:10px;border:2px solid #1e40af;background:#0f172a;color:#fff;min-height:44px" />
+      <input placeholder="Shop / CA name" required autocomplete="organization" style="padding:14px;border-radius:10px;border:2px solid #1e40af;background:#0f172a;color:#fff;min-height:44px" />
+      <input placeholder="WhatsApp number" required autocomplete="tel" style="padding:14px;border-radius:10px;border:2px solid #1e40af;background:#0f172a;color:#fff;min-height:44px" />
+      <input placeholder="City — Rajkot / Indore / Ahmedabad" style="padding:14px;border-radius:10px;border:2px solid #1e40af;background:#0f172a;color:#fff;min-height:44px" />
+      <textarea placeholder="Paste last bill details or GSTIN + one HSN" style="grid-column:1/3;padding:14px;border-radius:10px;border:2px solid #1e40af;background:#0f172a;color:#fff;min-height:90px"></textarea>
+      <button type="submit" style="grid-column:1/3;background:#FF6B00;color:#fff;border:none;padding:16px;border-radius:10px;font-weight:900;min-height:52px;cursor:pointer">SEND MY 2-MIN SAMPLE →</button>
+      <div id="formMsg" role="status" aria-live="polite" style="grid-column:1/3;color:#FFD60A;font-weight:700"></div>
+    </form>
+    <p class="fn" style="color:#93c5fd">Straight to WA + Razorpay trial link. *Cohort 10 — demo data: hardware (Rajkot) + CA (Ahmedabad) + designer (Indore). Powered by SolidInvoice (MIT).</p>
+  </div>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo" style="padding:24px;text-align:center;color:#64748b;font-size:.82rem;border-top:1px solid #e5e7eb">
+  VyaparBill · Powered by SolidInvoice (MIT) · <a href="/" style="color:#0B3D91;font-weight:700;text-decoration:underline">BACKPANEL</a> · vyaparbill.in · 10 shops only · waitlist after 10
+</footer>
+<div class="floating-cta" role="complementary" aria-label="Quick action"><a href="#pricing" class="btn" style="width:100%;text-align:center">TRIAL ₹999 →</a></div>
+<script>
+function calcBill(){
+  const bills = parseInt(document.getElementById('bills').value,10)||0;
+  const plan = parseInt(document.getElementById('plan').value,10)||1499;
+  const out = document.getElementById('billOut');
+  if(!bills || !plan){ out.textContent=''; return; }
+  const perBill = plan / bills;
+  const perBillGST = perBill * 1.18;
+  const yearlyTCO = Math.round(plan*1.18*12).toLocaleString('en-IN');
+  const inclMo = Math.round(plan*1.18).toLocaleString('en-IN');
+  const yearly = plan===999 ? ' (first month only)' : plan===1499 ? ' · Yearly TCO incl. 18% GST: ₹'+yearlyTCO+'/yr' : ' · Incl. GST: ₹'+inclMo+'/mo';
+  out.textContent = '≈ ₹'+perBill.toFixed(2)+'/bill (₹'+perBillGST.toFixed(2)+' incl. 18% GST) · '+bills+' bills → ₹'+plan.toLocaleString('en-IN')+' flat'+yearly;
+}
+calcBill();
+document.getElementById('bills').addEventListener('input',calcBill);
+document.getElementById('plan').addEventListener('change',calcBill);
+</script>
+<script src="app.js" defer></script>
+</body>
+</html>
