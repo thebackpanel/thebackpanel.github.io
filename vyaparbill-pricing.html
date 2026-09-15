@@ -241,6 +241,12 @@ body{padding-bottom:72px}
   <div style="text-align:center;max-width:640px;margin:0 auto var(--space-4)">
     <h2 class="t-h2">Apni yojana chuno</h2>
     <p class="t-body">Ek hi daam, unlimited bills, hosting included. 10 seats ke baad — Cohort Full. Agla number 2027.</p>
+    <div style="margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:12px 16px;background:#fff;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center">
+      <label style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;cursor:pointer"><input type="checkbox" id="itcToggle" style="width:16px;height:16px;min-height:16px" /> Mere paas GSTIN hai — 18% ITC chahiye</label>
+      <input id="gstinInput" placeholder="GSTIN 15-char (27AAPFU0939F1ZV)" maxlength="15" style="display:none;flex:1 1 200px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:13px;min-height:44px;text-transform:uppercase" />
+      <span id="gstinStatus" class="t-small" style="display:none"></span>
+    </div>
+    <div id="itcHint" class="t-small" style="display:none;margin-top:8px;background:rgba(255,107,0,.08);padding:8px 12px;border-radius:8px"></div>
   </div>
   <div class="pricing-grid">
     <article class="price-card">
@@ -373,18 +379,44 @@ body{padding-bottom:72px}
 </div>
 
 <script>
+function isValidGSTIN(g){
+  if(!/^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z][1-9A-Z]Z[0-9A-Z]$/.test(g)) return false;
+  const chars="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let sum=0;
+  for(let i=0;i<14;i++){const c=chars.indexOf(g[i]);let p=(i%2===0)?c:c*2;sum+=Math.floor(p/36)+(p%36)}
+  const chk=(36-(sum%36))%36;
+  return chars[chk]===g[14];
+}
 function calcBill(){
   const bills=parseInt(document.getElementById('bills').value,10)||0;
   const plan=parseInt(document.getElementById('plan').value,10)||1499;
   const out=document.getElementById('billOut');
+  const itc=document.getElementById('itcToggle')?.checked;
+  const gstin=(document.getElementById('gstinInput')?.value||"").toUpperCase().trim();
   if(!bills||!plan){out.textContent='';return}
   const per=plan/bills, perGST=per*1.18;
   const save=plan===1499? ' · Sal bhar ₹6,000 bachao' : '';
-  out.textContent='≈ ₹'+per.toFixed(2)+'/bill (₹'+perGST.toFixed(2)+' GST ke saath) · '+bills+' bill → ₹'+plan.toLocaleString('en-IN')+' pakka'+save;
+  let extra=itc&&gstin&&isValidGSTIN(gstin)?' · Net ₹'+per.toFixed(2)+'/bill ITC ke baad':itc&&gstin?' · GSTIN galat':itc?' · GSTIN daalo':'';
+  out.textContent='≈ ₹'+per.toFixed(2)+'/bill (₹'+perGST.toFixed(2)+' GST ke saath) · '+bills+' bill → ₹'+plan.toLocaleString('en-IN')+' pakka'+save+extra;
+}
+function updateITC(){
+  const on=document.getElementById('itcToggle').checked;
+  const inp=document.getElementById('gstinInput');
+  const st=document.getElementById('gstinStatus');
+  const hint=document.getElementById('itcHint');
+  inp.style.display=on?'block':'none'; st.style.display=on?'inline':'none'; hint.style.display=on?'block':'none';
+  if(!on){hint.textContent=''; st.textContent=''; calcBill(); return}
+  const v=inp.value.toUpperCase().trim();
+  if(!v){st.textContent='15-char GSTIN likho'; st.style.color='var(--muted)'; hint.textContent='CA ke liye: ₹1,499 + ₹229 GST = ₹1,728 gross — ₹229 ITC wapas, net ₹1,499'; }
+  else if(!isValidGSTIN(v)){st.textContent='✗ Galat GSTIN (Luhn mod-36)'; st.style.color='#B91C1C'; hint.textContent='Sahi example: 27AAPFU0939F1ZV — 15-char, Z se pehle wala checksum';}
+  else{st.textContent='✓ Valid GSTIN — ITC milega'; st.style.color='#15803D'; const plan=parseInt(document.getElementById('plan').value,10)||1499; const gst=Math.round(plan*0.18); const gross=plan+gst; hint.textContent='CA ITC: ₹'+plan+' + 18% GST ₹'+gst+' = ₹'+gross+' gross — ₹'+gst+' ITC claim, net ₹'+plan;}
+  calcBill();
 }
 calcBill();
 document.getElementById('bills')?.addEventListener('input',calcBill);
-document.getElementById('plan')?.addEventListener('change',calcBill);
+document.getElementById('plan')?.addEventListener('change',()=>{calcBill(); updateITC();});
+document.getElementById('itcToggle')?.addEventListener('change',updateITC);
+document.getElementById('gstinInput')?.addEventListener('input',updateITC);
 </script>
 </body>
 </html>
