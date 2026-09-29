@@ -17,7 +17,7 @@
 <!-- Fonts: self-hosted subset woff2, preloaded (no third-party chain) -->
 <link rel="preload" href="assets/fonts/archivo-black-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
-<!-- Critical CSS: above-fold only (full styles deferred below) -->
+<!-- Critical CSS: font-face + minimal above-fold only -->
 <style>
 @font-face{font-family:'Archivo Black';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/archivo-black-latin.woff2') format('woff2')}
 @font-face{font-family:'Archivo Fallback';src:local('Arial Black'),local('Arial-BoldMT');size-adjust:100%;ascent-override:87.8%;descent-override:21%;line-gap-override:0%}
@@ -26,21 +26,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{overflow-x:hidden;scroll-behavior:smooth}
 body{background:#0A0A0A;color:#F5F5F0;font-family:'Inter','Inter Fallback',system-ui,'Segoe UI',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.skip-link{position:absolute;left:-999px;top:0;background:#0A0A0A;color:#FFD400;padding:.75rem 1rem;z-index:500;font-weight:700}
-.trust-bar{background:#0A0A0A;color:#F5F5F0;padding:.6rem 1rem;font-size:.72rem;font-weight:600;letter-spacing:.08em;display:flex;justify-content:center;gap:1rem 2rem;flex-wrap:wrap}
-.site-nav{display:flex;justify-content:space-between;align-items:center;padding:0 clamp(1rem,5vw,4rem);min-height:72px;background:rgba(255,255,255,.94);position:sticky;top:0;z-index:200}
-.site-logo{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;text-decoration:none;color:#0A0A0A;display:flex;align-items:center;gap:.6rem}
-.logo-panel{background:#0A0A0A;color:#FFD400;padding:.15em .4em;border-radius:.35em;transform:rotate(-2deg);display:inline-block}
-.nav-links{display:flex;gap:.5rem 1rem;align-items:center;flex-wrap:wrap}
-.nav-links a{font-weight:700;font-size:.75rem;color:#0A0A0A;text-decoration:none}
-.nav-toggle-input{display:none}.nav-toggle-btn{display:none}
-.hero{background-color:#0A0A0A;background-image:repeating-linear-gradient(105deg,#FFD400 0 10px,transparent 10px 24px);background-size:100% 10px;background-repeat:no-repeat;background-position:top;color:#F5F5F0;padding:clamp(3rem,8vw,6rem) clamp(1rem,5vw,4rem);text-align:center;overflow:hidden}
-.hero h1{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:clamp(3rem,8vw,7rem);line-height:.95;letter-spacing:-.02em;margin-bottom:1.25rem;overflow-wrap:break-word}
-.hero h1 em{color:#FFD400;font-style:normal}
-.hero .sub{color:#d8d8d2;font-size:clamp(1rem,.93rem + .35vw,1.25rem);max-width:60ch;margin:0 auto 1rem;line-height:1.7}
-.hero-cta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;background:#FFD400;color:#0A0A0A;border:2px solid #FFD400;padding:1rem 2rem;font-weight:800;font-size:1rem;border-radius:.75rem;text-decoration:none;min-height:52px}
-.btn.ghost{background:transparent;color:#F5F5F0;border:2px solid #F5F5F0}
 </style>
 
 <!-- Styles: deferred (non-blocking) with no-JS fallback -->
@@ -89,7 +74,7 @@ body{background:#0A0A0A;color:#F5F5F0;font-family:'Inter','Inter Fallback',syste
 
 <header class="site-nav" id="nav" role="banner">
   <a href="/" class="site-logo" aria-label="BACKPANEL home">
-    <span class="dot" aria-hidden="true"></span>BACK<span style="color:var(--fg-brand)">PANEL</span>
+    <span class="dot" aria-hidden="true"></span>BACK<span class="logo-brand">PANEL</span>
   </a>
   <input type="checkbox" id="navtoggle" class="nav-toggle-input" aria-hidden="true" />
   <label for="navtoggle" class="nav-toggle-btn" aria-label="Toggle navigation menu" role="button" tabindex="0">&#9776;</label>
@@ -281,9 +266,9 @@ body{background:#0A0A0A;color:#F5F5F0;font-family:'Inter','Inter Fallback',syste
     </div>
 
     <div class="combo" role="note" aria-label="How to combine">
-      <h3 style="margin-bottom:8px">How founders usually combine this</h3>
-      <p style="color:var(--fg-secondary);line-height:1.7;margin:0">New store? Cards + neon + launch grid + 1 influencer visit. Personal brand? Tap card + pitch reel + a month of LinkedIn. D2C? UGC bank + meme cut + WhatsApp kit. Tell us your stage. We'll tell you what to skip.</p>
-      <div class="cta-row" role="group" aria-label="Call to action" style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+      <h3 class="combo-title">How founders usually combine this</h3>
+      <p class="combo-body">New store? Cards + neon + launch grid + 1 influencer visit. Personal brand? Tap card + pitch reel + a month of LinkedIn. D2C? UGC bank + meme cut + WhatsApp kit. Tell us your stage. We'll tell you what to skip.</p>
+      <div class="cta-row" role="group" aria-label="Call to action">
         <a href="#contact-stack" class="btn">BUILD MY STACK →</a>
         <a href="/#pricing" class="btn ghost">SEE AUTO PLANS</a>
       </div>
@@ -294,7 +279,7 @@ body{background:#0A0A0A;color:#F5F5F0;font-family:'Inter','Inter Fallback',syste
 <section id="contact-stack" class="block getwrapped" aria-labelledby="contact-stack-heading">
   <div class="wrap">
     <h2 id="contact-stack-heading">Tell us <span class="hl">what you need</span></h2>
-    <p class="section-sub" style="color:#d7d7d7">Six checkboxes, one reply within a day: cards, neon, reels, influencers, social, launch pack. We tell you what fits, and what to skip.</p>
+    <p class="section-sub">Six checkboxes, one reply within a day: cards, neon, reels, influencers, social, launch pack. We tell you what fits, and what to skip.</p>
     <form id="stackForm" class="lead-form" aria-label="Stack enquiry form">
       <div>
         <label for="stack-name" class="sr-only">Your name</label>
@@ -308,13 +293,13 @@ body{background:#0A0A0A;color:#F5F5F0;font-family:'Inter','Inter Fallback',syste
         <label for="stack-email" class="sr-only">Email address</label>
         <input id="stack-email" name="email" type="email" placeholder="Email" required autocomplete="email" />
       </div>
-      <div class="pill-row" role="group" aria-label="I need help with" style="margin-top:4px">
-        <label style="display:flex;align-items:center;gap:8px;color:#e7e7e7;font-size:.9rem"><input type="checkbox" name="need" value="tap-cards" /> Tap cards</label>
-        <label style="display:flex;align-items:center;gap:8px;color:#e7e7e7;font-size:.9rem"><input type="checkbox" name="need" value="neon" /> Neon sign</label>
-        <label style="display:flex;align-items:center;gap:8px;color:#e7e7e7;font-size:.9rem"><input type="checkbox" name="need" value="reels" /> Reels</label>
-        <label style="display:flex;align-items:center;gap:8px;color:#e7e7e7;font-size:.9rem"><input type="checkbox" name="need" value="influencers" /> Influencers</label>
-        <label style="display:flex;align-items:center;gap:8px;color:#e7e7e7;font-size:.9rem"><input type="checkbox" name="need" value="social" /> Instagram / LinkedIn</label>
-        <label style="display:flex;align-items:center;gap:8px;color:#e7e7e7;font-size:.9rem"><input type="checkbox" name="need" value="launch" /> Launch pack</label>
+      <div class="pill-row" role="group" aria-label="I need help with">
+        <label class="check-label"><input type="checkbox" name="need" value="tap-cards" /> Tap cards</label>
+        <label class="check-label"><input type="checkbox" name="need" value="neon" /> Neon sign</label>
+        <label class="check-label"><input type="checkbox" name="need" value="reels" /> Reels</label>
+        <label class="check-label"><input type="checkbox" name="need" value="influencers" /> Influencers</label>
+        <label class="check-label"><input type="checkbox" name="need" value="social" /> Instagram / LinkedIn</label>
+        <label class="check-label"><input type="checkbox" name="need" value="launch" /> Launch pack</label>
       </div>
       <div>
         <label for="stack-brief" class="sr-only">What do you sell?</label>
@@ -322,10 +307,10 @@ body{background:#0A0A0A;color:#F5F5F0;font-family:'Inter','Inter Fallback',syste
       </div>
       <div class="hp-veil" aria-hidden="true"><label>Leave empty<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label></div>
       <button type="submit">BUILD MY STACK →</button>
-      <p class="form-sla" style="font-size:.78rem;color:#d8d8d2;margin-top:.5rem">A founder replies within 24 hours — in English, Hindi, or Gujarati.</p>
+      <p class="form-sla">A founder replies within 24 hours — in English, Hindi, or Gujarati.</p>
       <div id="stackMsg" role="status" aria-live="polite"></div>
     </form>
-    <p class="fn" style="color:#b5b5b5">Same team as the autos. Same reply-within-a-day promise.</p>
+    <p class="fn">Same team as the autos. Same reply-within-a-day promise.</p>
   </div>
 </section>
 
@@ -342,7 +327,7 @@ body{background:#0A0A0A;color:#F5F5F0;font-family:'Inter','Inter Fallback',syste
 </div>
 
 <footer class="site-footer" role="contentinfo">
-  BACKPANEL · cards, neon, reels &amp; everything after the ad · <a href="/" class="foolink" style="color:var(--fg-brand);font-weight:700;text-decoration:underline">Back to autos</a> &nbsp;|&nbsp; <a href="mailto:founders@backpanel.in" class="foolink">founders@backpanel.in</a> &nbsp;|&nbsp; <a href="privacy.html" style="color:var(--fg-brand);font-weight:700;text-decoration:underline">Privacy</a> &nbsp;|&nbsp; <a href="terms.html" style="color:var(--fg-brand);font-weight:700;text-decoration:underline">Terms</a>
+  BACKPANEL · cards, neon, reels &amp; everything after the ad · <a href="/" class="foolink foolink-brand">Back to autos</a> &nbsp;|&nbsp; <a href="mailto:founders@backpanel.in" class="foolink">founders@backpanel.in</a> &nbsp;|&nbsp; <a href="privacy.html" class="foolink foolink-brand">Privacy</a> &nbsp;|&nbsp; <a href="terms.html" class="foolink foolink-brand">Terms</a>
 </footer>
 
 <script src="app.js" defer></script>
