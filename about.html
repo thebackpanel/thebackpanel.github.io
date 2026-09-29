@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+<title>About | BACKPANEL — Gujarat's Auto-Rickshaw Ad Network</title>
+<meta name="description" content="BACKPANEL is Gujarat's only RTO-certified auto-rickshaw back-panel ad network. Founded by two people who got tired of digital ads nobody watches." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://thebackpanel.github.io/about.html" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<meta name="theme-color" content="#0A0A0A" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="About | BACKPANEL" />
+<meta property="og:description" content="Gujarat's only RTO-certified auto-rickshaw back-panel ad network. Two founders, one idea: the ad a phone can't skip." />
+<meta property="og:image" content="https://thebackpanel.github.io/assets/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="About | BACKPANEL" />
+<meta name="twitter:image" content="https://thebackpanel.github.io/assets/og-image.png" />
+<link rel="preload" href="assets/fonts/archivo-black-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+<style>
+@font-face{font-family:'Archivo Black';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/archivo-black-latin.woff2') format('woff2')}
+@font-face{font-family:'Archivo Fallback';src:local('Arial Black'),local('Arial-BoldMT');size-adjust:100%;ascent-override:87.8%;descent-override:21%;line-gap-override:0%}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url('assets/fonts/inter-var-latin.woff2') format('woff2')}
+@font-face{font-family:'Inter Fallback';src:local('.SFNSText'),local('.SFNSDisplay'),local('Segoe UI'),local('Roboto'),local('Helvetica Neue'),local('Arial');size-adjust:105%;ascent-override:92%;descent-override:23%;line-gap-override:0%}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{background:#0A0A0A;color:#F5F5F0;font-family:'Inter','Inter Fallback',system-ui,'Segoe UI',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.skip-link{position:absolute;left:-999px;top:0;background:#0A0A0A;color:#FFD400;padding:.75rem 1rem;z-index:500;font-weight:700}
+.skip-link:focus{left:12px;top:12px}
+.trust-bar{background:#0A0A0A;color:#F5F5F0;padding:.6rem 1rem;font-size:.72rem;font-weight:600;letter-spacing:.08em;display:flex;justify-content:center;gap:1rem 2rem;flex-wrap:wrap}
+.site-nav{display:flex;justify-content:space-between;align-items:center;padding:0 clamp(1rem,5vw,4rem);min-height:72px;background:rgba(255,255,255,.94);position:sticky;top:0;z-index:200}
+.site-logo{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;text-decoration:none;color:#0A0A0A;display:flex;align-items:center;gap:.6rem}
+.logo-panel{background:#0A0A0A;color:#FFD400;padding:.15em .4em;border-radius:.35em;transform:rotate(-2deg);display:inline-block}
+.nav-links{display:flex;gap:.5rem 1rem;align-items:center;flex-wrap:wrap}
+.nav-links a{font-weight:700;font-size:.75rem;color:#0A0A0A;text-decoration:none}
+.nav-toggle-input{display:none}.nav-toggle-btn{display:none}
+.hero{background-color:#0A0A0A;background-image:repeating-linear-gradient(105deg,#FFD400 0 10px,transparent 10px 24px);background-size:100% 10px;background-repeat:no-repeat;background-position:top;color:#F5F5F0;padding:clamp(3rem,8vw,6rem) clamp(1rem,5vw,4rem);text-align:center;overflow:hidden}
+.hero h1{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:clamp(2rem,6vw,5rem);line-height:.95;letter-spacing:-.02em;margin-bottom:1.25rem;overflow-wrap:break-word}
+.hero h1 em{color:#FFD400;font-style:normal}
+.hero .sub{color:#d8d8d2;font-size:clamp(1rem,.93rem + .35vw,1.25rem);max-width:60ch;margin:0 auto 1rem;line-height:1.7}
+.hero-cta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:#FFD400;color:#0A0A0A;border:2px solid #FFD400;padding:1rem 2rem;font-weight:800;font-size:1rem;border-radius:.75rem;text-decoration:none;min-height:52px}
+.btn.ghost{background:transparent;color:#F5F5F0;border:2px solid #F5F5F0}
+.block{padding:clamp(3rem,8vw,6rem) clamp(1rem,5vw,4rem)}
+.block.alt{background:#111}
+.wrap{max-width:1100px;margin:0 auto}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:1.5rem}
+.card{border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:1.5rem;background:rgba(255,255,255,.03)}
+.card h3{margin-bottom:.5rem}
+.card p{color:#a8a8a8}
+.hl{color:#FFD400}
+h2{font-family:'Archivo Black','Archivo Fallback','Arial Black',sans-serif;font-size:clamp(1.5rem,4vw,3rem);line-height:1.1}
+.section-sub{color:#a8a8a8;margin-top:.5rem;max-width:60ch}
+.facts{list-style:none;display:grid;gap:.75rem;margin-top:1.5rem}
+.facts li{padding-left:1.4em;position:relative;color:#d8d8d2;line-height:1.7}
+.facts li::before{content:"→";position:absolute;left:0;color:#FFD400;font-weight:800}
+.dot{width:6px;height:6px;background:#FFD400;border-radius:50%;display:inline-block;margin-right:.4rem}
+.site-footer{padding:1.5rem;text-align:center;font-size:.75rem;color:#888;border-top:1px solid rgba(255,255,255,.06)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-toggle-btn{display:block;cursor:pointer;font-size:1.5rem}
+  .trust-bar{font-size:.65rem}
+}
+@media(min-width:769px){
+  .nav-toggle-input:checked~.nav-links{display:flex!important}
+}
+.founder-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:2rem}
+@media(min-width:640px){.founder-grid{grid-template-columns:1fr 1fr}}
+.founder-card{border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:2rem;text-align:center;background:rgba(255,255,255,.03)}
+.founder-avatar{width:96px;height:96px;border-radius:50%;background:#FFD400;color:#0A0A0A;display:grid;place-items:center;font-family:'Archivo Black',sans-serif;font-size:1.75rem;font-weight:800;margin:0 auto 1rem}
+.founder-card h3{margin-bottom:.25rem}
+.founder-card .role{color:#FFD400;font-size:.85rem;font-weight:700;letter-spacing:.04em;margin-bottom:.75rem}
+.founder-card p{color:#a8a8a8;font-size:.9rem;line-height:1.7}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BACKPANEL",
+  "url": "https://thebackpanel.github.io",
+  "logo": "https://thebackpanel.github.io/assets/og-image.png",
+  "description": "Gujarat's only RTO-certified auto-rickshaw back-panel ad network.",
+  "foundingDate": "2025",
+  "areaServed": {
+    "@type": "State",
+    "name": "Gujarat",
+    "containedInPlace": {
+      "@type": "Country",
+      "name": "India"
+    }
+  },
+  "sameAs": [],
+  "dateModified": "2026-09-29"
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div class="trust-bar" aria-label="Company statistics">
+  <span><span class="dot" aria-hidden="true"></span>RTO-CERTIFIED</span>
+  <span><span class="dot" aria-hidden="true"></span>GUJARAT ONLY</span>
+  <span><span class="dot" aria-hidden="true"></span>ECO-VINYL ONLY</span>
+</div>
+
+<header class="site-nav" id="nav" role="banner">
+  <a href="/" class="site-logo" aria-label="BACKPANEL home">
+    <span class="dot" aria-hidden="true"></span><span class="logo-panel">BACKPANEL</span>
+  </a>
+  <input type="checkbox" id="navtoggle" class="nav-toggle-input" aria-hidden="true" />
+  <label for="navtoggle" class="nav-toggle-btn" aria-label="Toggle navigation menu" role="button" tabindex="0">&#9776;</label>
+  <nav class="nav-links" aria-label="Primary navigation">
+    <a href="/#how">HOW</a>
+    <a href="/#pricing">PRICING</a>
+    <a href="vyaparbill-pricing.html">VYAPARBILL</a>
+    <a href="/#faq">FAQ</a>
+    <a href="stack.html">STACK</a>
+    <a href="#contact" class="cta">GET WRAPPED</a>
+  </nav>
+</header>
+
+<main id="main-content" role="main">
+
+<section class="hero" aria-labelledby="about-heading">
+  <h1 id="about-heading">TWO PEOPLE WHO GOT TIRED OF <em>DIGITAL ADS NOBODY WATCHES.</em></h1>
+  <p class="sub">We started BACKPANEL because every startup founder we met had the same complaint: "My ads get skipped, scrolled past, or blocked." So we put the ad where nobody can skip it — the back of an auto-rickshaw at a red light.</p>
+</section>
+
+<section class="block" aria-labelledby="why-section">
+  <div class="wrap">
+    <h2 id="why-section">Why <span class="hl">auto-rickshaws</span>?</h2>
+    <p class="section-sub">Three reasons. None of them are romantic.</p>
+    <ul class="facts" role="list" aria-label="Why we chose auto-rickshaws">
+      <li role="listitem"><b>Nobody can skip it.</b> The driver behind you is stuck at a red light. No ad-blocker. No "Skip Ad" button. Just your brand, staring them in the face for 90 seconds.</li>
+      <li role="listitem"><b>It's hyper-local.</b> We blanket the one neighbourhood you sell in. Not "Gujarat-wide awareness." Just the 25 autos that pass your customer's office every day.</li>
+      <li role="listitem"><b>It's affordable.</b> ≈₹5 CPM, derived from our own rates. Your performance marketer just winced. With jealousy.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block alt" aria-labelledby="founders-heading">
+  <div class="wrap">
+    <h2 id="founders-heading">The <span class="hl">founders</span></h2>
+    <p class="section-sub">Two people, one idea: make outdoor advertising actually work for startups.</p>
+    <div class="founder-grid">
+      <div class="founder-card">
+        <div class="founder-avatar" aria-hidden="true">BP</div>
+        <h3>Founder</h3>
+        <div class="role">Operations &amp; Growth</div>
+        <p>Handles fleet ops, RTO paperwork, and making sure every panel is on the road on time. Believes the best marketing doesn't feel like marketing.</p>
+      </div>
+      <div class="founder-card">
+        <div class="founder-avatar" aria-hidden="true">CK</div>
+        <h3>Co-Founder</h3>
+        <div class="role">Creative &amp; Strategy</div>
+        <p>Runs creative direction, copy, and the Pitch on Wheels program. Thinks the funniest ad is the one that gets shared — not the one that gets noticed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="values-heading">
+  <div class="wrap">
+    <h2 id="values-heading">What we <span class="hl">don't</span> do</h2>
+    <p class="section-sub">Boundaries are a feature, not a limitation.</p>
+    <ul class="facts" role="list" aria-label="What we don't do">
+      <li role="listitem"><b>No hood stickers.</b> Back-panel only. RTO sign-off, per auto, per city. No gray zone.</li>
+      <li role="listitem"><b>No LED. No moving QR.</b> Static vinyl and a link. That's it.</li>
+      <li role="listitem"><b>No fake numbers.</b> Every stat on this site is derived from our own rates or labeled as an estimate. We publish the math. You can check it.</li>
+      <li role="listitem"><b>No spam.</b> We don't sell your data, we don't send you 47 emails, and we don't add you to a WhatsApp group you never asked for.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block alt" aria-labelledby="where-heading">
+  <div class="wrap">
+    <h2 id="where-heading">Where we <span class="hl">operate</span></h2>
+    <p class="section-sub">Gujarat. That's it. We don't pretend to be everywhere.</p>
+    <ul class="facts" role="list" aria-label="Operating areas">
+      <li role="listitem"><b>Ahmedabad</b> — CG Road, Satellite, Vastrapur, and expanding</li>
+      <li role="listitem"><b>Rajkot</b> — 120 Ring Road, University Road, and surrounding areas</li>
+      <li role="listitem"><b>Surat</b> — City Light, Athwa, and expanding</li>
+      <li role="listitem"><b>Vadodara</b> — Alkapuri, Sayajiguj, and expanding</li>
+      <li role="listitem"><b>Coming soon:</b> Junagadh, Bhavnagar, Jamnagar — once we have 10+ autos in each</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="contact" aria-labelledby="contact-heading">
+  <div class="wrap">
+    <h2 id="contact-heading">Get in <span class="hl">touch</span></h2>
+    <p class="section-sub" style="color:#d8d8d2">Questions? Just want to talk? We're real people. We reply within 24 hours.</p>
+    <p style="margin-top:1rem"><a href="mailto:founders@backpanel.in" class="btn" style="display:inline-flex">EMAIL US →</a></p>
+    <p style="margin-top:1rem;color:#888;font-size:.85rem">founders@backpanel.in — real inbox, real humans, no auto-reply</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  BACKPANEL · the ad that ends up on LinkedIn · RTO-certified &nbsp;|&nbsp; <a href="#contact" class="foolink" style="color:#FFD400;font-weight:700;text-decoration:underline">Get in touch</a> &nbsp;|&nbsp; <a href="mailto:founders@backpanel.in" class="foolink">founders@backpanel.in</a> &nbsp;|&nbsp; <a href="privacy.html">Privacy</a> &nbsp;|&nbsp; <a href="terms.html">Terms</a>
+</footer>
+
+<script src="app.js" defer></script>
+<script src="bp-enhance.js" defer></script>
+</body>
+</html>

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi-Latn">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>VyaparBill — GST Bill Jo Khud Vasuli Kare</title>
 <meta name="description" content="VyaparBill — GST bill jo khud vasuli kare. UPI QR + WhatsApp pe 2 min bhejo, customer pay kare. Trial ₹999, sal ₹1,499/mo (₹17,988), mahina ₹1,999. Bas 10 dukane." />
 <meta name="keywords" content="VyaparBill GST billing, UPI QR bill, WhatsApp bill, GSTR-1, bill vasuli, dukan billing" />
+<meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://thebackpanel.github.io/vyaparbill-pricing.html" />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="manifest" href="site.webmanifest" />
@@ -13,7 +14,13 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="VyaparBill — Bill Bhejo, Paisa Apne Aap Aayega" />
 <meta property="og:description" content="2 minute mein GST bill banao, UPI QR lagao, WhatsApp pe bhejo. Customer ek tap pe pay kare, aapko turant pata chale. Trial ₹999 se shuru." />
-<meta property="og:image" content="assets/og-image.png" />
+<meta property="og:image" content="https://thebackpanel.github.io/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="VyaparBill — Bill Bhejo, Paisa Apne Aap Aayega" />
+<meta name="twitter:description" content="2 minute mein GST bill banao, UPI QR lagao, WhatsApp pe bhejo. Customer ek tap pe pay kare, aapko turant pata chale. Trial ₹999 se shuru." />
+<meta name="twitter:image" content="https://thebackpanel.github.io/assets/og-image.png" />
 <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
 <style>
 /* Quiet Luxury 2026 — VyparBill Pricing */
@@ -22,6 +29,8 @@
 html{font-size:16px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--bg);padding:10px 16px;z-index:100;border-radius:0 0 8px 0;font-weight:700}
+.skip-link:focus{left:12px;top:12px}
 body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,'Noto Sans Devanagari','Noto Sans Gujarati',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale}
 h1,h2,h3{line-height:1.15;overflow-wrap:break-word}
 p,li,td{overflow-wrap:break-word}
@@ -150,7 +159,8 @@ body{padding-bottom:72px}
       {"@type":"Offer","name":"Har Mahina","price":"1999","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://vyaparbill.in#pricing"}
     ]
   },
-  "areaServed":{"@type":"Country","name":"India"}
+  "areaServed":{"@type":"Country","name":"India"},
+  "dateModified":"2026-09-29"
 }
 </script>
 <script type="application/ld+json">
@@ -168,6 +178,7 @@ body{padding-bottom:72px}
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Astro: SiteNav.astro -->
 <header class="site-nav">
   <div class="wrap inner">
@@ -176,6 +187,7 @@ body{padding-bottom:72px}
       <a href="#value-math">Hisaab</a>
       <a href="#pricing">Yojana</a>
       <a href="#comparison">Tulna</a>
+      <a href="about.html">About</a>
       <a href="#final-cta" class="nav-cta">Seat Rokko</a>
     </nav>
   </div>
@@ -184,7 +196,7 @@ body{padding-bottom:72px}
 <!-- Astro: TrustStrip.astro -->
 <div class="trust-strip wrap">Maskati · Relief Road · Shapar-Veraval · Siyaganj · Sitabuldi — 10 saal ka bharosa · Sirf 10 dukane · Gujarati/Hindi desk</div>
 
-<main>
+<main id="main-content">
 <!-- Astro: Hero.astro | Visual: large bold, generous whitespace, accent only on CTA -->
 <section id="hero" class="hero wrap reveal">
   <div class="hero-grid">
@@ -360,7 +372,7 @@ body{padding-bottom:72px}
     <h2 class="t-h2">Ab hisaab ka tension khatam karo</h2>
     <p class="t-body" style="margin:12px auto 20px">CG Road, Shapar, Sitabuldi — jahan aapka customer hai, wahan aapka paisa time pe aayega. 2 minute ka demo lo, apna purana bill bhejo.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="https://wa.me/919999999999?text=VyaparBill%20demo%20chahiye" class="btn-primary">Claim Seat — ₹999 se shuru</a>
+      <a href="#pricing" class="btn-primary">Claim Seat — ₹999 se shuru</a>
       <a href="#pricing" class="btn-secondary" style="color:var(--bg)">Yojana dekho</a>
     </div>
     <p class="t-small" style="color:#E7E5E4;margin-top:12px">30 din refund · White-label + hosting included · Unlimited bills</p>
@@ -369,13 +381,13 @@ body{padding-bottom:72px}
 </main>
 
 <footer style="padding:24px 0;border-top:1px solid var(--line);text-align:center" class="t-small">
-  VyaparBill · Bharat ki dukano ke liye · <a href="/" style="font-weight:600;text-decoration:underline">BACKPANEL</a> · vyaparbill.in · Sirf 10 seats
+  VyaparBill · Bharat ki dukano ke liye · <a href="/" style="font-weight:600;text-decoration:underline">BACKPANEL</a> · <a href="mailto:founders@backpanel.in" style="text-decoration:underline">founders@backpanel.in</a> · Sirf 10 seats
 </footer>
 
 <!-- Sticky Mobile CTA spec: Claim Seat + WhatsApp, thumb-friendly 52px, safe-area -->
 <div class="sticky-cta" role="complementary" aria-label="Quick action">
   <a href="#final-cta" class="btn-primary" style="padding:14px">Claim Seat</a>
-  <a href="https://wa.me/919999999999?text=Hi%20VyaparBill" class="btn-wa" aria-label="WhatsApp">WhatsApp</a>
+  <a href="#pricing" class="btn-wa" aria-label="View plans">Yojana dekho</a>
 </div>
 
 <script>

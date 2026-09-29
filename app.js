@@ -118,27 +118,19 @@ function pushGoogle(map) {
         });
     });
 }
-// ── Backend Push ───────────────────────────────────────────
-function pushBackend(path, payload) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 2, , 3]);
-                    return [4, fetch(path, {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify(payload)
-                        })];
-                case 1:
-                    _a.sent();
-                    return [2, true];
-                case 2:
-                    _a.sent();
-                    return [2, false];
-            }
-        });
-    });
+// ── In-page success state ──────────────────────────────────
+function showFormSuccess(form, msgId, message) {
+    var submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = message || 'SENT ✓';
+    }
+    var msgEl = document.getElementById(msgId);
+    if (msgEl) {
+        msgEl.textContent = message || 'Brief sent — we\'ll email you back within 24 hours.';
+        msgEl.style.color = '#FFD400';
+        msgEl.style.fontWeight = '700';
+    }
 }
 // ── Lead Form Handler ──────────────────────────────────────
 function sendLead(e) {
@@ -165,19 +157,15 @@ function sendLead(e) {
                         localStorage.setItem("backpanel_lead_" + Date.now(), JSON.stringify(data));
                     }
                     catch (_b) { }
-                    return [4, Promise.all([
-                            pushBackend("/api/leads", data),
-                            pushGoogle({ name: data.name, email: data.email, org: data.company })
-                        ])];
+                    if (typeof window.bpTrack === 'function')
+                        window.bpTrack('form_submit_lead', { company: data.company });
+                    return [4, pushGoogle({ name: data.name, email: data.email, org: data.company })];
                 case 1:
                     _a.sent();
                     subject = encodeURIComponent("BACKPANEL brief: " + data.company);
                     body = encodeURIComponent("Name: " + data.name + "\nCompany: " + data.company + "\nEmail: " + data.email + "\nHood: " + data.hood + "\nBrief: " + data.brief);
+                    showFormSuccess(f, "formMsg", "Brief sent \u2014 we'll email you back within 24 hours. Check your inbox.");
                     window.location.href = "mailto:founders@backpanel.in?subject=" + subject + "&body=" + body;
-                    formMsg = document.getElementById("formMsg");
-                    if (formMsg)
-                        formMsg.textContent = "Brief sent \u2014 we'll email you back within 24 hours.";
-                    f.reset();
                     return [2, false];
             }
         });
@@ -202,18 +190,15 @@ function sendPitch(e) {
                         pitch_url: getName("pitch_url")
                     };
                     msg = document.getElementById("pitchMsg");
-                    return [4, Promise.all([
-                            pushBackend("/api/pitch", payload),
-                            pushGoogle({ name: payload.founder_name, org: payload.company })
-                        ])];
+                    if (typeof window.bpTrack === 'function')
+                        window.bpTrack('form_submit_pitch', { company: payload.company });
+                    return [4, pushGoogle({ name: payload.founder_name, org: payload.company })];
                 case 1:
                     _a.sent();
                     subject = encodeURIComponent("Pitch on Wheels: " + payload.company);
                     body = encodeURIComponent("Founder: " + payload.founder_name + "\nCompany: " + payload.company + "\nPitch: " + payload.pitch_url);
+                    showFormSuccess(f, "pitchMsg", "Pitch submitted \u2014 if it wins, we wrap 50 autos. Check your inbox.");
                     window.location.href = "mailto:founders@backpanel.in?subject=" + subject + "&body=" + body;
-                    if (msg)
-                        msg.textContent = "Pitch submitted \u2014 if it wins, we wrap 50 autos.";
-                    f.reset();
                     return [2, false];
             }
         });
